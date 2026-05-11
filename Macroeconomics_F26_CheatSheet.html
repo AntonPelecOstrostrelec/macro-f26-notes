@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Macroeconomics F26 — 1-Page Cheat Sheet</title>
+<style>
+  @page { size: A4; margin: 1cm; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; font-size: 9.5pt; line-height: 1.32; color: #111; margin: 0; padding: 8px; }
+  h1 { color: #002b5c; font-size: 13pt; margin: 0 0 4px 0; padding: 0; border-bottom: 2px solid #002b5c; padding-bottom: 2px; }
+  h2 { color: #002b5c; font-size: 10pt; margin: 6px 0 3px 0; padding: 2px 6px; background: #d6e1ef; border-radius: 3px; }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .col { }
+  .box { border: 1px solid #b6c8df; padding: 5px 7px; border-radius: 3px; margin-bottom: 5px; background: #fafbfd; }
+  .formula { font-family: 'Cambria Math', Georgia, serif; font-size: 9.5pt; }
+  table { border-collapse: collapse; width: 100%; font-size: 8.5pt; margin: 2px 0; }
+  th, td { border: 1px solid #c0c8d4; padding: 2px 5px; text-align: left; vertical-align: top; }
+  th { background: #134e9a; color: white; font-weight: bold; }
+  ul { margin: 1px 0 1px 18px; padding: 0; }
+  li { margin: 0; }
+  .key { color: #c62828; font-weight: bold; }
+  .ok { color: #1b5e20; font-weight: bold; }
+  .small { font-size: 8pt; color: #555; }
+  @media print { body { padding: 0; } }
+</style>
+</head>
+<body>
+
+<h1>Macroeconomics F26 — One-Page Cheat Sheet (print &amp; bring)</h1>
+
+<div class="grid">
+
+<div class="col">
+<h2>1. National Income Identity & Multipliers</h2>
+<div class="box formula">
+Y = C + I + G &nbsp;(closed) &nbsp;|&nbsp; Y = C + I + G + NX &nbsp;(open)<br>
+C = a + b·Yd &nbsp;|&nbsp; Yd = Y − T &nbsp;|&nbsp; b = MPC ∈ (0,1)<br>
+S<sub>priv</sub> = Y − T − C &nbsp;|&nbsp; S<sub>pub</sub> = T − G &nbsp;|&nbsp; S = S<sub>priv</sub> + S<sub>pub</sub><br>
+<span class="key">Gov multiplier = 1/(1−MPC)</span><br>
+<span class="key">Tax multiplier = −MPC/(1−MPC)</span><br>
+<span class="key">Balanced-budget multiplier = 1</span><br>
+Open-economy multiplier = 1/(1 − MPC + m)
+</div>
+
+<h2>2. IS-LM (closed economy)</h2>
+<div class="box formula">
+IS: Y = C(Y−T) + I(r) + G &nbsp;→ slopes <span class="key">DOWN</span><br>
+LM: M/P = L(Y, r) typically Y − cr &nbsp;→ slopes <span class="key">UP</span><br>
+Solve IS=LM for (Y*, r*).<br>
+↑G or ↓T → IS right → Y↑, r↑ (crowding out: I↓)<br>
+↑M → LM right → Y↑, r↓
+</div>
+
+<h2>3. Mundell-Fleming (open, perfect K mobility)</h2>
+<div class="box formula">
+r = r* (world rate) &nbsp;|&nbsp; ↑e (appreciation) → ↓NX<br>
+LM* is <span class="key">VERTICAL</span>; IS* slopes down in (e, Y).
+</div>
+<table>
+<tr><th></th><th>Floating</th><th>Fixed</th></tr>
+<tr><th>Fiscal</th><td class="key">Ineffective</td><td class="ok">Effective</td></tr>
+<tr><th>Monetary</th><td class="ok">Effective</td><td class="key">Ineffective</td></tr>
+<tr><th>Tariff (↑)</th><td>Y same, e↑</td><td>Y↑, e fixed</td></tr>
+</table>
+<span class="small">Memory: <em>floating gives monetary, fixed gives fiscal.</em></span>
+
+<h2>4. Classical Production & Factor Markets</h2>
+<div class="box formula">
+Cobb-Douglas: Y = A·L<sup>α</sup>·K<sup>β</sup>. α+β = 1 → CRS, &gt;1 IRS, &lt;1 DRS.<br>
+RTS test: if doubling all inputs raises Y by ratio R: R&gt;2 IRS, =2 CRS, &lt;2 DRS<br>
+MPL = αY/L &nbsp;|&nbsp; MPK = βY/K<br>
+W/P = MPL &nbsp;|&nbsp; R/P = MPK<br>
+Labor income = αY (share α) &nbsp;|&nbsp; Capital income = βY
+</div>
+</div>
+
+<div class="col">
+<h2>5. Money Market & Fisher</h2>
+<div class="box formula">
+QTM: M·V = P·Y &nbsp;→ %ΔM + %ΔV = %ΔP + %ΔY<br>
+V, Y fixed → <span class="key">%ΔP ≈ %ΔM</span> (money neutrality)<br>
+Fisher: <span class="key">i = r + π<sup>e</sup></span><br>
+Real money demand: (M/P)<sup>d</sup> = L(Y, i)
+</div>
+
+<h2>6. Solow Growth (square-root case)</h2>
+<div class="box formula">
+y = k<sup>1/2</sup> &nbsp;|&nbsp; Δk = sk<sup>1/2</sup> − (δ+n+g)k<br>
+Steady state (Δk = 0):<br>
+<span class="key">k* = [s/(δ+n+g)]²</span><br>
+<span class="key">y* = √k* = s/(δ+n+g)</span><br>
+sy* = s·y* &nbsp;|&nbsp; c* = (1−s)·y*<br>
+<span class="key">Golden rule: MPK = δ + n + g</span> (maximises c*)<br>
+Long-run per-capita growth = g (technology only).
+</div>
+
+<h2>7. Inflation, CPI, Phillips, Okun</h2>
+<div class="box formula">
+CPI = <span class="key">FIXED</span> basket weights (Laspeyres)<br>
+GDP deflator = <span class="key">CURRENT</span> quantities (Paasche) = (Nom/Real)·100<br>
+Inflation π = (P<sub>t</sub> − P<sub>t−1</sub>)/P<sub>t−1</sub> · 100<br>
+Phillips: <span class="key">π = π<sup>e</sup> − β(u − u<sub>n</sub>) + ν</span><br>
+Okun: ΔY/Y ≈ −β·(u − u<sub>n</sub>); employment↑ ↔ Y↑ (positive); u↑ ↔ Y↓ (negative)
+</div>
+
+<h2>8. Consumption Theories</h2>
+<div class="box formula">
+<strong>Keynes:</strong> C = a + b·Yd. APC = a/Y + b → falls as Y rises.<br>
+<strong>Friedman PIH:</strong> C = α·Y<sup>P</sup>. Smooth via permanent income.<br>
+<strong>Modigliani LCH:</strong> C = (W + R·Y)/T. Smooth over lifetime.<br>
+Kuznets puzzle: APC constant in long run (PIH/LCH), falls in cross-section (Keynes).
+</div>
+
+<h2>9. GDP Concepts</h2>
+<div class="box formula">
+GDP = value of final goods produced <em>within country</em><br>
+GNP = GDP + net factor income from abroad<br>
+NNP = GNP − depreciation<br>
+Real GDP at base-year P; Nominal GDP at current P.
+</div>
+
+<h2>10. Quick Reflexes for T/F</h2>
+<table>
+<tr><th>Statement template</th><th>Watch out</th></tr>
+<tr><td>"Doubling inputs raises Y by …"</td><td>Compute ratio R</td></tr>
+<tr><td>"MPC > 1" or "MPC < 0"</td><td>FALSE always</td></tr>
+<tr><td>"CPI uses changing weights"</td><td>FALSE — fixed</td></tr>
+<tr><td>"IS* is vertical (open)"</td><td>FALSE — LM* is</td></tr>
+<tr><td>"Okun: emp ↔ Y negative"</td><td>FALSE — positive</td></tr>
+<tr><td>"Real GDP at current prices"</td><td>FALSE — nominal is</td></tr>
+<tr><td>"QTM: ΔM not proportional to ΔP"</td><td>FALSE — proportional</td></tr>
+<tr><td>"Money neutrality affects real Y"</td><td>FALSE — only nominal</td></tr>
+</table>
+</div>
+
+</div>
+
+<div class="box" style="margin-top:6px;">
+<strong>Exam tactics:</strong> Show working step-by-step for partial credit. Define curves before using them ("IS represents combinations of (Y, r) where the goods market clears…"). Always state the multiplier formula before computing. Diagrams: label axes (Y on x; r/e/P on y) and curves clearly. For T/F, write the answer + 1 sentence — no more.
+</div>
+
+<div class="small" style="text-align: center; margin-top: 6px;">
+Macroeconomics F26 cheat sheet — built from V19–S25 exam patterns. Keep with you during the exam.
+</div>
+
+</body>
+</html>

@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Macroeconomics F26 — Audio Study Notes</title>
+<style>
+  * { box-sizing: border-box; }
+  body { font-family: 'Segoe UI', Calibri, Arial, sans-serif; max-width: 980px; margin: 0 auto; padding: 0 20px 100px 20px; color: #222; line-height: 1.65; background: #fafbfd; }
+  h1 { color: #002b5c; border-bottom: 3px solid #002b5c; padding-bottom: 8px; font-size: 1.9em; margin-top: 22px; }
+  h2 { color: #002b5c; margin-top: 40px; font-size: 1.4em; padding: 10px 14px; background: #d6e1ef; border-radius: 6px; }
+  p { margin: 14px 0; padding: 12px 16px; border-radius: 6px; transition: background 0.3s, transform 0.2s; }
+  p.speaking { background: #fff8c4; border-left: 5px solid #f9a825; transform: translateX(4px); box-shadow: 0 2px 8px rgba(249, 168, 37, 0.3); }
+  p.spoken { color: #777; }
+  .player {
+    position: fixed; bottom: 0; left: 0; right: 0;
+    background: #002b5c; color: white; padding: 14px 24px;
+    box-shadow: 0 -4px 18px rgba(0,0,0,0.25);
+    z-index: 100;
+  }
+  .player-row { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; max-width: 980px; margin: 0 auto; }
+  .player button {
+    background: #134e9a; color: white; border: none;
+    padding: 10px 16px; font-size: 0.95em; cursor: pointer;
+    border-radius: 4px; font-weight: bold; transition: background 0.15s;
+  }
+  .player button:hover { background: #1a5fb8; }
+  .player button:disabled { opacity: 0.5; cursor: default; }
+  .player button.play { background: #2e7d32; padding: 10px 24px; font-size: 1.05em; }
+  .player button.play:hover { background: #388e3c; }
+  .player button.stop { background: #c62828; }
+  .player button.stop:hover { background: #d32f2f; }
+  .player select {
+    padding: 8px 10px; border-radius: 4px; border: 1px solid #b6c8df;
+    background: white; color: #002b5c; font-size: 0.9em;
+  }
+  .player .label { font-size: 0.85em; opacity: 0.9; }
+  .player .now-playing { flex: 1 1 100%; font-size: 0.85em; opacity: 0.85; padding-top: 4px; }
+  .toc {
+    background: white; border: 1px solid #c0c8d4; padding: 18px 24px;
+    border-radius: 6px; margin-bottom: 22px;
+  }
+  .toc h3 { color: #002b5c; margin-top: 0; }
+  .toc-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 8px; }
+  .toc-grid button {
+    background: #f5f7fa; color: #134e9a; border: 1px solid #b6c8df;
+    padding: 10px 14px; cursor: pointer; border-radius: 4px;
+    text-align: left; font-size: 0.92em; transition: all 0.15s;
+  }
+  .toc-grid button:hover { background: #134e9a; color: white; }
+  .toc-grid button.active { background: #002b5c; color: white; border-color: #002b5c; }
+  .intro {
+    background: #fff8e1; border-left: 4px solid #f9a825;
+    padding: 16px 22px; border-radius: 6px; margin-bottom: 18px;
+  }
+  .small { font-size: 0.88em; color: #555; }
+</style>
+</head>
+<body>
+
+<h1>Macroeconomics F26 — Audio Study Notes</h1>
+
+<div class="intro">
+<strong>How to use this.</strong> Hit ▶ Play below. The page reads itself aloud and highlights the current sentence. Speed up to 1.25× or 1.5× for review. Use Section ▶ to skip; use the table of contents to jump anywhere. Designed for ~30 minutes of audio at 1× — about 20 minutes at 1.5×, perfect for a commute or walk.<br><br>
+<strong>Tip:</strong> Pick a "Natural" voice from the voice dropdown if available (e.g., "Microsoft Ava Online" on Windows 10/11 in Edge). They sound like real people, not robots.
+</div>
+
+<div class="toc">
+<h3>Sections — click any to jump to it</h3>
+<div class="toc-grid" id="tocGrid"></div>
+</div>
+
+<div id="content"></div>
+
+<div class="player">
+<div class="player-row">
+  <button id="playBtn" class="play" onclick="togglePlay()">▶ Play</button>
+  <button class="stop" onclick="stopAll()">⏹ Stop</button>
+  <button onclick="prevSection()">⏮ Section</button>
+  <button onclick="nextSection()">Section ⏭</button>
+  <span class="label">Speed:</span>
+  <select id="speedSel" onchange="setSpeed()">
+    <option value="0.85">0.85×</option>
+    <option value="1" selected>1×</option>
+    <option value="1.15">1.15×</option>
+    <option value="1.25">1.25×</option>
+    <option value="1.5">1.5×</option>
+    <option value="1.75">1.75×</option>
+    <option value="2">2×</option>
+  </select>
+  <span class="label">Voice:</span>
+  <select id="voiceSel" onchange="setVoice()"></select>
+  <span class="now-playing" id="nowPlaying">Ready. Press Play to start.</span>
+</div>
+</div>
+
+<script>
+// ========= AUDIO-OPTIMIZED CONTENT =========
+// Each section = title + array of paragraphs. Paragraphs are written for the ear:
+// formulas spelled out as words, conversational tone.
+const SECTIONS = [
+  {
+    id: 'intro',
+    title: '1. Welcome & Strategy',
+    paragraphs: [
+      "Welcome, Marek. This is your audio macroeconomics study guide for the F26 exam at Aarhus University. We have about thirty minutes of content here, organized by problem set priority. You can listen to the whole thing in order, or jump to specific sections using the menu at the top.",
+      "Quick orientation. The exam is four hours, all aids allowed, with five problem sets. Problem Set One is a Keynesian cross and IS-LM case study, worth thirty percent. Problem Set Two is True or False, worth ten percent. Problem Set Three is open economy with the Mundell-Fleming model, worth twenty percent. Problem Set Four is the Solow growth model, twenty percent. Problem Set Five is consumption theory and a Danish data table, also twenty percent.",
+      "I recommend listening to this once at one and a quarter speed for an overview, then a second time at one and a half speed for review. Each section is roughly three to five minutes. Let's begin with the foundation."
+    ]
+  },
+  {
+    id: 'national-accounts',
+    title: '2. National Income & Multipliers',
+    paragraphs: [
+      "Let's start with the national income identity. In a closed economy, total output Y equals consumption plus investment plus government spending. Y equals C plus I plus G. In an open economy, we add net exports, which is exports minus imports. Y equals C plus I plus G plus net exports.",
+      "Consumption depends on disposable income. The standard form is: C equals a constant, plus the marginal propensity to consume, times disposable income. Disposable income is total income minus taxes. The marginal propensity to consume, or MPC, is always between zero and one. If MPC is zero point seven five, that means out of every extra dollar of disposable income, people spend seventy-five cents and save twenty-five cents.",
+      "Now the multipliers. These are exam favorites. The government spending multiplier equals one over one minus MPC. With MPC of zero point seven five, that's four. So if government spending rises by one hundred, output rises by four hundred. The intuition: the first hundred is income for someone, who spends seventy-five percent of it, which is income for someone else, and so on. The geometric series sums to one over one minus MPC.",
+      "The tax multiplier is similar but smaller and negative. It equals minus MPC over one minus MPC. With MPC of zero point seven five, that's negative three. The reason it's smaller in absolute value than the spending multiplier: a tax change first reduces disposable income, then only MPC of that reduction translates to less consumption.",
+      "The balanced budget multiplier equals exactly one. If you raise both G and T by the same amount, output rises by exactly that amount. This is a famous result.",
+      "In an open economy with imports, the multiplier shrinks. It becomes one over one minus MPC plus m, where m is the marginal propensity to import. Imports are a leakage. Money spent abroad doesn't generate domestic income, so the multiplier is smaller.",
+      "One more important set of identities. Private saving equals income minus taxes minus consumption. Public saving equals taxes minus government spending. National saving is the sum: private plus public. And in any economy in equilibrium, total saving equals investment, plus net exports if the economy is open. Saving minus investment equals net exports. Remember this identity — it tells you that a country with a trade surplus is exporting capital."
+    ]
+  },
+  {
+    id: 'is-lm',
+    title: '3. IS-LM Model (PS1, 30%)',
+    paragraphs: [
+      "Now let's tackle the IS-LM model, which is your big Problem Set One, worth thirty percent. This model determines output and the interest rate together, in the short run, when prices are sticky.",
+      "The IS curve represents goods market equilibrium. Start with Y equals C plus I plus G, but now investment depends on the interest rate. Specifically, investment equals a constant minus a sensitivity parameter times r. When r is high, borrowing is expensive, investment is low, planned expenditure is low, output is low. When r is low, the opposite. So the IS curve slopes downward in a graph with output on the horizontal axis and r on the vertical axis.",
+      "The LM curve represents money market equilibrium. Real money supply equals real money demand. A typical exam form is: real money demand equals Y minus c times r. Set this equal to the given M over P. When Y rises, money demand rises. With money supply fixed, the interest rate must rise to clear the market. So the LM curve slopes upward.",
+      "Equilibrium is where IS meets LM. To solve it on the exam, write IS as Y equals some function of r. Write LM as Y equals another function of r. Set them equal, solve for r-star, then substitute back to find Y-star. Always state the formulas before substituting numbers.",
+      "Now the four policy effects you absolutely must memorize. First, fiscal expansion: government spending rises, or taxes fall. The IS curve shifts to the right. Both Y and r rise. Crucially, r rises because higher Y means more money demand. The rise in r reduces investment — that's called crowding out. Always mention crowding out when explaining a fiscal expansion. Examiners love it.",
+      "Second, fiscal contraction: G falls or T rises. IS shifts left. Both Y and r fall.",
+      "Third, monetary expansion: money supply rises. LM shifts right. Y rises, r falls. More money lowers the interest rate, which boosts investment.",
+      "Fourth, monetary contraction: money supply falls. LM shifts left. Y falls, r rises.",
+      "When you write up your exam answer, always start with the formula, then derive, then explain in words. Diagrams are critical: sketch IS and LM with labeled axes — Y on horizontal, r on vertical — and show the shift clearly with an arrow."
+    ]
+  },
+  {
+    id: 'mundell-fleming',
+    title: '4. Mundell-Fleming Open Economy (PS3, 20%)',
+    paragraphs: [
+      "Now Mundell-Fleming. This is the open economy version, your Problem Set Three, worth twenty percent. The new assumption is perfect capital mobility, which means the domestic interest rate must equal the world interest rate, r-star. If they differed, capital would flood in or out instantly, equalizing them.",
+      "The diagram has the exchange rate e on the vertical axis and Y on the horizontal axis. Two curves. IS-star slopes downward. Higher exchange rate, that is, an appreciation, makes imports cheaper and exports more expensive. Net exports fall, lowering Y. LM-star is vertical. With r fixed at r-star and money supply given, Y is pinned down at one specific value.",
+      "Now the four cases. Memorize the memory hook: floating gives monetary, fixed gives fiscal. Let me walk through each.",
+      "Under floating exchange rates, fiscal expansion does not raise Y. The IS-star shifts right, but LM-star is vertical. The pressure on the interest rate attracts foreign capital. The currency appreciates. Net exports fall. That fall in net exports exactly cancels the fiscal boost. So fiscal policy is ineffective under floating.",
+      "Under floating, monetary expansion does raise Y. LM-star shifts right. Capital flows out, the currency depreciates, net exports rise, Y rises. So monetary policy is effective under floating.",
+      "Under fixed exchange rates, fiscal expansion does raise Y. The IS-star shifts right. To prevent the currency from appreciating, the central bank sells its own currency for foreign reserves. This expands the money supply, shifting LM-star right alongside the IS-star. Y rises by the full amount.",
+      "Under fixed, monetary expansion does not raise Y. Increasing the money supply would depreciate the currency. But the central bank must buy back its own currency to maintain the peg, which undoes the original increase. So monetary policy is ineffective under fixed.",
+      "One more case that's appeared twice recently: tariffs. A tariff makes imports more expensive, raising net exports at any given exchange rate. This shifts IS-star to the right. Under floating, the currency appreciates and Y is unchanged. Under fixed, the central bank intervenes, money supply expands, Y rises.",
+      "On the exam, you do not need numerical computations for Problem Set Three. It's all conceptual since the V23 exam. Just memorize the four cases plus tariffs, and explain with diagrams."
+    ]
+  },
+  {
+    id: 'solow',
+    title: '5. Solow Growth Model (PS4, 20%)',
+    paragraphs: [
+      "Solow growth model. Problem Set Four, worth twenty percent. This is highly numerical, but the recipe is the same every time.",
+      "The production function per worker is y equals k to the one-half. That's the square root of k. Most exams use this exact form. Sometimes there's a scale factor like y equals three k to the one-half — the technique is identical.",
+      "The fundamental equation: change in k equals s times f of k, minus the quantity delta plus n plus g, all times k. In words: capital per worker grows when saving per worker exceeds break-even investment per worker. Break-even investment must do three things. Replace depreciation, that's delta times k. Equip new workers as the population grows, that's n times k. And offset the dilution from technology growth, that's g times k.",
+      "At steady state, the change in k is zero. So saving equals break-even. The equation becomes: s times the square root of k-star, equals delta plus n plus g, all times k-star. Divide both sides by the square root of k-star. You get: s equals delta plus n plus g, all times the square root of k-star. Square both sides. K-star equals s divided by the quantity delta plus n plus g, all squared.",
+      "Once you have k-star, the rest is fast. Y-star is the square root of k-star. Saving per worker is s times y-star. Consumption per worker is one minus s, times y-star.",
+      "Let's do a worked example, mirroring the S25 exam. Country A has a saving rate of zero point one five, population growth zero point zero four, depreciation zero point zero three, technology growth zero point zero two. The denominator delta plus n plus g equals zero point zero nine. K-star equals zero point one five divided by zero point zero nine, the result squared, which equals approximately two point seven eight. Y-star is the square root, about one point six six seven. Saving per worker equals zero point one five times one point six six seven, which is zero point two five. Consumption per worker is zero point eight five times one point six six seven, about one point four two.",
+      "Now the Golden Rule. This is the level of capital that maximizes consumption per worker. The condition is: marginal product of capital equals delta plus n plus g. Crucially, the steady state is not always at the Golden Rule. The steady state depends on the saving rate, which is a choice. The Golden Rule is determined by technology. They coincide only when saving equals a specific Golden Rule level.",
+      "If saving is below the Golden Rule level, the country is under-saving. Raising saving would eventually raise consumption. If saving is above, the country is over-saving and consumption could be increased immediately by saving less.",
+      "The big insight Solow taught us: only technology growth, that is, g, drives long-run growth in output per worker. Capital alone hits diminishing returns and doesn't sustain growth."
+    ]
+  },
+  {
+    id: 'consumption',
+    title: '6. Consumption Theories (PS5, 20%)',
+    paragraphs: [
+      "Consumption theories. This is the first part of Problem Set Five. You'll be asked to compare Keynes with either Friedman's Permanent Income Hypothesis, or Modigliani's Life Cycle Hypothesis. About a fifty-fifty chance for either.",
+      "First, Keynes, from 1936. The Absolute Income Hypothesis. Consumption equals a constant a, plus b times current disposable income. The marginal propensity to consume, b, is between zero and one. Current income is what matters. Period. The implication is that the average propensity to consume falls as income rises, because the constant a becomes a smaller share of total income.",
+      "Second, Friedman, 1957. The Permanent Income Hypothesis. Consumption equals alpha times permanent income. Permanent income is the long-run, expected average income. Households smooth consumption based on permanent income, mostly ignoring transitory shocks. A windfall is mostly saved. An unexpected loss is mostly absorbed by reduced saving. The implication: tax rebates that people see as temporary do not boost consumption much.",
+      "Third, Modigliani, 1954. The Life Cycle Hypothesis. Consumption equals wealth plus remaining working years times income, all divided by total remaining years of life. The intuition: people plan consumption over their entire life. They save during working years and dissave in retirement. The implication is hump-shaped lifetime saving.",
+      "Now the Kuznets puzzle. Empirical fact: average propensity to consume is roughly constant in long-run time-series data, but falls in cross-section. Keynes alone cannot explain this — his theory predicts APC always falls with income. The Permanent Income Hypothesis solves it: in cross-section, higher-income households have a larger share of transitory income, making their measured APC lower. In time-series, all changes are mostly permanent, so APC stays constant.",
+      "For an A-level answer, structure your response in three paragraphs. First, state Keynes — current disposable income, MPC between zero and one, declining APC. Second, state PIH or LCH — forward-looking, permanent or lifetime income, smoothing across time. Third, give the policy implications and mention the Kuznets puzzle. That's the answer that earns top marks."
+    ]
+  },
+  {
+    id: 'cpi-data',
+    title: '7. CPI Data Analysis (PS5, second half)',
+    paragraphs: [
+      "The second part of Problem Set Five is data analysis. They give you a table from Statistics Denmark showing inflation by commodity group over several months.",
+      "First, key formula. Percent change equals new value minus old value, divided by old value, times one hundred. So if the CPI rises from one hundred and five to one hundred and eight, the percent change is three divided by one hundred and five, times one hundred, which is approximately two point eight six percent.",
+      "Typical questions. Which category showed the most fluctuation? Compute the maximum minus the minimum across the months for each row. Identify the largest range.",
+      "Why did Education stay flat? Education prices are largely set by the public sector. Tuition is regulated. So Education does not respond much to short-term market shocks.",
+      "Why are Restaurants and Hotels volatile? They are labor-intensive, so wage shocks transmit. Demand is seasonal. Energy and food cost pass-through is high. And consumption is discretionary, so demand is elastic.",
+      "How would inflation in essentials affect overall consumption? Use the identity Y equals C plus I plus G. If essentials become more expensive but wages don't keep up, real disposable income falls. C falls. With essentials being inelastic, households cut discretionary spending most. Lower C lowers aggregate demand, lowers Y. There may be a second-round effect: the central bank tightens policy, which raises r and lowers I, further dampening Y.",
+      "When answering these questions, anchor your reasoning in macroeconomic theory. Don't just give an opinion. Connect the data to a model: the consumption function, the Phillips curve, or the national income identity."
+    ]
+  },
+  {
+    id: 'tf-traps',
+    title: '8. True/False Traps (PS2, 10%)',
+    paragraphs: [
+      "Now the True or False traps. The format started in V23 and has appeared every year since. Five statements, ten percent of the exam. Twenty minutes total. Here are the patterns.",
+      "First, the returns to scale trap. They show you a production function where doubling inputs raises output from x to y, and ask if it's increasing, constant, or decreasing returns. Compute the ratio y over x. If greater than two, increasing returns. If equal to two, constant. If less than two, decreasing. This appeared in every single exam since V23 — guaranteed for F26.",
+      "Second, money neutrality and the quantity theory. Statements like 'changes in the money supply have no effect on real variables' are true in the long run, by the classical dichotomy. The quantity theory says M times V equals P times Y. In growth-rate form, percent change in M equals percent change in P, when V and Y are constant.",
+      "Third, the marginal propensity to consume trap. Statements like 'MPC is greater than one and less than zero' — false, mathematically impossible. Or 'MPC measures how income changes per unit change in consumption' — also false. MPC measures how consumption changes per unit change in disposable income. Direction matters.",
+      "Fourth, the Phillips curve. The statement 'reducing inflation in the short run requires accepting higher unemployment' is true. This is the sacrifice ratio.",
+      "Fifth, the Mundell-Fleming curves. 'The IS-star is vertical in an open economy' — false. LM-star is the vertical one.",
+      "Sixth, CPI versus GDP deflator weights. CPI uses fixed weights, the Laspeyres index. The GDP deflator uses current quantities, the Paasche index. The exam often reverses this. CPI fixed, deflator current.",
+      "Seventh, Okun's law sign. The relationship between unemployment and output is negative. Unemployment up means output down. The relationship between employment and output is positive. Don't confuse the two.",
+      "Eighth, real versus nominal GDP. Nominal GDP is at current prices. Real GDP is at constant base-year prices. Real is inflation-adjusted. The exam often reverses this. Nominal current, real constant.",
+      "When you see a True or False statement, read it twice. Watch for reversed definitions, swapped variables, and quick numerical traps. Write your answer as 'True' or 'False' followed by exactly one sentence of reasoning. No more, no less."
+    ]
+  },
+  {
+    id: 'bonus-classical',
+    title: '9. Cobb-Douglas, Fisher, AD-AS, Phillips',
+    paragraphs: [
+      "Some bonus topics that have appeared in older exams.",
+      "Cobb-Douglas production function. Y equals A times K to the alpha, times L to the one minus alpha. The marginal product of labor equals one minus alpha, times Y over L. The marginal product of capital equals alpha times Y over K. In a competitive market, factors are paid their marginal products. So real wage equals MPL, and real rent equals MPK. Total labor income equals one minus alpha times Y. Total capital income equals alpha times Y. Together they sum to Y exactly — Euler's theorem under constant returns to scale.",
+      "The Fisher equation. Nominal interest rate equals real interest rate plus expected inflation. So real interest rate equals nominal minus inflation. If nominal is three percent and inflation is zero point eight percent, the real rate is two point two percent.",
+      "The aggregate demand and aggregate supply diagram. Three curves. AD slopes down. SRAS slopes up. LRAS is vertical at potential output Y-bar.",
+      "An adverse supply shock — like an oil shock or a pandemic — shifts SRAS up and to the left. In the short run, output falls and prices rise simultaneously. This is stagflation. In the long run, the economy returns to potential output as wages and prices adjust, but at a permanently higher price level. Policy options: monetary expansion accommodates the shock, raising Y back toward potential, but worsens inflation. Or wait for natural adjustment, which is slow but stops at the original price level. Or use targeted supply-side relief like input subsidies, which shifts SRAS back rightward without inflating demand.",
+      "The Phillips curve. Inflation equals expected inflation, minus beta times the unemployment gap, plus a supply shock term. The unemployment gap is u minus the natural rate u-n. In the short run there's a trade-off between inflation and unemployment. In the long run, expected inflation adjusts and the Phillips curve becomes vertical at the natural rate. No permanent trade-off.",
+      "Okun's law. A one-percentage-point rise in unemployment is associated with about a two-percent fall in real GDP relative to potential. The sign is negative. Don't confuse this with employment, which has a positive relationship with output.",
+      "Open economy identity, one more time. Saving minus investment equals net exports. If a country saves more than it invests at home, it has a trade surplus and is exporting capital. If less, trade deficit and importing capital."
+    ]
+  },
+  {
+    id: 'tactics',
+    title: '10. Final Exam Tactics',
+    paragraphs: [
+      "Final exam tactics. The F26 exam is four hours, all aids allowed. Bring all your notes including the printed cheat sheet.",
+      "Time allocation. About seventy-two minutes for Problem Set One since it's worth thirty percent. About twenty minutes for the True or False section. About forty-eight minutes each for Problems Three, Four, and Five. Save four minutes at the end for review.",
+      "Always show your working. Even if your final answer is wrong, you get partial credit for correct intermediate steps. Examiners have to mark hundreds of papers — make it easy for them to see your reasoning.",
+      "Define terms before you use them. When asked to derive the IS curve, start with: 'The IS curve represents combinations of Y and r where the goods market is in equilibrium.' Then derive. The first sentence earns marks before any algebra.",
+      "For the in-your-opinion questions, anchor your answer in economic theory. Don't just opine. Use the framework Y equals C plus I plus G, or the Phillips curve, or the consumption function. Connect your reasoning to a model.",
+      "For the True or False section, write the answer first, then exactly one sentence. No more. Long answers waste time.",
+      "Sanity check your numbers. If you compute MPC greater than one, you've made an error. If you get a negative multiplier or negative Y, you've made an error. Catch these before moving on.",
+      "Sketch diagrams when relevant. Always label the axes — Y on horizontal, r or e or P on vertical. Label the curves clearly. Show shifts with arrows.",
+      "Common mistakes to avoid. Confusing CPI weights with deflator weights. Confusing Okun's law sign. Forgetting MPC is between zero and one. Drawing IS-star vertical instead of LM-star in Mundell-Fleming. Forgetting to include all of delta plus n plus g in the Solow steady state.",
+      "Final advice. Sleep well the night before. Eat breakfast. Bring water. Read every question carefully before starting to compute. Trust your preparation. You've got this. Now go get an A. Good luck."
+    ]
+  }
+];
+
+// ========= TTS ENGINE =========
+let voices = [];
+let currentSection = 0;
+let currentParagraph = 0;
+let isPlaying = false;
+let isPaused = false;
+let utterance = null;
+
+function loadVoices() {
+  voices = window.speechSynthesis.getVoices().filter(v => v.lang.startsWith('en'));
+  const sel = document.getElementById('voiceSel');
+  sel.innerHTML = '';
+  // Prioritize natural-sounding voices first
+  const sorted = voices.slice().sort((a, b) => {
+    const aNat = /natural|neural|enhanced|premium|online/i.test(a.name) ? -1 : 0;
+    const bNat = /natural|neural|enhanced|premium|online/i.test(b.name) ? -1 : 0;
+    return aNat - bNat;
+  });
+  sorted.forEach((v, i) => {
+    const opt = document.createElement('option');
+    opt.value = voices.indexOf(v);
+    opt.textContent = v.name + ' (' + v.lang + ')';
+    sel.appendChild(opt);
+  });
+}
+
+window.speechSynthesis.onvoiceschanged = loadVoices;
+loadVoices();
+
+function buildContent() {
+  const container = document.getElementById('content');
+  const tocGrid = document.getElementById('tocGrid');
+  SECTIONS.forEach((sec, sIdx) => {
+    const h2 = document.createElement('h2');
+    h2.id = 'sec-' + sIdx;
+    h2.textContent = sec.title;
+    container.appendChild(h2);
+    sec.paragraphs.forEach((para, pIdx) => {
+      const p = document.createElement('p');
+      p.id = 's' + sIdx + 'p' + pIdx;
+      p.dataset.sec = sIdx;
+      p.dataset.par = pIdx;
+      p.textContent = para;
+      container.appendChild(p);
+    });
+    const btn = document.createElement('button');
+    btn.textContent = sec.title;
+    btn.id = 'tocBtn' + sIdx;
+    btn.onclick = () => jumpTo(sIdx);
+    tocGrid.appendChild(btn);
+  });
+}
+buildContent();
+
+function clearHighlights() {
+  document.querySelectorAll('p.speaking').forEach(p => p.classList.remove('speaking'));
+  document.querySelectorAll('.toc-grid button.active').forEach(b => b.classList.remove('active'));
+}
+
+function highlightCurrent() {
+  clearHighlights();
+  const p = document.getElementById('s' + currentSection + 'p' + currentParagraph);
+  if (p) {
+    p.classList.add('speaking');
+    p.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+  const btn = document.getElementById('tocBtn' + currentSection);
+  if (btn) btn.classList.add('active');
+  document.getElementById('nowPlaying').textContent =
+    'Section ' + (currentSection + 1) + ' of ' + SECTIONS.length + ': ' +
+    SECTIONS[currentSection].title + ' — paragraph ' + (currentParagraph + 1) + ' of ' + SECTIONS[currentSection].paragraphs.length;
+}
+
+function speakCurrent() {
+  if (!isPlaying) return;
+  const sec = SECTIONS[currentSection];
+  if (!sec) { stopAll(); return; }
+  if (currentParagraph >= sec.paragraphs.length) {
+    currentSection++;
+    currentParagraph = 0;
+    if (currentSection >= SECTIONS.length) { stopAll(); document.getElementById('nowPlaying').textContent = 'Finished. Press Play to restart.'; return; }
+  }
+  highlightCurrent();
+  utterance = new SpeechSynthesisUtterance(SECTIONS[currentSection].paragraphs[currentParagraph]);
+  utterance.rate = parseFloat(document.getElementById('speedSel').value);
+  utterance.volume = 1.0;
+  utterance.pitch = 1.0;
+  const voiceIdx = document.getElementById('voiceSel').value;
+  if (voices[voiceIdx]) utterance.voice = voices[voiceIdx];
+  utterance.onend = () => {
+    if (!isPlaying) return;
+    document.getElementById('s' + currentSection + 'p' + currentParagraph)?.classList.add('spoken');
+    currentParagraph++;
+    speakCurrent();
+  };
+  utterance.onerror = (e) => {
+    console.warn('TTS error:', e);
+    currentParagraph++;
+    speakCurrent();
+  };
+  window.speechSynthesis.speak(utterance);
+}
+
+function togglePlay() {
+  if (isPlaying && !isPaused) {
+    window.speechSynthesis.pause();
+    isPaused = true;
+    document.getElementById('playBtn').textContent = '▶ Resume';
+    document.getElementById('nowPlaying').textContent = 'Paused.';
+  } else if (isPaused) {
+    window.speechSynthesis.resume();
+    isPaused = false;
+    document.getElementById('playBtn').textContent = '⏸ Pause';
+    highlightCurrent();
+  } else {
+    isPlaying = true;
+    isPaused = false;
+    document.getElementById('playBtn').textContent = '⏸ Pause';
+    speakCurrent();
+  }
+}
+
+function stopAll() {
+  window.speechSynthesis.cancel();
+  isPlaying = false;
+  isPaused = false;
+  currentSection = 0;
+  currentParagraph = 0;
+  clearHighlights();
+  document.querySelectorAll('p.spoken').forEach(p => p.classList.remove('spoken'));
+  document.getElementById('playBtn').textContent = '▶ Play';
+  document.getElementById('nowPlaying').textContent = 'Stopped. Press Play to start over.';
+}
+
+function nextSection() {
+  window.speechSynthesis.cancel();
+  currentSection = Math.min(currentSection + 1, SECTIONS.length - 1);
+  currentParagraph = 0;
+  if (isPlaying) speakCurrent();
+  else { highlightCurrent(); }
+}
+
+function prevSection() {
+  window.speechSynthesis.cancel();
+  currentSection = Math.max(currentSection - 1, 0);
+  currentParagraph = 0;
+  if (isPlaying) speakCurrent();
+  else { highlightCurrent(); }
+}
+
+function jumpTo(sIdx) {
+  window.speechSynthesis.cancel();
+  currentSection = sIdx;
+  currentParagraph = 0;
+  if (!isPlaying) {
+    isPlaying = true;
+    document.getElementById('playBtn').textContent = '⏸ Pause';
+  }
+  speakCurrent();
+}
+
+function setSpeed() {
+  // Restart current paragraph with new speed
+  if (isPlaying && !isPaused) {
+    window.speechSynthesis.cancel();
+    speakCurrent();
+  }
+}
+
+function setVoice() {
+  if (isPlaying && !isPaused) {
+    window.speechSynthesis.cancel();
+    speakCurrent();
+  }
+}
+
+// Allow click on paragraph to jump and play from there
+document.addEventListener('click', (e) => {
+  if (e.target.tagName === 'P' && e.target.dataset.sec !== undefined) {
+    window.speechSynthesis.cancel();
+    currentSection = parseInt(e.target.dataset.sec);
+    currentParagraph = parseInt(e.target.dataset.par);
+    if (!isPlaying) {
+      isPlaying = true;
+      document.getElementById('playBtn').textContent = '⏸ Pause';
+    }
+    speakCurrent();
+  }
+});
+
+// Show keyboard shortcuts via spacebar
+document.addEventListener('keydown', (e) => {
+  if (e.code === 'Space' && !['INPUT','SELECT','TEXTAREA'].includes(document.activeElement.tagName)) {
+    e.preventDefault();
+    togglePlay();
+  }
+});
+</script>
+
+</body>
+</html>

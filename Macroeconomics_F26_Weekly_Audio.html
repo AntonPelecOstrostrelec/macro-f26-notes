@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Macroeconomics F26 — Weekly Audio Notes</title>
+<style>
+  * { box-sizing: border-box; }
+  body { font-family: 'Segoe UI', Calibri, Arial, sans-serif; max-width: 980px; margin: 0 auto; padding: 0 20px 110px 20px; color: #222; line-height: 1.65; background: #fafbfd; }
+  h1 { color: #002b5c; border-bottom: 3px solid #002b5c; padding-bottom: 8px; font-size: 1.9em; margin-top: 22px; }
+  h2 { color: #002b5c; margin-top: 40px; font-size: 1.4em; padding: 10px 14px; background: #d6e1ef; border-radius: 6px; }
+  p { margin: 14px 0; padding: 12px 16px; border-radius: 6px; transition: background 0.3s, transform 0.2s; cursor: pointer; }
+  p:hover { background: #f5f7fa; }
+  p.speaking { background: #fff8c4; border-left: 5px solid #f9a825; transform: translateX(4px); box-shadow: 0 2px 8px rgba(249, 168, 37, 0.3); }
+  p.spoken { color: #888; }
+  .player {
+    position: fixed; bottom: 0; left: 0; right: 0;
+    background: #002b5c; color: white; padding: 14px 24px;
+    box-shadow: 0 -4px 18px rgba(0,0,0,0.25);
+    z-index: 100;
+  }
+  .player-row { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; max-width: 980px; margin: 0 auto; }
+  .player button {
+    background: #134e9a; color: white; border: none;
+    padding: 10px 16px; font-size: 0.95em; cursor: pointer;
+    border-radius: 4px; font-weight: bold; transition: background 0.15s;
+  }
+  .player button:hover { background: #1a5fb8; }
+  .player button.play { background: #2e7d32; padding: 10px 24px; font-size: 1.05em; }
+  .player button.play:hover { background: #388e3c; }
+  .player button.stop { background: #c62828; }
+  .player button.stop:hover { background: #d32f2f; }
+  .player select {
+    padding: 8px 10px; border-radius: 4px; border: 1px solid #b6c8df;
+    background: white; color: #002b5c; font-size: 0.9em;
+  }
+  .player .label { font-size: 0.85em; opacity: 0.9; }
+  .player .now-playing { flex: 1 1 100%; font-size: 0.85em; opacity: 0.85; padding-top: 4px; }
+  .toc {
+    background: white; border: 1px solid #c0c8d4; padding: 18px 24px;
+    border-radius: 6px; margin-bottom: 22px;
+  }
+  .toc h3 { color: #002b5c; margin-top: 0; }
+  .toc-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 8px; }
+  .toc-grid button {
+    background: #f5f7fa; color: #134e9a; border: 1px solid #b6c8df;
+    padding: 10px 14px; cursor: pointer; border-radius: 4px;
+    text-align: left; font-size: 0.92em; transition: all 0.15s;
+  }
+  .toc-grid button:hover { background: #134e9a; color: white; }
+  .toc-grid button.active { background: #002b5c; color: white; border-color: #002b5c; }
+  .intro {
+    background: #fff8e1; border-left: 4px solid #f9a825;
+    padding: 16px 22px; border-radius: 6px; margin-bottom: 18px;
+  }
+  .small { font-size: 0.88em; color: #555; }
+</style>
+</head>
+<body>
+
+<h1>Macroeconomics F26 — Weekly Audio Notes</h1>
+
+<div class="intro">
+<strong>The full week-by-week chapter walkthrough, in audio form.</strong> Every Mankiw chapter your lectures covered, written for the ear and read aloud. About 60–70 minutes at 1× speed, or 40–45 minutes at 1.5×. Hit ▶ Play. Pick a "Natural" voice from the dropdown for human-quality narration (e.g., Microsoft Ava Online in Edge). Click any paragraph to jump there. Press Spacebar to pause/resume.<br><br>
+<strong>Suggested listening plan over your 3 days:</strong> Day 1 morning walk — Welcome, Week 6, 8, 9. Day 1 afternoon — Week 10, 11. Day 2 morning — Week 12, 13. Day 2 afternoon — Week 15, 16, 17. Day 3 — re-listen to Weeks 10, 11, 12 (the three biggest exam topics) at 1.5×.
+</div>
+
+<div class="toc">
+<h3>Sections — click any to jump to it</h3>
+<div class="toc-grid" id="tocGrid"></div>
+</div>
+
+<div id="content"></div>
+
+<div class="player">
+<div class="player-row">
+  <button id="playBtn" class="play" onclick="togglePlay()">▶ Play</button>
+  <button class="stop" onclick="stopAll()">⏹ Stop</button>
+  <button onclick="prevSection()">⏮ Section</button>
+  <button onclick="nextSection()">Section ⏭</button>
+  <span class="label">Speed:</span>
+  <select id="speedSel" onchange="setSpeed()">
+    <option value="0.85">0.85×</option>
+    <option value="1" selected>1×</option>
+    <option value="1.15">1.15×</option>
+    <option value="1.25">1.25×</option>
+    <option value="1.5">1.5×</option>
+    <option value="1.75">1.75×</option>
+    <option value="2">2×</option>
+  </select>
+  <span class="label">Voice:</span>
+  <select id="voiceSel" onchange="setVoice()"></select>
+  <span class="now-playing" id="nowPlaying">Ready. Press Play to start.</span>
+</div>
+</div>
+
+<script>
+const SECTIONS = [
+  {
+    id: 'welcome',
+    title: 'Welcome & How to Use This',
+    paragraphs: [
+      "Welcome, Marek. This is your audio walkthrough of the entire macroeconomics syllabus, week by week, mapped to Mankiw's textbook chapters one through twenty-two.",
+      "There are eleven sections covering Week six through Week seventeen, plus a final big-picture summary. Each week takes about five to seven minutes at one-times speed. Total runtime is about an hour at one-times, or forty minutes at one-and-a-half times.",
+      "I recommend listening like a podcast. First time, listen all the way through at one-times to absorb the material. Second time, at one-and-a-half times for review. Third time, jump only to the sections you found weak.",
+      "If a paragraph confuses you, just click it to replay. If you want to skip a week, hit Section forward. The play button doubles as pause. Press the spacebar anytime to toggle.",
+      "Let's start with Week six, the foundation."
+    ]
+  },
+  {
+    id: 'w6',
+    title: 'Week 6 — Intro, GDP, CPI, Classical (Ch 1–4)',
+    paragraphs: [
+      "Week six covers the first four chapters of Mankiw, which lay the groundwork for everything else.",
+      "First, what is macroeconomics? Microeconomics looks at one market — the market for apples, or jeans, or software developers. Macroeconomics zooms out to the entire economy at once. Total output, total employment, prices in general, interest rates. Instead of asking what the price of bread is, macro asks whether prices are rising in general — that's inflation.",
+      "Macro tries to answer three big questions. Why do some countries get rich while others stay poor? That's growth. Why does the economy go through booms and busts? That's business cycles. And what can the government do to keep things stable? That's policy.",
+      "Macroeconomists work with models. A model is a simplified picture, usually a few equations and a graph. We feed in some inputs — these are the exogenous variables, taken as given — and the model produces outputs — the endogenous variables. For example, in IS-LM, government spending and the money supply are exogenous; output and the interest rate are endogenous.",
+      "Now to GDP, the most important measurement in macro. GDP is the total market value of all final goods and services produced inside a country in a given period — usually a year or a quarter. There are three ways to measure GDP and they all give the same number. The production approach: add up the value of everything produced, avoiding double counting. The expenditure approach: GDP equals consumption plus investment plus government spending plus net exports. The income approach: add up all wages, profits, rents, and interest paid in the economy.",
+      "A critical distinction: nominal versus real GDP. Nominal GDP values output at current prices. Real GDP values output at constant base-year prices. Why does this matter? Suppose a country produces a hundred cars in twenty-twenty-four at twenty thousand euros each, so nominal GDP is two million. In twenty-twenty-five it produces the same hundred cars at twenty-five thousand euros each, so nominal GDP is two and a half million. That looks like twenty-five percent growth. But real GDP, valued at twenty-twenty-four prices, is two million in both years. Real production didn't change. The twenty-five percent is purely inflation.",
+      "From this we get the GDP deflator, which equals nominal GDP divided by real GDP, times one hundred. It uses current quantities as weights. Economists call this a Paasche index.",
+      "The Consumer Price Index, or CPI, is different. It measures the cost of a fixed basket of goods over time. Statistics Denmark picks a representative basket once and tracks its cost. The CPI uses fixed weights — a Laspeyres index. Memorize this distinction: CPI fixed weights, GDP deflator current weights. The exam loves to reverse them.",
+      "Inflation is just the percent change in the price index. If the CPI goes from one hundred and five to one hundred and eight, inflation is three divided by one hundred and five, times one hundred, which is about two point eight six percent.",
+      "A few more aggregates. GNP equals GDP plus net income from abroad — what citizens earn regardless of where they work. NNP equals GNP minus depreciation. Disposable income equals total income minus taxes — what households actually have to spend.",
+      "Now the classical theory of national income. This is the long-run view: prices are flexible, markets clear, everything is determined by real factors. Output Y depends on capital K and labor L through a production function. The standard form is Cobb-Douglas: Y equals A times K to the alpha, times L to the one minus alpha.",
+      "How do factors get paid? In a competitive market, firms hire each factor up to the point where its marginal product equals its real price. Labor: real wage equals MPL, the marginal product of labor. Capital: real rent equals MPK. Here's the intuition. If hiring an extra worker produces five units worth five-times-P euros, but you only pay them W euros, you keep hiring until the marginal worker's output exactly covers their wage. So real wage equals MPL.",
+      "For Cobb-Douglas with constant returns to scale, labor income equals one minus alpha, times Y, and capital income equals alpha times Y. Together they sum exactly to Y. This is Euler's theorem.",
+      "Classical equilibrium: in the long run, output Y is fixed by the production function. The interest rate r adjusts so saving equals investment. Saving has private and public parts. Private saving equals Y minus T minus C. Public saving equals T minus G. Together they form national saving. Equilibrium occurs where national saving equals investment.",
+      "If government spending rises, national saving falls, the supply of loanable funds shrinks, the interest rate rises, and investment falls. This is crowding out — even in the classical model.",
+      "Finally, money. Money is anything that's a medium of exchange, a store of value, and a unit of account. The central bank controls the money supply M. The Quantity Theory of Money says: M times V equals P times Y. In growth-rate form, percent change in M plus percent change in V equals percent change in P plus percent change in Y. If velocity is constant, inflation equals money growth minus real output growth.",
+      "Classical economists separated real variables — output, employment, real wages — from nominal variables — prices, money supply. In the long run, changes in M only affect nominal stuff. Output and employment are unaffected. This is money neutrality.",
+      "Last for week six, the Fisher equation: nominal interest rate i equals real interest rate r plus expected inflation. So real interest rate equals nominal minus inflation. If a lender wants a real return of two percent and expects three percent inflation, they demand a nominal rate of five percent.",
+      "That's the foundation. Week eight goes deeper."
+    ]
+  },
+  {
+    id: 'w8',
+    title: 'Week 8 — Classical Continued + Inflation (Ch 3–5)',
+    paragraphs: [
+      "Week eight continues the classical model and adds a chapter on inflation in detail.",
+      "First, the loanable funds market. In classical theory, the interest rate is determined here. Saving is the supply of loanable funds. Investment is the demand. Saving is roughly vertical because Y is fixed by production. Investment slopes downward — lower r makes borrowing cheaper, so firms invest more.",
+      "Equilibrium r is where saving meets investment. If government spending rises with taxes unchanged, public saving falls, total national saving falls, and the saving curve shifts left. The interest rate rises. Investment falls. This is crowding out, and it's a key reason why fiscal expansion has costs.",
+      "Now to inflation. The cause of long-run inflation is, mostly, money growth. With velocity stable and real output growing slowly, inflation tracks money supply growth. If Denmark's central bank prints eight percent more money per year while real output grows two percent, inflation will be about six percent.",
+      "The Fisher effect tells us how nominal interest rates respond to inflation. If money growth rises by five percentage points, expected inflation rises by five points, and the nominal interest rate also rises by five points. The real rate is unaffected. So in countries with high inflation, you observe high nominal interest rates.",
+      "There are real costs to inflation, even when expected. Shoeleather costs: people hold less cash to avoid inflation, making more trips to the ATM. Menu costs: firms have to keep changing their printed prices. Tax distortions: tax codes are written in nominal terms, so inflation pushes people into higher brackets unfairly. And confusion: it's hard to compare prices across years when the unit of account is shifting.",
+      "Unexpected inflation is even worse. It redistributes wealth. If you lent someone a hundred euros expecting two percent inflation, but inflation turns out to be eight percent, the borrower paid you back in cheaper money. You lost. This is why surprise inflation hurts creditors and helps debtors.",
+      "Finally, hyperinflation. Defined as monthly inflation above fifty percent. Always caused by extreme money printing, usually because the government is financing deficits by printing. Examples: Zimbabwe in twenty-oh-eight, Weimar Germany in nineteen-twenty-three. Hyperinflation destroys the ability to save, plan, or even use money.",
+      "That's week eight. Next we open up the economy."
+    ]
+  },
+  {
+    id: 'w9',
+    title: 'Week 9 — Open Economy Classical + Unemployment (Ch 6–7)',
+    paragraphs: [
+      "Week nine takes us into open-economy macroeconomics and unemployment.",
+      "We've been pretending the country was closed. Now we let goods and capital cross borders. The national income identity becomes Y equals C plus I plus G plus net exports, where net exports equals exports minus imports.",
+      "Rearranging this identity gives a powerful relationship: saving minus investment equals net exports. Why? If we save more than we invest at home, the extra savings flow abroad as net foreign lending. We accumulate IOUs from foreigners. That's a trade surplus. If saving is less than investment, we borrow from abroad. That's a trade deficit. So saving minus investment equals net exports always, by accounting.",
+      "Two exchange rate concepts. The nominal exchange rate is the price of one currency in another — for example, one euro equals seven point four five Danish kroner. The real exchange rate is the price of domestic goods relative to foreign goods, in the same currency. A real appreciation means our goods become more expensive abroad — exports fall, imports rise, net exports fall.",
+      "So net exports is a function of the real exchange rate. As the exchange rate rises, net exports fall. This is a downward-sloping relationship.",
+      "In a small open economy with perfect capital mobility, the domestic real interest rate must equal the world rate. Otherwise capital floods in or out instantly. So the domestic interest rate is fixed at the world rate. Investment is determined by that. National saving is determined by Y, T, and C. The gap, saving minus investment, must equal net exports. That determines the real exchange rate.",
+      "Now to unemployment. Some definitions. The labor force equals the employed plus the unemployed. The unemployed are people not working but actively looking. The unemployment rate is unemployed divided by labor force.",
+      "There are three types of unemployment. Frictional unemployment is the time needed for workers and jobs to find each other. Job search, moving for work, considering offers. This can be reduced with better job-matching websites and information, but never eliminated.",
+      "Structural unemployment occurs when wages are above market-clearing levels. Causes: minimum wage above market wage, unions negotiating high wages for members, efficiency wages where firms pay above market to motivate workers, or skills mismatched with available jobs. Reduced by retraining, lowering wage rigidities, or matching workers to demand.",
+      "Cyclical unemployment is caused by the business cycle. When the economy is in recession, output is below potential, and firms lay off workers. This is what stabilization policy targets.",
+      "The natural rate of unemployment, u-n, is frictional plus structural. It's the unemployment rate that exists even when the economy is at potential output. It's not zero — there's always some friction.",
+      "Wage rigidities — three sources. First, minimum wage laws. Second, unions, which protect insiders at the cost of outsiders. Third, efficiency wages, where firms voluntarily pay above market to reduce turnover and increase effort.",
+      "Finally, Okun's law. A one-percentage-point increase in unemployment is associated with about a two-percent decrease in real GDP relative to potential. The sign is negative. Higher unemployment, lower output. But notice: employment, not unemployment, has a positive relationship with output. Don't confuse the two — the exam loves this trap.",
+      "That's week nine. Next, the Solow growth model."
+    ]
+  },
+  {
+    id: 'w10',
+    title: 'Week 10 — Solow Growth Model (Ch 7–9)',
+    paragraphs: [
+      "Week ten covers the Solow growth model. This is Problem Set Four on your exam, worth twenty percent. Spend extra time on this section.",
+      "The big question Solow tries to answer: why are some countries rich and some poor? Two countries that look similar today can grow apart over time. Solow uses three ingredients: capital accumulation, population growth, and technological progress.",
+      "The setup is per-worker form. We divide everything by the number of workers. So y is output per worker, k is capital per worker. The production function is y equals f of k, with diminishing returns — each extra unit of k adds less. The exam standard is y equals k to the one-half — that's the square root of k.",
+      "The fundamental equation of the Solow model: change in k equals s times f of k, minus the quantity delta plus n plus g, all times k. In words: capital per worker grows when saving per worker exceeds break-even investment.",
+      "Why break-even investment? Three things must be replaced or maintained. First, depreciated capital — that's delta times k. Second, capital for new workers, since population is growing — that's n times k. Third, the dilution that comes from technology growth — that's g times k. Add them up: delta plus n plus g, times k.",
+      "At the steady state, change in k equals zero. So saving exactly equals break-even investment. Setting them equal: s times square root of k-star, equals delta plus n plus g, times k-star. Divide both sides by square root of k-star. We get s equals delta plus n plus g, times square root of k-star. Solve for k-star: k-star equals s divided by delta plus n plus g, all squared.",
+      "Once you have k-star, the rest is fast. Y-star equals the square root of k-star. Saving per worker equals s times y-star. Consumption per worker equals one minus s, times y-star.",
+      "Let me walk you through a worked example, mirroring the S25 exam. Country A has saving rate fifteen percent, population growth four percent, depreciation three percent, technology growth two percent. Sum: nine percent. K-star equals zero point one five divided by zero point zero nine, the result squared. That's about two point seven eight. Y-star is the square root, about one point six six seven. Saving per worker is zero point one five times one point six six seven, which equals zero point two five. Consumption per worker is zero point eight five times one point six six seven, about one point four two.",
+      "Now Country B has saving rate twenty percent, same population growth four percent, same depreciation three percent, but technology growth four percent. Sum: eleven percent. K-star equals zero point two divided by zero point one one, squared, about three point three one. Y-star is square root, about one point eight two. Country B has higher k, higher y, and higher consumption per worker than A.",
+      "What changed each thing? Higher saving raises k-star and y-star but does not change the long-run growth rate. Higher population growth lowers k-star and y-star. Higher depreciation does the same. Higher technology growth lowers k-star in level form but raises the long-run growth rate of y-per-worker.",
+      "Here's Solow's big insight. Only technology growth — that's g — drives sustained long-run growth in output per worker. Capital alone hits diminishing returns and stops growing. This is why education, research, innovation, and technology transfer are so important.",
+      "Now the Golden Rule. The Golden Rule level of capital is the k that maximizes consumption per worker in steady state. The condition is: marginal product of capital equals delta plus n plus g.",
+      "Critical concept: the steady state is NOT always the Golden Rule. The steady state depends on the saving rate, which is a choice made by households or policy. The Golden Rule is determined by technology. They coincide only when the saving rate equals a specific Golden-Rule saving rate. Below that, the country is under-saving and could increase consumption by saving more. Above that, the country is over-saving and could increase consumption by saving less.",
+      "On the exam, this concept is asked every year. The standard question: 'Is the steady-state level of capital always equal to the Golden Rule level?' Answer: No. They depend on different things. Be ready to explain this.",
+      "That's the Solow model. Move to week eleven for IS-LM."
+    ]
+  },
+  {
+    id: 'w11',
+    title: 'Week 11 — Fluctuations + IS-LM (Ch 9–11)',
+    paragraphs: [
+      "Week eleven introduces business cycles and the IS-LM model. This is Problem Set One on your exam, worth thirty percent. Master this.",
+      "First, why do we need a different model for the short run? The classical model assumes prices are flexible and markets always clear. But in the short run, prices are sticky — wages are negotiated yearly, menu prices change slowly, contracts lock in nominal payments. So when demand drops, output falls — not just prices. This is what creates business cycles.",
+      "Think of it as a two-speed economy. In the long run, prices adjust, the classical model holds, output is at potential. In the short run, prices are sticky, IS-LM applies, output can be above or below potential.",
+      "The IS-LM model has two markets, two curves, two unknowns: output Y and the interest rate r.",
+      "The IS curve represents goods market equilibrium. Start with Y equals consumption plus investment plus government spending. Now investment depends on r: investment equals a constant minus a sensitivity parameter times r. Higher r means lower investment, lower planned expenditure, lower Y. So the IS curve slopes down in a graph with Y on the horizontal axis and r on the vertical.",
+      "Before going deeper, let me explain the Keynesian cross — the foundation of IS. Planned expenditure equals C plus I plus G. Equilibrium occurs where Y equals planned expenditure. If we plug in the consumption function, we can solve for Y. The result: Y equals autonomous spending divided by one minus MPC. Autonomous spending includes the constants from C, all of I, and all of G.",
+      "From the Keynesian cross we get the multipliers. The government spending multiplier equals one over one minus MPC. With MPC of zero point seven five, that's four. So one hundred more in G raises Y by four hundred. Why? The first hundred is income for someone. They spend seventy-five of it. That's income for someone else, who spends fifty-six and a quarter. The series adds up.",
+      "The tax multiplier equals minus MPC over one minus MPC. With MPC of zero point seven five, that's negative three. The balanced budget multiplier — equal increases in G and T — equals exactly one. The result is one of the elegant theorems of macroeconomics.",
+      "Now back to IS. With investment as a function of r, the IS curve shows all combinations of Y and r where the goods market clears. It slopes down.",
+      "The LM curve represents money market equilibrium. Real money supply, M divided by P, equals real money demand, which is a function of Y and r. A typical exam form: real money demand equals Y minus c times r. Setting demand equal to supply gives the LM equation.",
+      "When Y rises, money demand rises. With money supply fixed, the interest rate must rise to clear the market. So the LM curve slopes up.",
+      "Equilibrium is where IS meets LM. To solve algebraically: write IS as Y equals f of r. Write LM as Y equals g of r. Set equal, solve for r-star. Substitute back to find Y-star.",
+      "Now the four policy effects you must memorize. First, fiscal expansion: G rises or T falls. The IS shifts right. Both Y and r rise. The rise in r reduces investment — that's crowding out. Always mention crowding out when explaining a fiscal expansion.",
+      "Second, fiscal contraction: G falls or T rises. IS shifts left. Y and r both fall.",
+      "Third, monetary expansion: money supply rises. LM shifts right. Y rises, r falls. Lower r boosts investment.",
+      "Fourth, monetary contraction: money supply falls. LM shifts left. Y falls, r rises.",
+      "On the exam, sketch the diagrams. Always label axes — Y on horizontal, r on vertical — and show shifts with arrows. Explain in words why each shift happens.",
+      "That's week eleven. Week twelve takes us open."
+    ]
+  },
+  {
+    id: 'w12',
+    title: 'Week 12 — IS-LM Applications + Mundell-Fleming (Ch 12–13)',
+    paragraphs: [
+      "Week twelve applies IS-LM and extends it to the open economy. The open-economy version is Mundell-Fleming, which is Problem Set Three on your exam, worth twenty percent.",
+      "First, applying IS-LM to derive aggregate demand. If the price level rises, real money supply M over P falls. That shifts LM left, raising the interest rate, lowering investment, lowering Y. So higher P means lower Y. That's the AD curve, downward-sloping in a graph with P on vertical and Y on horizontal.",
+      "Now Mundell-Fleming. The new assumption is perfect capital mobility, meaning the domestic interest rate must equal the world rate, r-star. If they differed, capital would flood in or out instantly to equalize them.",
+      "The diagram has the exchange rate on vertical and Y on horizontal. Two curves. IS-star slopes down — higher e means weaker net exports, lower Y. LM-star is vertical — with r fixed at r-star and money supply given, Y is pinned at one value.",
+      "Now four cases, depending on whether the exchange rate is fixed or floating.",
+      "Memory hook: Floating gives monetary, fixed gives fiscal. If you remember nothing else, remember this sentence. Let me unpack it.",
+      "Under floating exchange rates, fiscal expansion does NOT raise Y. The IS-star shifts right, but LM-star is vertical, pinning Y. The pressure on the interest rate attracts capital, the currency appreciates, net exports fall, exactly canceling the fiscal boost. Fiscal is INEFFECTIVE under floating.",
+      "Under floating, monetary expansion DOES raise Y. LM-star shifts right. Capital flows out, currency depreciates, net exports rise, Y rises. Monetary is EFFECTIVE under floating.",
+      "Under fixed exchange rates, fiscal expansion DOES raise Y. The IS-star shifts right. To prevent appreciation, the central bank sells its own currency for foreign reserves. The money supply expands, LM-star shifts right alongside. Y rises by the full amount.",
+      "Under fixed, monetary expansion does NOT raise Y. Increasing the money supply would depreciate the currency, but the central bank must buy back the currency to maintain the peg, undoing the increase. Monetary is INEFFECTIVE under fixed.",
+      "One more important case: tariffs. A tariff raises net exports. Under floating, the currency appreciates and Y is unchanged — the appreciation cancels the tariff effect. Under fixed, the central bank intervenes, money supply expands, Y rises.",
+      "On the exam since V23, no numerical work is required for Mundell-Fleming — it's all conceptual. Memorize the four cases plus tariffs, and explain with diagrams.",
+      "That's week twelve. Next, aggregate supply and consumption."
+    ]
+  },
+  {
+    id: 'w13',
+    title: 'Week 13 — Aggregate Supply, AD-AS, Consumption (Ch 14–16)',
+    paragraphs: [
+      "Week thirteen covers aggregate supply, dynamic AD-AS, and three consumption theories.",
+      "Aggregate supply, chapter fourteen. Mankiw gives three theories of why short-run aggregate supply slopes upward — sticky-wage, sticky-price, imperfect-information. They all reduce to the same general result: output equals potential output, plus alpha times the deviation between actual and expected prices. When prices surprise to the upside, output expands above potential.",
+      "Three curves to know. AD slopes down — higher P, less real money supply, higher r, lower Y. SRAS slopes up — higher prices, more output. LRAS is vertical at potential output Y-bar — in the long run, prices don't affect output.",
+      "Demand shocks. Suppose government spending rises. AD shifts right. Short run: output rises above potential, prices rise. Over time, expected prices adjust, SRAS shifts up, the economy returns to Y-bar at a higher P. Demand shocks affect output short-run, prices long-run.",
+      "Supply shocks. An oil shock or a pandemic shifts SRAS up and to the left. Short run: output falls and prices rise — that's stagflation. Long run, wages and expectations adjust, SRAS shifts back. Output returns to Y-bar but prices stay elevated.",
+      "Policy options after a supply shock. Accommodate by expanding monetary policy: AD shifts right, output recovers, but inflation worsens. Or wait for natural adjustment: slow but no extra inflation. Or supply-side relief — input subsidies that shift SRAS back rightward, the best response if achievable.",
+      "Dynamic AD-AS, chapter fifteen, is more advanced. It combines the Phillips curve, monetary policy rules like the Taylor rule, and dynamic adjustment. Probably not tested in detail on your exam — but know that inflation expectations adjust over time and central banks set rates following rules.",
+      "Now the consumption theories, chapter sixteen. This is Problem Set Five on your exam. Three theories.",
+      "First, Keynes nineteen-thirty-six, Absolute Income Hypothesis. Consumption equals a constant a, plus b times current disposable income. The marginal propensity to consume b is between zero and one. Keynes says current income drives consumption — period. Implication: average propensity to consume falls as income rises, because the constant a becomes a smaller share.",
+      "Second, Friedman nineteen-fifty-seven, Permanent Income Hypothesis. Consumption equals alpha times permanent income, where permanent income is the long-run expected income. Households smooth consumption based on permanent income, ignoring transitory shocks. A bonus is mostly saved. Implication: temporary tax rebates barely affect consumption.",
+      "Third, Modigliani nineteen-fifty-four, Life Cycle Hypothesis. Consumption equals wealth plus remaining working years times income, divided by total remaining years of life. People plan consumption over their entire life. Save during work years, dissave in retirement.",
+      "The Kuznets puzzle: empirical fact is that average propensity to consume is constant in long-run time series but falls in cross-section. Keynes alone can't explain this. PIH and LCH solve it: in cross-section, higher-income households have a larger share of transitory income, making their measured APC look lower.",
+      "On the exam, structure your comparison in three paragraphs. State Keynes. State PIH or LCH. Discuss policy implications and the Kuznets puzzle. That earns top marks.",
+      "That's week thirteen. Move to week fifteen."
+    ]
+  },
+  {
+    id: 'w15',
+    title: 'Week 15 — Investment + Financial Crises (Ch 16, 17, 22)',
+    paragraphs: [
+      "Week fifteen wraps up consumption and moves into investment theory and financial crises.",
+      "More on consumption. Modern theories build on Keynes, PIH, and LCH with several refinements. Rational expectations: people use all available information about future income, not just current. Borrowing constraints: if you can't borrow against future income, current income matters more than PIH suggests. Habit formation: people get used to consumption levels and adjust slowly. Behavioral factors: mental accounting, self-control problems.",
+      "Now the theory of investment, chapter seventeen. There are three types. Business fixed investment — firms buying machines, factories, equipment. Residential investment — new housing. Inventory investment — changes in stocks of unsold goods.",
+      "What determines business fixed investment? Firms compare the cost of capital with the marginal product of capital. The cost of capital is the real interest rate r plus the depreciation rate delta. If MPK exceeds r plus delta, build more capital. If MPK is less, let capital depreciate.",
+      "This gives us the negative relationship: investment depends inversely on the interest rate. Higher r, lower investment. This is exactly the I of r function we used in IS-LM.",
+      "Beyond the basic model: animal spirits. Keynes's term for the role of confidence and expectations in investment decisions. When firms feel optimistic, they invest more than the math predicts. When pessimistic, they hold back. This explains why investment is the most volatile component of GDP.",
+      "Tobin's q is another way to think about investment. Q equals the market value of the firm divided by the replacement cost of its capital. If q is greater than one, investing in new capital is profitable — the market values it more than it costs. If q is less than one, don't invest. Q-theory connects investment to stock market valuations.",
+      "Financial crises, chapter twenty-two in newer editions. A financial crisis is a sharp disruption in financial intermediation. Banks and credit markets stop functioning normally. Examples: the Great Depression of nineteen-twenty-nine, the Asian crisis nineteen-ninety-seven, the Global Financial Crisis of two-thousand-seven and -eight.",
+      "How crises typically unfold. First, an asset price boom — often credit-driven. Second, the boom turns to bust and asset prices crash. Third, banks lose money and reduce lending. Fourth, the credit crunch reduces investment and consumption, causing a recession. Fifth, bank runs and panics, where confidence collapses, deepening the recession.",
+      "Policy responses during crises. Lender of last resort: the central bank lends to solvent-but-illiquid banks. Bailouts and recapitalizations: the government injects capital into failing banks. Aggressive monetary easing: cut the interest rate to zero or use unconventional tools like quantitative easing. Fiscal stimulus: raise government spending to support demand when private spending collapses.",
+      "Financial crises don't usually appear directly on Aarhus exams. But the AD-AS framework for handling demand shocks does — V20 and V22 used COVID and Russia-Ukraine as examples.",
+      "That's week fifteen. Two more weeks to go."
+    ]
+  },
+  {
+    id: 'w16',
+    title: 'Week 16 — Investment + Banking (Ch 17–18)',
+    paragraphs: [
+      "Week sixteen extends the investment chapter and adds money supply and banking.",
+      "Investment under uncertainty. Beyond the basic I of r story, several factors matter. Expectations and animal spirits drive confidence-based investment. Tax policy affects the effective cost of capital — investment tax credits and accelerated depreciation reduce it. And credit constraints matter: small firms often can't borrow at the going rate, even when projects are profitable.",
+      "Now to chapter eighteen: money supply, money demand, and banking. The central bank creates the monetary base — currency in circulation plus reserves at the central bank. Commercial banks then expand this through fractional-reserve lending. This is how banks effectively create money.",
+      "Let me walk through an example. You deposit one thousand kroner at the bank. The bank holds ten percent as reserves — that's a hundred kroner. The bank lends out nine hundred. The borrower spends the nine hundred. The recipient deposits it elsewhere. Now there's one thousand plus nine hundred — that's one thousand nine hundred kroner of total deposits in the system, all from your original thousand.",
+      "The bank does it again with the new nine hundred. They keep ninety, lend eight hundred and ten. After many rounds, total deposits expand to one thousand divided by zero point one — that's ten thousand kroner. Your original thousand became ten thousand of the money supply.",
+      "The simple money multiplier formula: m equals one over the reserve ratio rr. If reserves are ten percent of deposits, the multiplier is ten. The money supply equals the multiplier times the monetary base.",
+      "Three tools of monetary policy. First, open market operations. The central bank buys or sells government bonds, which changes the monetary base, which changes the money supply. Second, reserve requirements. Changing the required reserve ratio changes the multiplier. Third, the discount rate, the rate at which the central bank lends to commercial banks.",
+      "Money demand. People hold money for transactions and as a store of value. Demand depends on output Y — more activity means more money needed — and on the nominal interest rate i. Higher i makes bonds more attractive than cash, reducing money demand.",
+      "On the exam, money market is half of IS-LM — it's the LM curve. Make sure you can explain why LM slopes up: when Y rises, money demand rises, with money supply fixed, the interest rate must rise to clear the market. Money creation by banks is interesting background but rarely tested directly.",
+      "That's week sixteen. One more week."
+    ]
+  },
+  {
+    id: 'w17',
+    title: 'Week 17 — Government Debt + Stabilization (Ch 19, 21)',
+    paragraphs: [
+      "Week seventeen covers government debt and stabilization policy.",
+      "First, government debt, chapter nineteen. A budget deficit is when government spending exceeds revenue in a given year — G minus T. Government debt is the accumulated sum of past deficits. The relevant indicator is the debt-to-GDP ratio.",
+      "Two views of debt. The traditional view: higher G with no offset reduces national saving, which raises the interest rate and lowers investment. Future generations are worse off because the capital stock is smaller.",
+      "The Ricardian equivalence view, due to Robert Barro: forward-looking households see today's deficit as future taxes. They save more today to pay those future taxes. Private saving rises by exactly the amount public saving falls. National saving stays the same. Debt-financed tax cuts have no effect.",
+      "Empirically, Ricardian equivalence holds only partially. Most economists believe the traditional view: deficits do reduce national saving and crowd out investment, but maybe not one-for-one.",
+      "When is debt sustainable? If the interest rate r is below the growth rate g, debt-to-GDP can be stable even with persistent deficits. This is the famous r-less-than-g condition. Recent decades have seen r below g in most rich countries, which is why Denmark and the EU can run debt without it exploding.",
+      "Now stabilization policy, chapter twenty-one. Should the government try to smooth out business cycles? Two camps disagree.",
+      "Active stabilization, the Keynesian view: use fiscal and monetary policy to dampen cycles. Recessions are costly — unemployment, lost output. We have tools, so use them.",
+      "Passive policy, the classical or monetarist view: let markets work, follow simple rules. Active policy creates lags, mistakes, and political distortions. It often makes things worse.",
+      "Why active policy is hard. Three reasons. Recognition lag: data on the economy comes with delays. You don't know you're in a recession until months later. Implementation lag: passing fiscal legislation takes time. Even monetary decisions take a few weeks. Effectiveness lag: once policy is in place, it takes six to eighteen months to work through the economy. By the time stimulus hits, the recession may be over and you're now over-stimulating a recovery, causing inflation.",
+      "Rules versus discretion. Discretion: the central bank decides each meeting based on judgement. Rules: follow a formula like the Taylor rule, which sets the interest rate based on inflation and the output gap. Rules reduce political pressure and time-inconsistency problems but lose flexibility.",
+      "Time inconsistency, due to Kydland and Prescott. The central bank announces it will keep inflation low. People believe it and set wages low. Then the central bank has incentive to surprise with higher inflation to boost output. People learn this pattern and expect higher inflation. So discretionary policy ends up with high inflation AND no output gain. The solution: commitment to a rule, or independent central banks.",
+      "Government debt and stabilization don't usually appear directly on the exam. But the policy logic — active versus passive, fiscal versus monetary, debt sustainability — provides the framework for the in-your-opinion questions in Problem Set One. Like the S25 PS1 part h question about how fiscal contraction affects society.",
+      "That's the last week. Now let's wrap up with the big picture."
+    ]
+  },
+  {
+    id: 'big-picture',
+    title: 'Big Picture — How Everything Connects',
+    paragraphs: [
+      "Final section: big picture. If you only had thirty minutes to revise, this is what to remember.",
+      "First, the two-speed economy. In the long run, the classical model holds. Output is determined by capital, labor, and technology. Money is neutral. Prices adjust. The Solow model explains growth. The loanable funds market clears.",
+      "In the short run, prices are sticky. AD shifts cause output to deviate from potential. The IS-LM model applies. Both monetary and fiscal policy matter for output.",
+      "Second, the three big models on your exam. The Keynesian cross plus IS-LM is your tool for short-run output and interest rates in a closed economy — that's Problem Set One. Mundell-Fleming is the open-economy version — that's Problem Set Three. Solow growth explains long-run output per worker — that's Problem Set Four.",
+      "Third, the four shifts you must visualize. G up shifts IS right, raising Y and r in a closed economy, but under floating exchange rates, Y stays the same and the currency appreciates. M up shifts LM right, raising Y and lowering r in a closed economy, but under fixed exchange rates, the change is undone. An adverse supply shock shifts SRAS up — output falls, prices rise. Higher saving in Solow raises k-star and y-star but doesn't change the long-run growth rate.",
+      "Fourth, the five families of formulas. National accounts: Y equals C plus I plus G; the multiplier equals one over one minus MPC. Money: M times V equals P times Y; nominal interest equals real plus expected inflation. Production: Y equals A times K to the alpha, times L to the one minus alpha; MPL equals one minus alpha, times Y over L. Solow: change in k equals s f of k, minus the quantity delta plus n plus g, times k; k-star equals s over delta plus n plus g, all squared. Phillips and Okun: inflation equals expected inflation, minus beta times the unemployment gap.",
+      "Fifth, the ten things you should be able to do without notes. Solve a closed-economy Keynesian cross for Y and the multiplier. Derive IS and LM from given equations and find equilibrium Y and r. Show fiscal and monetary expansion effects. Diagnose returns to scale by computing output ratios. Compute MPL, MPK, factor income shares for Cobb-Douglas. Derive the Solow steady state with full delta plus n plus g. Compare steady-state to Golden Rule. Run through the four Mundell-Fleming cases. Explain Keynes versus PIH versus LCH. Compute inflation percent change from a CPI table.",
+      "Final thought: the exam tests whether you can apply these frameworks to specific scenarios. Memorize the formulas, but also practice the explanations. When you see a problem, identify which model applies, write the formula, derive, and explain in words. That's what earns top marks.",
+      "You've now heard the entire syllabus. You have three days to internalize it. Listen to this audio one more time tomorrow at one and a half speed for review. Practice past exam problems on day two and day three. Trust your preparation. You've got this. Now go get an A. Good luck."
+    ]
+  }
+];
+
+// ========= TTS ENGINE (same as audio notes file) =========
+let voices = [];
+let currentSection = 0;
+let currentParagraph = 0;
+let isPlaying = false;
+let isPaused = false;
+let utterance = null;
+
+function loadVoices() {
+  voices = window.speechSynthesis.getVoices().filter(v => v.lang.startsWith('en'));
+  const sel = document.getElementById('voiceSel');
+  sel.innerHTML = '';
+  const sorted = voices.slice().sort((a, b) => {
+    const aNat = /natural|neural|enhanced|premium|online/i.test(a.name) ? -1 : 0;
+    const bNat = /natural|neural|enhanced|premium|online/i.test(b.name) ? -1 : 0;
+    return aNat - bNat;
+  });
+  sorted.forEach((v) => {
+    const opt = document.createElement('option');
+    opt.value = voices.indexOf(v);
+    opt.textContent = v.name + ' (' + v.lang + ')';
+    sel.appendChild(opt);
+  });
+}
+
+window.speechSynthesis.onvoiceschanged = loadVoices;
+loadVoices();
+
+function buildContent() {
+  const container = document.getElementById('content');
+  const tocGrid = document.getElementById('tocGrid');
+  SECTIONS.forEach((sec, sIdx) => {
+    const h2 = document.createElement('h2');
+    h2.id = 'sec-' + sIdx;
+    h2.textContent = sec.title;
+    container.appendChild(h2);
+    sec.paragraphs.forEach((para, pIdx) => {
+      const p = document.createElement('p');
+      p.id = 's' + sIdx + 'p' + pIdx;
+      p.dataset.sec = sIdx;
+      p.dataset.par = pIdx;
+      p.textContent = para;
+      container.appendChild(p);
+    });
+    const btn = document.createElement('button');
+    btn.textContent = sec.title;
+    btn.id = 'tocBtn' + sIdx;
+    btn.onclick = () => jumpTo(sIdx);
+    tocGrid.appendChild(btn);
+  });
+}
+buildContent();
+
+function clearHighlights() {
+  document.querySelectorAll('p.speaking').forEach(p => p.classList.remove('speaking'));
+  document.querySelectorAll('.toc-grid button.active').forEach(b => b.classList.remove('active'));
+}
+
+function highlightCurrent() {
+  clearHighlights();
+  const p = document.getElementById('s' + currentSection + 'p' + currentParagraph);
+  if (p) {
+    p.classList.add('speaking');
+    p.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+  const btn = document.getElementById('tocBtn' + currentSection);
+  if (btn) btn.classList.add('active');
+  document.getElementById('nowPlaying').textContent =
+    'Section ' + (currentSection + 1) + ' of ' + SECTIONS.length + ': ' +
+    SECTIONS[currentSection].title + ' — paragraph ' + (currentParagraph + 1) + ' of ' + SECTIONS[currentSection].paragraphs.length;
+}
+
+function speakCurrent() {
+  if (!isPlaying) return;
+  const sec = SECTIONS[currentSection];
+  if (!sec) { stopAll(); return; }
+  if (currentParagraph >= sec.paragraphs.length) {
+    currentSection++;
+    currentParagraph = 0;
+    if (currentSection >= SECTIONS.length) { stopAll(); document.getElementById('nowPlaying').textContent = 'Finished. Press Play to restart.'; return; }
+  }
+  highlightCurrent();
+  utterance = new SpeechSynthesisUtterance(SECTIONS[currentSection].paragraphs[currentParagraph]);
+  utterance.rate = parseFloat(document.getElementById('speedSel').value);
+  utterance.volume = 1.0;
+  utterance.pitch = 1.0;
+  const voiceIdx = document.getElementById('voiceSel').value;
+  if (voices[voiceIdx]) utterance.voice = voices[voiceIdx];
+  utterance.onend = () => {
+    if (!isPlaying) return;
+    document.getElementById('s' + currentSection + 'p' + currentParagraph)?.classList.add('spoken');
+    currentParagraph++;
+    speakCurrent();
+  };
+  utterance.onerror = (e) => {
+    console.warn('TTS error:', e);
+    currentParagraph++;
+    speakCurrent();
+  };
+  window.speechSynthesis.speak(utterance);
+}
+
+function togglePlay() {
+  if (isPlaying && !isPaused) {
+    window.speechSynthesis.pause();
+    isPaused = true;
+    document.getElementById('playBtn').textContent = '▶ Resume';
+    document.getElementById('nowPlaying').textContent = 'Paused.';
+  } else if (isPaused) {
+    window.speechSynthesis.resume();
+    isPaused = false;
+    document.getElementById('playBtn').textContent = '⏸ Pause';
+    highlightCurrent();
+  } else {
+    isPlaying = true;
+    isPaused = false;
+    document.getElementById('playBtn').textContent = '⏸ Pause';
+    speakCurrent();
+  }
+}
+
+function stopAll() {
+  window.speechSynthesis.cancel();
+  isPlaying = false;
+  isPaused = false;
+  currentSection = 0;
+  currentParagraph = 0;
+  clearHighlights();
+  document.querySelectorAll('p.spoken').forEach(p => p.classList.remove('spoken'));
+  document.getElementById('playBtn').textContent = '▶ Play';
+  document.getElementById('nowPlaying').textContent = 'Stopped. Press Play to start over.';
+}
+
+function nextSection() {
+  window.speechSynthesis.cancel();
+  currentSection = Math.min(currentSection + 1, SECTIONS.length - 1);
+  currentParagraph = 0;
+  if (isPlaying) speakCurrent();
+  else { highlightCurrent(); }
+}
+
+function prevSection() {
+  window.speechSynthesis.cancel();
+  currentSection = Math.max(currentSection - 1, 0);
+  currentParagraph = 0;
+  if (isPlaying) speakCurrent();
+  else { highlightCurrent(); }
+}
+
+function jumpTo(sIdx) {
+  window.speechSynthesis.cancel();
+  currentSection = sIdx;
+  currentParagraph = 0;
+  if (!isPlaying) {
+    isPlaying = true;
+    document.getElementById('playBtn').textContent = '⏸ Pause';
+  }
+  speakCurrent();
+}
+
+function setSpeed() {
+  if (isPlaying && !isPaused) {
+    window.speechSynthesis.cancel();
+    speakCurrent();
+  }
+}
+
+function setVoice() {
+  if (isPlaying && !isPaused) {
+    window.speechSynthesis.cancel();
+    speakCurrent();
+  }
+}
+
+document.addEventListener('click', (e) => {
+  if (e.target.tagName === 'P' && e.target.dataset.sec !== undefined) {
+    window.speechSynthesis.cancel();
+    currentSection = parseInt(e.target.dataset.sec);
+    currentParagraph = parseInt(e.target.dataset.par);
+    if (!isPlaying) {
+      isPlaying = true;
+      document.getElementById('playBtn').textContent = '⏸ Pause';
+    }
+    speakCurrent();
+  }
+});
+
+document.addEventListener('keydown', (e) => {
+  if (e.code === 'Space' && !['INPUT','SELECT','TEXTAREA'].includes(document.activeElement.tagName)) {
+    e.preventDefault();
+    togglePlay();
+  }
+});
+</script>
+
+</body>
+</html>
