@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Macroeconomics F26 — Complete Study Notes (Print Master)</title>
+<style>
+  @page { size: A4; margin: 1.5cm; }
+  body { font-family: 'Segoe UI', Calibri, Arial, sans-serif; max-width: 100%; margin: 0; padding: 0; color: #222; line-height: 1.5; background: white; font-size: 10.5pt; }
+  h1 { color: #002b5c; border-bottom: 3px solid #002b5c; padding-bottom: 6px; font-size: 1.6em; margin-top: 20px; }
+  h2 { color: #002b5c; border-bottom: 2px solid #b6c8df; padding-bottom: 4px; margin-top: 28px; font-size: 1.3em; page-break-after: avoid; }
+  h3 { color: #134e9a; margin-top: 18px; font-size: 1.08em; page-break-after: avoid; }
+  h4 { color: #134e9a; margin-top: 12px; margin-bottom: 4px; font-size: 0.98em; page-break-after: avoid; }
+  p, ul, ol, table { page-break-inside: avoid; }
+  table { border-collapse: collapse; width: 100%; margin: 8px 0; font-size: 0.92em; page-break-inside: avoid; }
+  th, td { border: 1px solid #c0c8d4; padding: 5px 7px; text-align: left; vertical-align: top; }
+  th { background: #134e9a !important; color: white !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  tr:nth-child(even) { background: #f5f7fa !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .formula { background: #f5f7fa !important; border-left: 3px solid #134e9a; padding: 7px 11px; margin: 6px 0; font-family: 'Cambria Math', Georgia, serif; font-size: 0.95em; -webkit-print-color-adjust: exact; print-color-adjust: exact; page-break-inside: avoid; }
+  .simple { background: #e3f2fd !important; border-left: 3px solid #1565c0; padding: 7px 11px; margin: 8px 0; -webkit-print-color-adjust: exact; print-color-adjust: exact; page-break-inside: avoid; }
+  .simple b::before { content: "💡 "; }
+  .key { background: #fff8e1 !important; border-left: 3px solid #f9a825; padding: 7px 11px; margin: 6px 0; -webkit-print-color-adjust: exact; print-color-adjust: exact; page-break-inside: avoid; }
+  .warn { background: #ffebee !important; border-left: 3px solid #c62828; padding: 7px 11px; margin: 6px 0; -webkit-print-color-adjust: exact; print-color-adjust: exact; page-break-inside: avoid; }
+  .answer { background: #e8f5e9 !important; border-left: 3px solid #2e7d32; padding: 8px 12px; margin: 6px 0; border-radius: 3px; -webkit-print-color-adjust: exact; print-color-adjust: exact; page-break-inside: avoid; }
+  .answer b { color: #1b5e20; }
+  .answer::before { content: "A: "; color: #1b5e20; font-weight: bold; }
+  .question { color: #002b5c; font-weight: bold; font-size: 0.98em; margin: 10px 0 4px 0; }
+  .question::before { content: "Q: "; color: #c62828; }
+  .chain { background: #f5f7fa !important; padding: 6px 10px; margin: 6px 0; border-radius: 3px; font-family: 'Cambria Math', Georgia, serif; font-size: 0.92em; -webkit-print-color-adjust: exact; print-color-adjust: exact; page-break-inside: avoid; }
+  .true { background: #e8f5e9 !important; color: #1b5e20; font-weight: bold; padding: 1px 6px; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .false { background: #ffebee !important; color: #b71c1c; font-weight: bold; padding: 1px 6px; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .section-break { page-break-before: always; }
+  .toc { background: #f5f7fa !important; border: 1px solid #c0c8d4; padding: 14px 22px; border-radius: 4px; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .toc ol { columns: 2; margin: 0; padding-left: 18px; }
+  .toc a { color: #134e9a; text-decoration: none; }
+  ul, ol { margin: 6px 0; padding-left: 22px; }
+  li { margin: 2px 0; }
+  .small { font-size: 0.88em; color: #555; }
+  .center { text-align: center; }
+  /* Make every diagram fit width */
+  svg { max-width: 100%; height: auto; }
+  .diagram { background: white; border: 1px solid #c0c8d4; padding: 10px; margin: 10px 0; text-align: center; page-break-inside: avoid; }
+  .diagram-caption { font-size: 0.85em; color: #555; margin-top: 4px; font-style: italic; }
+  /* Cover page */
+  .cover { text-align: center; padding: 80px 20px 40px 20px; }
+  .cover h1 { font-size: 2.4em; border: none; }
+  .cover .subtitle { font-size: 1.1em; color: #555; margin-top: 10px; }
+  .cover .meta { margin-top: 30px; color: #777; font-size: 0.95em; }
+  .cover-cards { display: block; margin-top: 50px; }
+  .cover-cards div { display: inline-block; width: 30%; padding: 10px; margin: 5px; vertical-align: top; background: #f5f7fa !important; border-radius: 4px; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  @media screen { body { max-width: 1100px; margin: 30px auto; padding: 0 30px; background: #fafbfd; } }
+</style>
+</head>
+<body>
+
+<!-- ============================== COVER ============================== -->
+<div class="cover">
+<h1>Macroeconomics F26</h1>
+<div class="subtitle">Complete Study Notes & Exam Reference</div>
+<div class="subtitle">Aarhus University · BSc · 4th Semester</div>
+<div class="meta">
+Mankiw <em>Macroeconomics</em> · Built from V19–S25 exam patterns<br>
+Generated for personal study purposes
+</div>
+<div class="cover-cards">
+<div><strong>Part A</strong><br>1-Page Cheat Sheet<br><span class="small">Print on paper · Exam-ready</span></div>
+<div><strong>Part B</strong><br>Variable Effects Reference<br><span class="small">"What happens when X changes"</span></div>
+<div><strong>Part C</strong><br>Exam Answer Bank<br><span class="small">Copy-paste model answers</span></div>
+</div>
+<div class="cover-cards">
+<div><strong>Part D</strong><br>Weekly Notes (Mankiw Ch 1-22)<br><span class="small">Full textbook walkthrough</span></div>
+<div><strong>Part E</strong><br>True/False Question Bank<br><span class="small">41 statements with answers</span></div>
+<div><strong>Part F</strong><br>Final Exam Tips<br><span class="small">Tactics & timing</span></div>
+</div>
+</div>
+
+<!-- ============================== TOC ============================== -->
+<div class="section-break"></div>
+<h1>Contents</h1>
+<div class="toc">
+<ol>
+<li><a href="#cheat">Part A — 1-Page Cheat Sheet (formulas)</a></li>
+<li><a href="#variables">Part B — Variable Effects ("what happens when X changes")</a></li>
+<li><a href="#answers">Part C — Exam Answer Bank (model answers)</a></li>
+<li><a href="#concepts">Part D — Core Concepts (by problem set)</a></li>
+<li><a href="#tf">Part E — True/False Bank (recurring traps)</a></li>
+<li><a href="#tips">Part F — Final Exam Tactical Tips</a></li>
+</ol>
+</div>
+
+<!-- ============================== PART A: CHEAT SHEET ============================== -->
+<div class="section-break"></div>
+<h1 id="cheat">Part A — 1-Page Cheat Sheet</h1>
+
+<h3>National Income Identity & Multipliers</h3>
+<div class="formula">
+Y = C + I + G (closed) | Y = C + I + G + NX (open)<br>
+C = a + b·Yd | Yd = Y − T | b = MPC ∈ (0,1)<br>
+S<sub>priv</sub> = Y − T − C | S<sub>pub</sub> = T − G | S = S<sub>priv</sub> + S<sub>pub</sub><br>
+<strong>Gov multiplier = 1/(1−MPC) | Tax mult = −MPC/(1−MPC) | Balanced budget = 1</strong><br>
+Open multiplier = 1/(1 − MPC + m)
+</div>
+
+<h3>IS-LM Model (closed)</h3>
+<div class="formula">
+IS: Y = C(Y−T) + I(r) + G → slopes <strong>DOWN</strong><br>
+LM: M/P = L(Y, r) typically Y − cr → slopes <strong>UP</strong><br>
+↑G or ↓T: IS right → Y↑, r↑ (crowding out: I↓)<br>
+↑M: LM right → Y↑, r↓
+</div>
+
+<h3>Mundell-Fleming</h3>
+<div class="formula">
+r = r* (perfect capital mobility) | ↑e → ↓NX<br>
+LM* is <strong>VERTICAL</strong>; IS* slopes down in (e,Y)
+</div>
+<table>
+<tr><th></th><th>Floating</th><th>Fixed</th></tr>
+<tr><th>Fiscal (↑G)</th><td>INEFFECTIVE (e↑)</td><td>EFFECTIVE (M↑)</td></tr>
+<tr><th>Monetary (↑M)</th><td>EFFECTIVE (e↓)</td><td>INEFFECTIVE</td></tr>
+<tr><th>Tariff (↑NX)</th><td>e↑, Y same</td><td>Y↑, e fixed</td></tr>
+</table>
+<p class="small"><strong>Memory hook:</strong> "Floating gives monetary, fixed gives fiscal."</p>
+
+<h3>Classical Production</h3>
+<div class="formula">
+Cobb-Douglas: Y = A·K<sup>α</sup>·L<sup>β</sup>. α+β=1 → CRS; >1 IRS; <1 DRS.<br>
+<strong>RTS test:</strong> doubling raises Y by ratio R: R>2 IRS, =2 CRS, <2 DRS<br>
+MPL = (1−α)·Y/L | MPK = α·Y/K<br>
+W/P = MPL | R/P = MPK<br>
+Labour income = (1−α)·Y | Capital income = α·Y
+</div>
+
+<h3>Money & Fisher</h3>
+<div class="formula">
+QTM: M·V = P·Y → %ΔP ≈ %ΔM − %ΔY (V, Y fixed) = money neutrality<br>
+<strong>Fisher: i = r + π<sup>e</sup></strong> → r = i − π<sup>e</sup>
+</div>
+
+<h3>Solow (square-root case)</h3>
+<div class="formula">
+y = k<sup>1/2</sup> | Δk = sk<sup>1/2</sup> − (δ+n+g)k<br>
+Steady state: <strong>k* = [s/(δ+n+g)]²</strong> | y* = √k* | sy* = s·y* | c* = (1−s)·y*<br>
+<strong>Golden Rule: MPK = δ+n+g</strong> (maximises c*)<br>
+Long-run per-capita growth = g (technology only)
+</div>
+
+<h3>Inflation, CPI, Phillips, Okun</h3>
+<div class="formula">
+CPI = fixed weights (Laspeyres) | GDP deflator = current quantities (Paasche)<br>
+π = (P<sub>t</sub> − P<sub>t−1</sub>)/P<sub>t−1</sub> · 100<br>
+<strong>Phillips:</strong> π = π<sup>e</sup> − β(u − u<sub>n</sub>) + ν<br>
+<strong>Okun:</strong> ΔY/Y ≈ −β·(u − u<sub>n</sub>); u↑ ↔ Y↓; employment↑ ↔ Y↑
+</div>
+
+<h3>Consumption Theories</h3>
+<div class="formula">
+<strong>Keynes:</strong> C = a + b·Yd → APC = a/Y + b falls as Y rises<br>
+<strong>Friedman PIH:</strong> C = α·Y<sup>P</sup> (permanent income smoothing)<br>
+<strong>Modigliani LCH:</strong> C = (W + R·Y)/T (lifetime smoothing)<br>
+Kuznets puzzle solved by PIH/LCH (APC constant long-run, falls cross-section)
+</div>
+
+<!-- ============================== PART B: VARIABLE EFFECTS ============================== -->
+<div class="section-break"></div>
+<h1 id="variables">Part B — Variable Effects Reference</h1>
+<div class="key">When asked "what happens when X changes?" — find X here, copy the chain + plain-English explanation, adapt to the question.</div>
+
+<h2>Goods market</h2>
+
+<h3>↑G (Government spending rises)</h3>
+<div class="chain">↑G (government spending) → ↑PE (planned expenditure = C+I+G) → ↑Y (output, via multiplier 1/(1−MPC)) → ↑money demand → ↑r (real interest rate) → ↓I (investment — this is crowding out)</div>
+<div class="simple"><b>In plain English.</b> Government spends more → demand for goods rises directly → firms produce more, so Y goes up. But more activity means people need more cash, pushing interest rates up. Higher rates make borrowing more expensive, so private investment falls — partly cancelling the boost. This is <em>crowding out</em>.</div>
+
+<h3>↑T (Taxes rise)</h3>
+<div class="chain">↑T (taxes) → ↓Yd (disposable income = Y−T) → ↓C (consumption) → ↓PE → ↓Y → ↓r → ↑I partially offsets</div>
+<div class="simple"><b>In plain English.</b> Taxes rise → households have less to spend → consumption falls → total demand drops → Y falls. Smaller effect than an equal cut in G because households save part of the tax change anyway.</div>
+
+<h3>↑MPC (Marginal propensity to consume rises)</h3>
+<div class="chain">↑MPC → larger multiplier (1/(1−MPC)) → any ΔG or Δa has bigger effect on Y</div>
+<div class="simple"><b>In plain English.</b> People spend a bigger fraction of any extra income → each policy shock gets amplified more rounds before settling. Fiscal policy becomes more powerful but the economy becomes more volatile.</div>
+
+<h2>Money market</h2>
+
+<h3>↑M (Money supply rises)</h3>
+<div class="chain">↑M (money supply) → ↑(M/P) → ↓r (real interest rate falls) → ↑I → ↑PE → ↑Y</div>
+<div class="simple"><b>In plain English.</b> Central bank prints more money → more cash chasing same investment → interest rates fall → cheaper to borrow → firms invest more → Y rises. Long-run: prices rise proportionally, real economy unchanged (money neutrality).</div>
+
+<h3>↑r (Real interest rate rises) — the most-asked variable</h3>
+<div class="chain">↑r → cost of capital (r+δ) rises → fewer projects clear MPK > r+δ → ↓I (investment) → ↓PE → ↓Y → ↓Yd → ↓C → further ↓Y (multiplier)</div>
+<div class="simple"><b>In plain English.</b> Higher rates make borrowing expensive → firms postpone investment → output falls → workers earn less → consumption falls → output falls more. Standard transmission of monetary tightening.</div>
+
+<h3>↑P (Price level rises)</h3>
+<div class="chain">↑P → ↓(M/P) (real money supply falls) → LM shifts LEFT → ↑r → ↓I → ↓Y</div>
+<div class="simple"><b>In plain English.</b> Higher prices means the same nominal money supply buys less. Interest rates must rise to clear the now-tighter money market, choking investment. This is the mechanism behind the downward-sloping AD curve.</div>
+
+<h2>Open economy</h2>
+
+<h3>↑e (Currency appreciates)</h3>
+<div class="chain">↑e → domestic goods MORE expensive abroad → ↓X (exports)<br>
+↑e → foreign goods CHEAPER at home → ↑IM (imports)<br>
+→ ↓NX (net exports) → ↓Y (floating ER)</div>
+<div class="simple"><b>In plain English.</b> Stronger home currency → foreigners pay more for our goods, so they buy less → our exporters hurt. At the same time, we buy more foreign stuff because it's now cheaper. NX falls.</div>
+
+<h3>Tariff (Import tariff imposed)</h3>
+<div class="chain">Tariff → ↓IM → ↑NX at any e → IS* shifts RIGHT<br>
+Under floating: e appreciates, cancels NX gain → Y unchanged<br>
+Under fixed: CB expands M, LM* shifts right → Y rises</div>
+<div class="simple"><b>In plain English.</b> Tariffs make foreign goods expensive → people buy domestic → net exports rise. Under fixed ER, the central bank expands M to prevent appreciation, so output rises. Under floating, the currency just appreciates and the gain evaporates.</div>
+
+<h2>Solow growth</h2>
+
+<h3>↑s (Saving rate rises)</h3>
+<div class="chain">↑s → sf(k) curve shifts UP → ↑k* (steady-state capital per worker) → ↑y* (output per worker)<br>
+Short-run: ↓C; long-run: ↑c* (if below Golden Rule)</div>
+<div class="simple"><b>In plain English.</b> Save more → build more machines per worker → each worker more productive → higher long-run output. But you sacrifice some consumption today. Trade-off: short-run pain for long-run gain.</div>
+
+<h3>↑n (Population growth rises)</h3>
+<div class="chain">↑n → break-even line (δ+n+g)k steepens → ↓k* → ↓y* (per worker)<br>
+Total Y grows faster (n+g); per-capita unchanged (g)</div>
+<div class="simple"><b>In plain English.</b> More workers means capital is "diluted" across them. Each worker has less to work with, so output per worker falls. Total economy grows faster, but the average person is no better off.</div>
+
+<h3>↑g (Technology growth rises)</h3>
+<div class="chain">↑g → break-even steepens → ↓k*, ↓y* per effective worker<br>
+But long-run per-capita growth rate RISES (= g)</div>
+<div class="simple"><b>In plain English.</b> Better technology means workers produce more, year after year. This is the ONLY thing that drives sustained per-capita growth in the long run — capital accumulation alone runs out of steam.</div>
+
+<h2>Aggregate supply & inflation</h2>
+
+<h3>Adverse supply shock</h3>
+<div class="chain">↑input costs → SRAS shifts UP → ↑P AND ↓Y (STAGFLATION)<br>
+↑u (Okun) | ↑π despite ↓Y</div>
+<div class="simple"><b>In plain English.</b> War, oil shock, pandemic → all firms face higher costs → prices rise but output falls. Both bad simultaneously. Policy dilemma: monetary easing fixes output but worsens inflation; tightening fights inflation but deepens recession.</div>
+
+<h3>↑u (Unemployment rises)</h3>
+<div class="chain">↑u → Okun: ↓Y (≈2% per 1pp ↑u) → ↓C → further ↓Y → Phillips: ↓π</div>
+<div class="simple"><b>In plain English.</b> More unemployed people means less total production. Lost income reduces spending, hurting other businesses. The silver lining: inflation pressure eases (which is why central banks accept some u to fight high π).</div>
+
+<h3>↑π<sup>e</sup> (Expected inflation rises)</h3>
+<div class="chain">↑π<sup>e</sup> → Fisher: ↑i (nominal rates rise)<br>
+Wages bake in higher π<sup>e</sup> → actual π rises (self-fulfilling)<br>
+Phillips curve shifts UP</div>
+<div class="simple"><b>In plain English.</b> When people EXPECT inflation, they act on it — workers demand bigger raises, landlords raise rents, firms raise prices preemptively. Inflation becomes self-fulfilling. This is why central banks fight to keep π<sup>e</sup> anchored.</div>
+
+<!-- ============================== PART C: EXAM ANSWERS ============================== -->
+<div class="section-break"></div>
+<h1 id="answers">Part C — Exam Answer Bank (Model Answers)</h1>
+<div class="key">2-3 sentence answers ready to adapt. Don't copy verbatim — paraphrase using these as templates.</div>
+
+<h2>PS1 — IS-LM (Closed Economy)</h2>
+
+<div class="question">Explain what the IS curve represents and why it slopes downward.</div>
+<div class="answer">The IS curve represents all combinations of income (Y) and the real interest rate (r) at which the goods market is in equilibrium — that is, where planned expenditure equals output. It slopes downward because a lower r raises investment I, which raises planned expenditure, which by the multiplier raises Y. So every lower r corresponds to a higher equilibrium Y.</div>
+
+<div class="question">Explain what the LM curve represents and why it slopes upward.</div>
+<div class="answer">The LM curve represents all combinations of income (Y) and the real interest rate (r) at which the money market is in equilibrium — real money supply equals real money demand. It slopes upward because higher Y raises money demand (more transactions); with the real money supply M/P fixed, the interest rate r must rise to discourage additional money holding, restoring equilibrium.</div>
+
+<div class="question">What is the government expenditure multiplier?</div>
+<div class="answer">The government expenditure multiplier measures how much equilibrium output Y rises per unit increase in government spending G. It equals 1/(1 − MPC), where MPC is the marginal propensity to consume. The multiplier exceeds 1 because each unit of new government spending generates further rounds of consumption through the spending cycle.</div>
+
+<div class="question">Explain crowding out.</div>
+<div class="answer">Crowding out is the reduction in private investment that occurs when government spending rises. Higher G shifts IS right, raising both Y and r. The rise in r raises the cost of borrowing, so private firms invest less. The net effect on Y is therefore smaller than the simple multiplier would predict.</div>
+
+<h2>PS3 — Mundell-Fleming</h2>
+
+<div class="question">Difference between fixed and floating exchange rates.</div>
+<div class="answer">Under a fixed exchange rate regime, the central bank commits to maintaining e at a constant level by buying or selling foreign reserves. Money supply M becomes endogenous, so monetary policy independence is lost. Under a floating regime, e is determined by market forces, and the central bank can independently control M — but the exchange rate fluctuates with capital flows and trade balances.</div>
+
+<div class="question">Effect of fiscal expansion under floating ER.</div>
+<div class="answer">The IS* curve shifts right, but LM* is vertical (Y is pinned by perfect capital mobility). Upward pressure on r attracts capital inflows; the currency appreciates. Higher e reduces NX, which exactly cancels the fiscal boost. Result: Y unchanged, e appreciates. Fiscal policy is INEFFECTIVE under floating ER.</div>
+
+<div class="question">Effect of monetary expansion under floating ER.</div>
+<div class="answer">The LM* curve shifts right. Downward pressure on r causes capital outflows, so the currency depreciates. The depreciation makes exports cheap and imports expensive, raising NX. Higher NX raises Y. Result: Y rises, e depreciates. Monetary policy is EFFECTIVE under floating.</div>
+
+<div class="question">Effect of fiscal expansion under fixed ER.</div>
+<div class="answer">The IS* curve shifts right. To prevent currency appreciation, the central bank sells domestic currency and buys foreign reserves, expanding M. The LM* shifts right alongside IS*. The new equilibrium has higher Y at the same fixed e. Result: Y rises (full multiplier), e remains fixed. Fiscal policy is EFFECTIVE under fixed ER.</div>
+
+<div class="question">Why is monetary policy ineffective under fixed ER?</div>
+<div class="answer">An expansionary monetary policy would shift LM* right and depreciate the currency. To maintain the peg, the central bank must reverse by buying back its own currency, contracting M back to its original level. The LM* shift is undone. Result: Y unchanged.</div>
+
+<div class="question">Tariff under fixed ER — effect on NX, IS/LM, e, Y.</div>
+<div class="answer">A tariff makes imports more expensive, raising NX at any given e. The IS* curve shifts right. Under fixed ER, the central bank must prevent the resulting appreciation by selling domestic currency, expanding M and shifting LM* right alongside. Result: Y rises, e fixed, NX rises. Caveat: this expansion of M may cause later inflationary pressure.</div>
+
+<div class="question">Why does appreciation reduce NX?</div>
+<div class="answer">An appreciation makes domestic goods relatively more expensive in foreign markets, so foreigners buy fewer exports (X falls). At the same time, foreign goods become cheaper at home, so domestic consumers import more (IM rises). Net exports NX = X − IM fall on both sides. This is why IS* slopes downward in (e, Y) space.</div>
+
+<h2>PS4 — Solow Growth</h2>
+
+<div class="question">Is steady-state k always equal to Golden Rule k? Why or why not?</div>
+<div class="answer">No, not in general. The steady-state k* depends on the saving rate s (a choice). The Golden Rule k<sub>gold</sub> is determined by technology — it satisfies MPK = δ + n + g, the condition that maximises consumption per worker. They coincide only when s equals a specific Golden Rule rate. If s &lt; s<sub>gold</sub>, the country is under-saving; if s &gt; s<sub>gold</sub>, the country is over-saving.</div>
+
+<div class="question">How does a higher saving rate affect Solow steady state?</div>
+<div class="answer">A higher saving rate raises steady-state capital per worker k* and output per worker y*. With more saving, more investment occurs at every k, shifting sf(k) up; the intersection with the break-even line moves right. The country reaches a higher level of output per worker. However, the long-run growth RATE of y per worker is unchanged — it always equals g (technology growth). Higher saving raises the level, not the rate.</div>
+
+<div class="question">How does higher population growth (n) affect Solow steady state?</div>
+<div class="answer">Higher population growth n steepens the break-even line (δ+n+g)k — the economy needs more investment to equip the larger workforce. The intersection with sf(k) shifts leftward, lowering steady-state k* and y*. Total output Y grows faster (at n+g instead of g), but per-capita output is permanently lower.</div>
+
+<div class="question">Role of technology growth g in Solow with progress.</div>
+<div class="answer">Technology growth g is the only source of sustained long-run growth in output per worker. While saving and population can change the level of per-capita output, they cannot sustain its growth rate — diminishing returns to capital eventually prevent that. Only continuous technological improvements raise productivity year after year, which is why advanced economies prioritise R&D, education, and innovation.</div>
+
+<h2>PS5 — Consumption Theory</h2>
+
+<div class="question">Compare Keynes vs Friedman's PIH.</div>
+<div class="answer">Keynes (1936) proposed that consumption depends on current disposable income: C = a + b·Yd, where b (MPC) is between 0 and 1. Friedman (1957) argued instead that consumption depends on permanent income Y<sup>P</sup>: C = α·Y<sup>P</sup>. Households smooth consumption over their lifetime expected income — transitory shocks are mostly saved, not spent. PIH explains the Kuznets puzzle (constant long-run APC, falling cross-section APC) better than Keynes.</div>
+
+<div class="question">Compare Keynes vs Modigliani's LCH.</div>
+<div class="answer">Keynes (1936) said consumption depends on current disposable income. Modigliani (1954) argued that consumption depends on lifetime resources, not current income. People save during their working years and dissave in retirement to smooth consumption over their entire life: C = (W + R·Y)/T, where W is wealth, R is remaining working years, T is total years remaining. The implication is hump-shaped saving over the life cycle.</div>
+
+<div class="question">Explain the Kuznets puzzle.</div>
+<div class="answer">Simon Kuznets observed that APC (C/Y) is roughly constant in long-run time-series data but falls as income rises in cross-section data. Keynes alone cannot explain this contradiction. PIH solves it: in cross-section, higher-income households have a larger transitory share, making their measured APC of permanent income look lower. In time-series, growth is mostly permanent, so APC stays constant.</div>
+
+<h2>Concept Definitions</h2>
+
+<div class="question">Frictional vs structural unemployment.</div>
+<div class="answer">Frictional unemployment arises from the time it takes for workers and jobs to find each other — job search, geographical moves. It is unavoidable but can be reduced through better job matching. Structural unemployment arises when wages are set above the market-clearing level (minimum wage, unions, efficiency wages), creating a persistent gap between labour supply and demand. Together they form the natural rate u<sub>n</sub>.</div>
+
+<div class="question">Quantity Theory of Money — how does it determine inflation?</div>
+<div class="answer">The Quantity Theory of Money states M × V = P × Y. In growth-rate form: %ΔM + %ΔV ≈ %ΔP + %ΔY. With V approximately constant in the long run, inflation equals money growth minus real output growth: %ΔP ≈ %ΔM − %ΔY. So if M grows at 8% and Y grows at 2%, inflation will be approximately 6%.</div>
+
+<div class="question">Money neutrality / classical dichotomy.</div>
+<div class="answer">Money neutrality is the principle that in the long run, changes in the money supply affect only nominal variables (prices, nominal wages, nominal interest rates) — not real variables (output, employment, real wages). The classical dichotomy separates these two sets: real variables are determined by real factors (capital, labour, technology), while nominal variables are determined by monetary factors.</div>
+
+<div class="question">Stagflation — what is it and how does it arise?</div>
+<div class="answer">Stagflation is the simultaneous occurrence of stagnant output (falling Y, rising unemployment) and high inflation (rising P). It typically arises from an adverse supply shock — oil price spike, war, pandemic — which raises input costs across the economy. The SRAS curve shifts up; the new equilibrium has higher P AND lower Y. Policy is stuck between fighting inflation and supporting output.</div>
+
+<div class="question">Time inconsistency in monetary policy.</div>
+<div class="answer">Time inconsistency (Kydland-Prescott) is the central bank's incentive to deviate from announced policies once private agents commit. If the CB announces low inflation and workers set wages accordingly, the CB then has an incentive to engineer surprise inflation. Workers anticipate this and demand higher wages from the start, leading to high inflation without output gain. The solution is institutional commitment — making the CB independent and rule-based.</div>
+
+<!-- ============================== PART D: CORE CONCEPTS ============================== -->
+<div class="section-break"></div>
+<h1 id="concepts">Part D — Core Concepts by Problem Set</h1>
+
+<h2>PS1 — IS-LM step-by-step recipe</h2>
+
+<div class="key"><strong>Standard exam workflow:</strong>
+<ol>
+<li>Solve Keynesian cross for Y with fixed I → identify the multiplier</li>
+<li>Replace I with I(r), derive IS curve</li>
+<li>Set money demand = supply, derive LM curve</li>
+<li>Solve IS = LM simultaneously for (Y*, r*)</li>
+<li>Apply policy shock, recompute new equilibrium</li>
+<li>Discuss "in your opinion" using economic logic</li>
+</ol></div>
+
+<h3>Worked example (S25 PS1 style)</h3>
+<div class="formula">
+Setup: C = 150 + 0.75(Y−T), I = 300, T = 150, G = 300. Later I = 500 − 150r. Money: (M/P)<sup>d</sup> = Y − 80r, M = 13,100, P = 10.<br><br>
+(a) Y in Keynesian cross with fixed I: Y = 150 + 0.75(Y−150) + 300 + 300<br>
+&nbsp;&nbsp;0.25Y = 637.5 → <strong>Y* = 2,550</strong><br><br>
+(b) IS with I = 500 − 150r: 0.25Y = 837.5 − 150r → <strong>IS: Y = 3,350 − 600r</strong><br><br>
+(d) LM: 1,310 = Y − 80r → <strong>LM: Y = 1,310 + 80r</strong><br><br>
+(f) Equilibrium: 3,350 − 600r = 1,310 + 80r → 2,040 = 680r → <strong>r* = 3%</strong><br>
+&nbsp;&nbsp;Y* = 1,310 + 80(3) = <strong>1,550</strong>
+</div>
+
+<h2>PS3 — Mundell-Fleming 4 cases</h2>
+<table>
+<tr><th>Regime</th><th>Policy</th><th>Y</th><th>e</th><th>Why</th></tr>
+<tr><td rowspan="2"><strong>Floating</strong></td><td>↑G fiscal</td><td>—</td><td>↑ (appreciate)</td><td>IS* shifts right but Y pinned by vertical LM*; e adjusts to cancel</td></tr>
+<tr><td>↑M monetary</td><td>↑</td><td>↓ (depreciate)</td><td>LM* shifts right; capital out → currency weakens → NX rises</td></tr>
+<tr><td rowspan="2"><strong>Fixed</strong></td><td>↑G fiscal</td><td>↑</td><td>fixed</td><td>CB defends peg by expanding M; LM* shifts alongside IS*</td></tr>
+<tr><td>↑M monetary</td><td>—</td><td>fixed</td><td>CB must reverse ΔM to defend peg → no net change</td></tr>
+</table>
+
+<h2>PS4 — Solow steady-state recipe</h2>
+
+<div class="key"><strong>Recipe (y = k<sup>1/2</sup>):</strong>
+<ol>
+<li>Compute δ + n + g</li>
+<li>k* = (s / (δ+n+g))²</li>
+<li>y* = √k*</li>
+<li>Saving per worker = s · y*</li>
+<li>Consumption per worker c* = (1 − s) · y*</li>
+</ol>
+Golden Rule: MPK = δ + n + g (maximises c*).</div>
+
+<h3>Worked example</h3>
+<div class="formula">
+Country A: s = 0.15, n = 0.04, δ = 0.03, g = 0.02 → δ+n+g = 0.09<br>
+k* = (0.15/0.09)² ≈ 2.78<br>
+y* = √2.78 ≈ 1.667<br>
+sy* = 0.25 | c* = 0.85 × 1.667 = 1.417
+</div>
+
+<h2>PS5 — Three consumption theories at a glance</h2>
+<table>
+<tr><th>Theory</th><th>Formula</th><th>Key Insight</th></tr>
+<tr><td>Keynes (1936)</td><td>C = a + b·Yd</td><td>Current Yd is everything; APC falls as Y rises</td></tr>
+<tr><td>Friedman PIH (1957)</td><td>C = α·Y<sup>P</sup></td><td>Only permanent income matters; transitory shocks saved</td></tr>
+<tr><td>Modigliani LCH (1954)</td><td>C = (W + R·Y)/T</td><td>Lifetime smoothing; save in working years, dissave in retirement</td></tr>
+</table>
+
+<!-- ============================== PART E: TRUE/FALSE BANK ============================== -->
+<div class="section-break"></div>
+<h1 id="tf">Part E — True/False Question Bank</h1>
+<div class="key">Every T/F from V23–S25 plus extras. Answer first ("True" or "False"), then ONE sentence of reasoning. Don't over-explain.</div>
+
+<h2>Verbatim past T/F</h2>
+
+<table>
+<tr><th>Exam</th><th>Statement</th><th>Answer & Why</th></tr>
+<tr><td>V23a</td><td>Doubling inputs raises Y from 120 to 180. This is IRS.</td><td><span class="false">FALSE</span> — 180/120 = 1.5 &lt; 2, so DRS not IRS.</td></tr>
+<tr><td>V23b</td><td>Classical theory: firms demand each factor until MP = real factor price.</td><td><span class="true">TRUE</span> — Standard profit-maximisation result.</td></tr>
+<tr><td>V23c</td><td>Phillips: short-run, reducing π requires accepting higher u.</td><td><span class="true">TRUE</span> — Sacrifice ratio applies short-run.</td></tr>
+<tr><td>V23d</td><td>I fixed in Keynesian cross, function of r in IS.</td><td><span class="true">TRUE</span> — Standard model setup.</td></tr>
+<tr><td>V23e</td><td>MPC shows how income changes when consumption changes.</td><td><span class="false">FALSE</span> — Reversed; MPC = ΔC/ΔYd, not the other way.</td></tr>
+<tr><td>V23_RE a</td><td>GDP deflator uses fixed weights while CPI uses changing weights.</td><td><span class="false">FALSE</span> — Opposite: CPI fixed (Laspeyres); deflator current (Paasche).</td></tr>
+<tr><td>V23_RE b</td><td>Doubling inputs raises Y from 120 to 250. This is IRS.</td><td><span class="true">TRUE</span> — 250/120 ≈ 2.08 &gt; 2 → genuine IRS.</td></tr>
+<tr><td>V23_RE c</td><td>QTM: changes in money supply have no effect on real variables.</td><td><span class="true">TRUE</span> — Money neutrality in long run.</td></tr>
+<tr><td>V23_RE d</td><td>Okun: negative relationship between employment and Y.</td><td><span class="false">FALSE</span> — Employment ↔ Y is positive; unemployment ↔ Y is negative.</td></tr>
+<tr><td>V23_RE e</td><td>IS curve is vertical in Mundell-Fleming.</td><td><span class="false">FALSE</span> — LM* is vertical; IS* slopes down.</td></tr>
+<tr><td>S25a</td><td>MPC always &gt; 1 but &lt; 0.</td><td><span class="false">FALSE</span> — Mathematically impossible; 0 &lt; MPC &lt; 1.</td></tr>
+<tr><td>S25b</td><td>Classical: real variables not affected by nominal changes in long run.</td><td><span class="true">TRUE</span> — Classical dichotomy / money neutrality.</td></tr>
+<tr><td>S25c</td><td>Doubling inputs raises Y from 5 to 7. This is DRS.</td><td><span class="true">TRUE</span> — 7/5 = 1.4 &lt; 2 → DRS.</td></tr>
+<tr><td>S25d</td><td>Phillips: short-run, reducing π requires higher u.</td><td><span class="true">TRUE</span> — Sacrifice ratio.</td></tr>
+<tr><td>S25e</td><td>Real GDP at current market prices, nominal adjusted for inflation.</td><td><span class="false">FALSE</span> — Reversed; nominal at current, real at base prices.</td></tr>
+<tr><td>S25_RE a</td><td>↑G shifts IS right, raising Y and r.</td><td><span class="true">TRUE</span> — Standard fiscal expansion in IS-LM.</td></tr>
+<tr><td>S25_RE b</td><td>Keynesian: Yd is the main determinant of consumption.</td><td><span class="true">TRUE</span> — Standard Keynes.</td></tr>
+<tr><td>S25_RE c</td><td>Appreciation reduces NX (exports more expensive, imports cheaper).</td><td><span class="true">TRUE</span> — Standard NX(e) relationship.</td></tr>
+<tr><td>S25_RE d</td><td>Doubling inputs raises Y from 100 to 150. This is IRS.</td><td><span class="false">FALSE</span> — 150/100 = 1.5 &lt; 2 → DRS not IRS.</td></tr>
+<tr><td>S25_RE e</td><td>QTM: ↑M is nominal but does NOT raise P proportionally.</td><td><span class="false">FALSE</span> — QTM says ↑M DOES raise P proportionally.</td></tr>
+</table>
+
+<h2>Predicted F26 statements (high-confidence)</h2>
+
+<table>
+<tr><th>Statement (likely to appear)</th><th>Answer & Why</th></tr>
+<tr><td>Doubling inputs raises Y from 80 to 200. This is CRS.</td><td><span class="false">FALSE</span> — 200/80 = 2.5 &gt; 2 → IRS, not CRS.</td></tr>
+<tr><td>Under fixed ER, fiscal expansion has no effect on Y.</td><td><span class="false">FALSE</span> — Fiscal is EFFECTIVE under fixed ER. CB expands M.</td></tr>
+<tr><td>MPC always between 0 and 1.</td><td><span class="true">TRUE</span> — Standard Keynesian assumption.</td></tr>
+<tr><td>Long-run: ↑M causes proportional ↑P but no real Y change.</td><td><span class="true">TRUE</span> — Money neutrality, QTM.</td></tr>
+<tr><td>In Solow with g: only g sustains long-run per-capita growth.</td><td><span class="true">TRUE</span> — Capital accumulation hits diminishing returns.</td></tr>
+</table>
+
+<h2>Reflexes drill (memorise)</h2>
+<table>
+<tr><th>Concept</th><th>Reflex answer</th></tr>
+<tr><td>RTS check (doubling X → Y)</td><td>Y/X &gt; 2 → IRS; = 2 → CRS; &lt; 2 → DRS</td></tr>
+<tr><td>MPC range</td><td>0 &lt; MPC &lt; 1 always</td></tr>
+<tr><td>Multiplier (closed)</td><td>1/(1 − MPC)</td></tr>
+<tr><td>Multiplier (open)</td><td>1/(1 − MPC + m)</td></tr>
+<tr><td>QTM long-run conclusion</td><td>%ΔP = %ΔM (V, Y fixed); money neutral</td></tr>
+<tr><td>Phillips trade-off</td><td>Short-run only; long-run vertical at u<sub>n</sub></td></tr>
+<tr><td>Okun's law sign</td><td>Δu ↔ ΔY is NEGATIVE; ΔE ↔ ΔY is POSITIVE</td></tr>
+<tr><td>CPI vs GDP deflator</td><td>CPI fixed (Laspeyres); deflator current (Paasche)</td></tr>
+<tr><td>Real vs Nominal GDP</td><td>Nominal at current P; Real at base P</td></tr>
+<tr><td>Mundell-Fleming memory hook</td><td>"Floating gives monetary, fixed gives fiscal"</td></tr>
+<tr><td>Solow steady state</td><td>k* = (s/(δ+n+g))²; y* = √k*; c* = (1−s)·y*</td></tr>
+<tr><td>Golden Rule</td><td>MPK = δ + n + g</td></tr>
+<tr><td>Cobb-Douglas factor shares</td><td>Labour gets (1−α)·Y; capital gets α·Y</td></tr>
+</table>
+
+<!-- ============================== PART F: TIPS ============================== -->
+<div class="section-break"></div>
+<h1 id="tips">Part F — Final Exam Tactical Tips</h1>
+
+<h3>Time allocation (4 hours = 240 min)</h3>
+<table>
+<tr><th>Problem</th><th>Weight</th><th>Time</th></tr>
+<tr><td>PS1 (IS-LM case study)</td><td>30%</td><td>72 min</td></tr>
+<tr><td>PS2 (T/F, 5 statements)</td><td>10%</td><td>20 min (≈4 min each)</td></tr>
+<tr><td>PS3 (Mundell-Fleming)</td><td>20%</td><td>48 min</td></tr>
+<tr><td>PS4 (Solow numerical)</td><td>20%</td><td>48 min</td></tr>
+<tr><td>PS5 (Consumption + CPI)</td><td>20%</td><td>48 min</td></tr>
+<tr><td>Final review/cleanup</td><td>—</td><td>4 min</td></tr>
+</table>
+
+<h3>General exam rules</h3>
+<ul>
+<li><strong>Always show working.</strong> Partial credit is huge — make every step explicit.</li>
+<li><strong>Define terms before using them.</strong> "The IS curve represents…" before deriving.</li>
+<li><strong>For T/F:</strong> Answer first (TRUE or FALSE), then ONE sentence reasoning.</li>
+<li><strong>For "in your opinion":</strong> Anchor in economic theory; use frameworks (Y = C + I + G, IS-LM, Phillips, etc.).</li>
+<li><strong>Sketch diagrams.</strong> Label axes (Y horizontal; r/e/P vertical). Show curve shifts with arrows.</li>
+<li><strong>Sanity-check numbers.</strong> MPC &gt; 1, negative Y, multiplier &lt; 0 = computational error.</li>
+<li><strong>Don't panic on a confusing question.</strong> Skip, finish what you know, come back.</li>
+</ul>
+
+<h3>Common mistakes to avoid</h3>
+<ul>
+<li>Confusing CPI weights (fixed) vs GDP deflator weights (current)</li>
+<li>Confusing Okun's law sign (employment-Y positive, unemployment-Y negative)</li>
+<li>Forgetting MPC ∈ (0, 1)</li>
+<li>Drawing IS* as vertical (it's LM* that's vertical in Mundell-Fleming)</li>
+<li>Forgetting all of (δ + n + g) in Solow steady-state denominator</li>
+<li>Saying steady-state IS Golden Rule (only when s = s<sub>gold</sub>)</li>
+<li>Confusing M (money supply) with M (imports) in open economy</li>
+<li>Confusing T (taxes) with T (lifetime years) in LCH formula</li>
+</ul>
+
+<div class="warn">
+<b>Day-of-exam checklist:</b>
+<ol>
+<li>Light breakfast. Water. Calculator. Pen and spare pen.</li>
+<li>Bring printed cheat sheet (mandatory).</li>
+<li>Arrive 30 minutes early to set up PC and Device Monitor.</li>
+<li>Once exam starts, read all 5 problems first (3 min). Plan your time.</li>
+<li>Start with the problem you feel STRONGEST on. Builds confidence.</li>
+<li>Write your answers in your own words. The reference material is for ideas, not copy-paste.</li>
+</ol>
+</div>
+
+<div class="key center" style="margin-top: 30px;">
+<strong>You've prepared thoroughly. Trust the work. Stay calm. Good luck, Marek.</strong>
+</div>
+
+</body>
+</html>

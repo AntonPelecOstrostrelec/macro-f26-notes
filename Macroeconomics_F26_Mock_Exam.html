@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Macroeconomics F26 — Ultimate Mock Exam</title>
+<style>
+  body { font-family: 'Segoe UI', Calibri, Arial, sans-serif; max-width: 980px; margin: 30px auto; padding: 0 30px; color: #222; line-height: 1.6; background: #fafbfd; }
+  h1 { color: #002b5c; border-bottom: 3px solid #002b5c; padding-bottom: 8px; font-size: 1.9em; }
+  h2 { color: #002b5c; padding: 12px 18px; background: #002b5c; color: white; border-radius: 6px; margin-top: 45px; font-size: 1.4em; }
+  h2 .weight { float: right; opacity: 0.85; font-weight: normal; font-size: 0.85em; }
+  h3 { color: #134e9a; margin-top: 26px; font-size: 1.15em; }
+  h4 { color: #134e9a; margin-top: 18px; margin-bottom: 6px; }
+  .intro { background: #fff8e1; border-left: 4px solid #f9a825; padding: 14px 20px; border-radius: 6px; margin-bottom: 22px; }
+  .question { background: white; border: 1px solid #c0c8d4; padding: 16px 22px; border-radius: 6px; margin: 14px 0; }
+  .question b { color: #002b5c; }
+  .formula { background: #f5f7fa; border-left: 4px solid #134e9a; padding: 10px 14px; margin: 10px 0; font-family: 'Cambria Math', Georgia, serif; font-size: 1.02em; }
+  .solution { background: #e8f5e9; border-left: 5px solid #2e7d32; padding: 14px 20px; margin: 12px 0; border-radius: 4px; display: none; }
+  .solution.shown { display: block; }
+  .solution b { color: #1b5e20; }
+  .show-btn { background: #2e7d32; color: white; border: none; padding: 8px 16px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.95em; margin-top: 8px; }
+  .show-btn:hover { background: #388e3c; }
+  .timer { background: #d6e1ef; padding: 10px 16px; border-radius: 4px; font-weight: bold; margin: 12px 0; color: #002b5c; }
+  table { border-collapse: collapse; width: 100%; margin: 12px 0; font-size: 0.95em; }
+  th, td { border: 1px solid #c0c8d4; padding: 8px 10px; text-align: left; vertical-align: top; }
+  th { background: #134e9a; color: white; }
+  tr:nth-child(even) { background: #f5f7fa; }
+  .true { background: #e8f5e9 !important; color: #1b5e20; font-weight: bold; }
+  .false { background: #ffebee !important; color: #b71c1c; font-weight: bold; }
+  .step { background: white; border-left: 3px solid #134e9a; padding: 8px 14px; margin: 6px 0; font-family: 'Cambria Math', Georgia, serif; }
+  .tips { background: #e3f2fd; border-left: 4px solid #1565c0; padding: 14px 20px; margin: 18px 0; border-radius: 4px; }
+  .tips b { color: #0d47a1; }
+  hr { border: none; border-top: 1px solid #c0c8d4; margin: 30px 0; }
+  .actions { text-align: center; margin: 20px 0; }
+  .actions button { margin: 0 6px; padding: 10px 20px; background: #134e9a; color: white; border: none; border-radius: 4px; cursor: pointer; font-weight: bold; }
+  .actions button:hover { background: #1a5fb8; }
+  @media print { .show-btn, .actions { display: none; } .solution { display: block !important; } }
+</style>
+</head>
+<body>
+
+<h1>Macroeconomics F26 — Ultimate Mock Exam</h1>
+<p style="color:#555; font-size:0.95em;">Designed to mirror the predicted F26 exam (4 hours, all aids allowed). Five problem sets, realistic wording, full working solutions you can reveal one at a time. Built from 12 years of exam patterns.</p>
+
+<div class="intro">
+<b>How to use this:</b> Block out 4 hours, no interruptions. Print the questions or read on screen, but write your answers on paper. Time yourself by the suggested weights. <strong>Do not look at solutions until you finish.</strong> After, click "Show solution" on each part to check your work and learn from any mistakes. Then do the bonus drills.
+</div>
+
+<div class="actions">
+  <button onclick="document.querySelectorAll('.solution').forEach(s => s.classList.add('shown'))">Show ALL solutions</button>
+  <button onclick="document.querySelectorAll('.solution').forEach(s => s.classList.remove('shown'))">Hide ALL solutions</button>
+  <button onclick="window.print()">Print mock exam</button>
+</div>
+
+<div class="timer">Suggested total time: 4 hours (240 minutes). Allocate as shown per problem set.</div>
+
+<!-- ============================== PS1 ============================== -->
+<h2>Problem Set 1 — Keynesian Cross & IS-LM (Case Study) <span class="weight">30% · 72 min</span></h2>
+
+<div class="question">
+<p>Consider a hypothetical closed economy, <em>Pratur-land</em>, where the goods market is described by the following equations:</p>
+<div class="formula">
+PE (Planned Expenditure) = C + I + G<br>
+where C = 100 + 0.75(Y − T), &nbsp; I = 300, &nbsp; T = 200, &nbsp; G = 300.<br>
+AE (Actual Expenditure) = Y.
+</div>
+
+<p><b>(a) Using the Keynesian cross approach, determine the equilibrium national income Y, consumption C, private saving S<sub>priv</sub>, public saving S<sub>pub</sub>, and identify the value of the government expenditure multiplier.</b></p>
+<button class="show-btn" onclick="this.nextElementSibling.classList.toggle('shown'); this.textContent = this.nextElementSibling.classList.contains('shown') ? 'Hide solution' : 'Show solution'">Show solution</button>
+<div class="solution">
+<b>Equilibrium Y — step by step:</b><br>
+<div class="step">
+<b>Step 1.</b> Start with the equilibrium condition Y = PE = C + I + G.<br>
+<b>Step 2.</b> Substitute the given functions and values.<br>
+&nbsp;&nbsp;Y = [100 + 0.75(Y − T)] + I + G<br>
+&nbsp;&nbsp;Y = [100 + 0.75(Y − 200)] + 300 + 300<br>
+<b>Step 3.</b> Distribute the 0.75 across (Y − 200): 0.75·Y − 0.75·200 = 0.75Y − 150.<br>
+&nbsp;&nbsp;Y = 100 + 0.75Y − 150 + 300 + 300<br>
+<b>Step 4.</b> Combine constant terms: 100 − 150 + 300 + 300 = 550.<br>
+&nbsp;&nbsp;Y = 0.75Y + 550<br>
+<b>Step 5.</b> Move 0.75Y to the left side (subtract 0.75Y from both sides).<br>
+&nbsp;&nbsp;Y − 0.75Y = 550<br>
+&nbsp;&nbsp;0.25Y = 550<br>
+<b>Step 6.</b> Divide both sides by 0.25.<br>
+&nbsp;&nbsp;Y = 550 ÷ 0.25 = <b>2,200</b>
+</div>
+
+<b>Consumption:</b><br>
+<div class="step">C = 100 + 0.75(2,200 − 200) = 100 + 1,500 = <b>1,600</b></div>
+
+<b>Private saving:</b><br>
+<div class="step">S<sub>priv</sub> = Y − T − C = 2,200 − 200 − 1,600 = <b>400</b></div>
+
+<b>Public saving:</b><br>
+<div class="step">S<sub>pub</sub> = T − G = 200 − 300 = <b>−100 (deficit)</b></div>
+
+<b>National saving check:</b> S = S<sub>priv</sub> + S<sub>pub</sub> = 400 − 100 = 300 = I ✓
+
+<b>Government expenditure multiplier:</b><br>
+<div class="step">Multiplier = 1/(1 − MPC) = 1/(1 − 0.75) = <b>4</b></div>
+<b>Meaning:</b> a 100-unit rise in G would raise Y by 400 in the pure Keynesian cross (before interest-rate adjustment).
+</div>
+</div>
+
+<div class="question">
+<p>Now suppose investment is no longer fixed but depends on the interest rate (r), as represented by:</p>
+<div class="formula">I = 500 − 50r</div>
+
+<p><b>(b) Derive the IS equation using the given information.</b></p>
+<button class="show-btn" onclick="this.nextElementSibling.classList.toggle('shown'); this.textContent = this.nextElementSibling.classList.contains('shown') ? 'Hide solution' : 'Show solution'">Show solution</button>
+<div class="solution">
+<div class="step">
+<b>Step 1.</b> Start from Y = C + I(r) + G — same as before but I now depends on r.<br>
+<b>Step 2.</b> Substitute: Y = 100 + 0.75(Y − 200) + (500 − 50r) + 300<br>
+<b>Step 3.</b> Distribute 0.75 across (Y − 200): Y = 100 + 0.75Y − 150 + 500 − 50r + 300<br>
+<b>Step 4.</b> Combine constants: 100 − 150 + 500 + 300 = 750<br>
+&nbsp;&nbsp;Y = 0.75Y + 750 − 50r<br>
+<b>Step 5.</b> Move 0.75Y to the left: Y − 0.75Y = 750 − 50r → 0.25Y = 750 − 50r<br>
+<b>Step 6.</b> Divide by 0.25 (multiply by 4): Y = 4·750 − 4·50r = 3,000 − 200r<br>
+&nbsp;&nbsp;<b>IS: Y = 3,000 − 200r</b>
+</div>
+</div>
+</div>
+
+<div class="question">
+<p><b>(c) Explain in 2–3 sentences what the IS curve represents and why it slopes downward.</b></p>
+<button class="show-btn" onclick="this.nextElementSibling.classList.toggle('shown'); this.textContent = this.nextElementSibling.classList.contains('shown') ? 'Hide solution' : 'Show solution'">Show solution</button>
+<div class="solution">
+<b>Model answer:</b> "The IS curve represents all combinations of income Y and the real interest rate r at which the goods market is in equilibrium — that is, where planned expenditure equals output. It slopes downward because a lower r raises investment I, which raises planned expenditure, which by the multiplier raises Y. So every lower r corresponds to a higher equilibrium Y."
+</div>
+</div>
+
+<div class="question">
+<p>Additionally, the money market is represented by:</p>
+<div class="formula">
+Real money demand: (M/P)<sup>d</sup> = Y − 50r<br>
+Nominal money supply M = 4,000, &nbsp; price level P = 4.
+</div>
+
+<p><b>(d) Derive the LM equation.</b></p>
+<button class="show-btn" onclick="this.nextElementSibling.classList.toggle('shown'); this.textContent = this.nextElementSibling.classList.contains('shown') ? 'Hide solution' : 'Show solution'">Show solution</button>
+<div class="solution">
+<div class="step">M/P = 4,000 / 4 = 1,000<br>
+Set demand = supply: 1,000 = Y − 50r<br>
+<b>LM: Y = 1,000 + 50r</b></div>
+</div>
+</div>
+
+<div class="question">
+<p><b>(e) Explain in 2–3 sentences what the LM curve represents and why it slopes upward.</b></p>
+<button class="show-btn" onclick="this.nextElementSibling.classList.toggle('shown'); this.textContent = this.nextElementSibling.classList.contains('shown') ? 'Hide solution' : 'Show solution'">Show solution</button>
+<div class="solution">
+<b>Model answer:</b> "The LM curve represents all combinations of (Y, r) at which the money market is in equilibrium — real money supply equals real money demand. It slopes upward because higher Y raises money demand (more transactions); with the real money supply M/P fixed, the interest rate r must rise to discourage additional money holding, restoring equilibrium."
+</div>
+</div>
+
+<div class="question">
+<p><b>(f) Using the IS-LM framework, determine the equilibrium level of income Y* and interest rate r*.</b></p>
+<button class="show-btn" onclick="this.nextElementSibling.classList.toggle('shown'); this.textContent = this.nextElementSibling.classList.contains('shown') ? 'Hide solution' : 'Show solution'">Show solution</button>
+<div class="solution">
+<div class="step">
+<b>Step 1.</b> Set IS equal to LM (both must give the same Y at equilibrium):<br>
+&nbsp;&nbsp;3,000 − 200r = 1,000 + 50r<br>
+<b>Step 2.</b> Move constants to the left, r terms to the right (add 200r to both sides, subtract 1,000 from both sides):<br>
+&nbsp;&nbsp;3,000 − 1,000 = 50r + 200r<br>
+&nbsp;&nbsp;2,000 = 250r<br>
+<b>Step 3.</b> Divide both sides by 250:<br>
+&nbsp;&nbsp;<b>r* = 2,000 ÷ 250 = 8 (i.e. 8%)</b><br>
+<b>Step 4.</b> Substitute r* = 8 back into the LM equation to find Y*:<br>
+&nbsp;&nbsp;Y* = 1,000 + 50(8) = 1,000 + 400 = <b>1,400</b><br>
+<b>Step 5. Sanity check:</b> plug r* = 8 into IS too:<br>
+&nbsp;&nbsp;Y = 3,000 − 200(8) = 3,000 − 1,600 = 1,400 ✓ Both equations give Y = 1,400. Correct.
+</div>
+</div>
+</div>
+
+<div class="question">
+<p><b>(g) Suppose the government implements an expansionary fiscal policy by raising G from 300 to 400 (with T unchanged). Calculate the new equilibrium Y and r using the IS-LM framework.</b></p>
+<button class="show-btn" onclick="this.nextElementSibling.classList.toggle('shown'); this.textContent = this.nextElementSibling.classList.contains('shown') ? 'Hide solution' : 'Show solution'">Show solution</button>
+<div class="solution">
+<b>New IS (with G = 400):</b>
+<div class="step">Y = 100 + 0.75(Y − 200) + (500 − 50r) + 400<br>
+Y = 100 + 0.75Y − 150 + 500 − 50r + 400<br>
+0.25Y = 850 − 50r<br>
+<b>IS': Y = 3,400 − 200r</b></div>
+
+<b>Solve IS' = LM:</b>
+<div class="step">3,400 − 200r = 1,000 + 50r<br>
+2,400 = 250r → <b>r* = 9.6 (9.6%)</b><br>
+Y* = 1,000 + 50(9.6) = <b>1,480</b></div>
+
+<b>So Y rises by 80 (from 1,400 to 1,480) and r rises by 1.6 percentage points (from 8% to 9.6%).</b><br>
+<b>Crowding out:</b> the simple multiplier would predict ΔY = 4 × 100 = 400. The actual ΔY is only 80 — the rest is crowded out by the rise in r reducing investment.
+</div>
+</div>
+
+<div class="question">
+<p><b>(h) In your opinion, how does this fiscal expansion affect society as a whole? Answer using economic logic.</b></p>
+<button class="show-btn" onclick="this.nextElementSibling.classList.toggle('shown'); this.textContent = this.nextElementSibling.classList.contains('shown') ? 'Hide solution' : 'Show solution'">Show solution</button>
+<div class="solution">
+<b>Model A-grade answer:</b><br>
+"The fiscal expansion has both benefits and costs that must be weighed against each other.<br><br>
+<b>Benefits:</b> Y rises from 1,400 to 1,480, which raises employment and short-term welfare. If the economy is in a recession (Y below potential), this is a clear positive — reducing cyclical unemployment, raising household incomes, and lifting aggregate demand. Government spending also funds public goods (infrastructure, education) that provide additional long-term benefits not captured by GDP alone.<br><br>
+<b>Costs:</b> The fiscal multiplier is heavily dampened by crowding out — only 80 of the expected 400 ΔY materialises because r rises from 8% to 9.6%, reducing private investment I. Lower I means slower capital accumulation, reducing long-run Y̅ (Solow logic). The deficit also widens (S<sub>pub</sub> falls further), increasing public debt that future generations must service.<br><br>
+<b>Verdict:</b> Whether the policy is wise depends on context. If the economy is below potential and there's slack in capital markets, the gains likely outweigh the costs. If the economy is at potential, this is likely to fuel inflation and crowd out productive private investment — a poor trade-off. Context determines verdict."
+</div>
+</div>
+
+<!-- ============================== PS2 ============================== -->
+<h2>Problem Set 2 — True/False <span class="weight">10% · 20 min</span></h2>
+<p>State whether each statement is True or False and give one sentence of reasoning.</p>
+
+<div class="question">
+<p><b>(a) Doubling all inputs in a production technology raises output from 60 to 110 units. This is increasing returns to scale (IRS).</b></p>
+<button class="show-btn" onclick="this.nextElementSibling.classList.toggle('shown'); this.textContent = this.nextElementSibling.classList.contains('shown') ? 'Hide solution' : 'Show solution'">Show solution</button>
+<div class="solution">
+<b><span class="false" style="padding:4px 10px;">FALSE</span></b><br>
+Output rose by only 83% (110/60 ≈ 1.83 &lt; 2). Output less than doubled, so this is <b>decreasing returns to scale (DRS)</b>, not IRS.
+</div>
+</div>
+
+<div class="question">
+<p><b>(b) Under perfect capital mobility and fixed exchange rates, expansionary monetary policy effectively raises domestic output.</b></p>
+<button class="show-btn" onclick="this.nextElementSibling.classList.toggle('shown'); this.textContent = this.nextElementSibling.classList.contains('shown') ? 'Hide solution' : 'Show solution'">Show solution</button>
+<div class="solution">
+<b><span class="false" style="padding:4px 10px;">FALSE</span></b><br>
+Under fixed ER, monetary policy is INEFFECTIVE. ↑M would depreciate the currency; the central bank must buy back the currency to defend the peg, undoing ΔM. <em>Floating gives monetary, fixed gives fiscal.</em>
+</div>
+</div>
+
+<div class="question">
+<p><b>(c) According to the Quantity Theory of Money, an increase in the money supply raises real output (Y) in the long run.</b></p>
+<button class="show-btn" onclick="this.nextElementSibling.classList.toggle('shown'); this.textContent = this.nextElementSibling.classList.contains('shown') ? 'Hide solution' : 'Show solution'">Show solution</button>
+<div class="solution">
+<b><span class="false" style="padding:4px 10px;">FALSE</span></b><br>
+QTM with the classical dichotomy says money is neutral in the long run: ΔM affects only P (proportionally), not real Y, real r, or employment. Real output is determined by K, L, A — not by M.
+</div>
+</div>
+
+<div class="question">
+<p><b>(d) The short-run Phillips curve shows a positive relationship between unemployment and inflation.</b></p>
+<button class="show-btn" onclick="this.nextElementSibling.classList.toggle('shown'); this.textContent = this.nextElementSibling.classList.contains('shown') ? 'Hide solution' : 'Show solution'">Show solution</button>
+<div class="solution">
+<b><span class="false" style="padding:4px 10px;">FALSE</span></b><br>
+The short-run Phillips curve shows a NEGATIVE trade-off: higher u → lower π (formula π = π<sup>e</sup> − β(u − u<sub>n</sub>)). The relationship reverses in the long run, which is vertical at u<sub>n</sub> (no permanent trade-off).
+</div>
+</div>
+
+<div class="question">
+<p><b>(e) The marginal propensity to consume (MPC) measures the change in consumption per unit change in disposable income and always satisfies 0 &lt; MPC &lt; 1.</b></p>
+<button class="show-btn" onclick="this.nextElementSibling.classList.toggle('shown'); this.textContent = this.nextElementSibling.classList.contains('shown') ? 'Hide solution' : 'Show solution'">Show solution</button>
+<div class="solution">
+<b><span class="true" style="padding:4px 10px;">TRUE</span></b><br>
+MPC = ∂C/∂Yd. Standard Keynesian assumption: out of every extra unit of disposable income, people spend a fraction (between 0 and 1) on consumption and save the rest.
+</div>
+</div>
+
+<!-- ============================== PS3 ============================== -->
+<h2>Problem Set 3 — Open Economy / Mundell-Fleming <span class="weight">20% · 48 min</span></h2>
+
+<div class="question">
+<p>Consider two economies, <em>Denmark</em> and <em>Sweden</em>. Denmark maintains a fixed exchange rate (pegged to the euro), while Sweden operates under a floating exchange rate (SEK floats against the EUR and USD).</p>
+
+<p><b>(a) Explain the key difference between fixed and floating exchange rate regimes, and what this means for monetary policy independence.</b></p>
+<button class="show-btn" onclick="this.nextElementSibling.classList.toggle('shown'); this.textContent = this.nextElementSibling.classList.contains('shown') ? 'Hide solution' : 'Show solution'">Show solution</button>
+<div class="solution">
+<b>Model answer:</b><br>
+"Under a <b>fixed</b> exchange rate regime, the central bank commits to keeping the exchange rate e constant against another currency. To do this, it buys/sells its own currency in exchange for foreign reserves whenever market forces would push e off target. As a result, the money supply M becomes endogenous — the CB cannot independently set M, because doing so would force a deviation from the peg. Monetary policy is therefore not independent.<br><br>
+Under a <b>floating</b> exchange rate regime, the exchange rate is set entirely by market forces (supply and demand for the currency). The central bank can independently set M (or the policy interest rate), and the exchange rate adjusts in response. Monetary policy is fully independent.<br><br>
+<b>Trade-off:</b> Fixed regime gives currency stability (good for trade-heavy economies like Denmark) but sacrifices monetary autonomy. Floating regime gives monetary autonomy but accepts exchange-rate volatility."
+</div>
+</div>
+
+<div class="question">
+<p><b>(b) Sweden's central bank cuts the policy interest rate. Using the Mundell-Fleming model, explain which curve shifts, and the effect on Swedish output and the krona's exchange rate.</b></p>
+<button class="show-btn" onclick="this.nextElementSibling.classList.toggle('shown'); this.textContent = this.nextElementSibling.classList.contains('shown') ? 'Hide solution' : 'Show solution'">Show solution</button>
+<div class="solution">
+<b>Model answer:</b><br>
+"The cut in r is equivalent to expansionary monetary policy (↑M). The <b>LM*</b> curve shifts right (in (e, Y) space). The vertical LM* line was at one Y; the new LM*' is at a higher Y.<br><br>
+<b>Mechanism:</b><br>
+1. ↑M creates downward pressure on r.<br>
+2. But r must equal r* (world rate). So capital flows OUT of Sweden — investors leave for better returns abroad.<br>
+3. Selling SEK to buy foreign assets → krona DEPRECIATES (e falls).<br>
+4. Cheaper krona makes Swedish exports cheap abroad and imports expensive → NX rises.<br>
+5. Higher NX raises Y.<br><br>
+<b>Result: Y rises, krona depreciates.</b> Monetary policy is EFFECTIVE under floating. The transmission works through the exchange rate, not directly through r."
+</div>
+</div>
+
+<div class="question">
+<p><b>(c) Denmark introduces import tariffs on certain goods (a trade-policy intervention). Explain how this affects Denmark's net exports NX, the IS or LM curve, the exchange rate, and output under the fixed-ER regime.</b></p>
+<button class="show-btn" onclick="this.nextElementSibling.classList.toggle('shown'); this.textContent = this.nextElementSibling.classList.contains('shown') ? 'Hide solution' : 'Show solution'">Show solution</button>
+<div class="solution">
+<b>Model answer:</b><br>
+"Tariffs make imports more expensive, raising net exports NX at any given exchange rate. The <b>IS*</b> curve shifts right (more spending on domestic goods at every e).<br><br>
+<b>Mechanism under fixed ER:</b><br>
+1. IS* shifts right → upward pressure on e (DKK would appreciate without intervention).<br>
+2. To defend the peg, Nationalbanken sells DKK for EUR reserves. This expands the money supply M.<br>
+3. ↑M → LM* shifts right alongside IS*.<br>
+4. Both curves shift, new equilibrium at higher Y, same e.<br><br>
+<b>Result: Y rises, e stays fixed, NX rises in equilibrium, M expands.</b><br><br>
+<b>Caveats:</b> The expansion of M may cause inflation pressure later. Also, tariffs typically invite retaliation from trading partners, which could erase the NX gain. From a pure welfare standpoint, tariffs distort trade and create deadweight losses — short-run Y gain comes at long-run efficiency costs."
+</div>
+</div>
+
+<div class="question">
+<p><b>(d) Suppose Sweden's interest rate rises (driven by world rates rising, so r* rises). Using the aggregate demand identity Y = C + I + G + NX, with C = f(Yd) and I = f(r), analyse the impact on investment I, consumption C, and output Y.</b></p>
+<button class="show-btn" onclick="this.nextElementSibling.classList.toggle('shown'); this.textContent = this.nextElementSibling.classList.contains('shown') ? 'Hide solution' : 'Show solution'">Show solution</button>
+<div class="solution">
+<b>Model answer:</b><br>
+"<b>Direct effect on I:</b> Higher r raises the cost of capital (r + δ). Fewer projects clear the MPK &gt; r + δ threshold. Investment I falls.<br><br>
+<b>Indirect effect on C:</b> Lower I reduces aggregate demand, lowering Y. Lower Y means lower disposable income (Yd = Y − T). Lower Yd reduces consumption C (via C = a + b·Yd, with MPC = b).<br><br>
+<b>Net effect on Y:</b> Both I and C fall, so Y falls significantly. The combined effect is amplified by the multiplier — the initial fall in I gets magnified by 1/(1−MPC) before the new equilibrium is reached.<br><br>
+<b>NX effect (open-economy side):</b> Higher r* attracts global capital. SEK appreciates. This reduces NX, further dampening Y.<br><br>
+<b>Bottom line:</b> Y falls through three channels: ↓I, ↓C, and ↓NX. G is fixed by policy and remains unchanged."
+</div>
+</div>
+
+<!-- ============================== PS4 ============================== -->
+<h2>Problem Set 4 — Solow Growth Model <span class="weight">20% · 48 min</span></h2>
+
+<div class="question">
+<p>Consider two countries A and B that have the same depreciation rate but differ in saving rates and population/technology growth rates. The following information is provided:</p>
+<div class="formula">
+Production function (per worker) for both countries: y = f(k) = k<sup>1/2</sup><br>
+Saving function (per worker):<br>
+&nbsp;&nbsp;Country A: sf(k) = 0.25·k<sup>1/2</sup> &nbsp; (so s = 0.25)<br>
+&nbsp;&nbsp;Country B: sf(k) = 0.40·k<sup>1/2</sup> &nbsp; (so s = 0.40)<br>
+Depreciation rate δ = 0.04 in both countries.<br>
+Population growth: n = 0.02 in both countries.<br>
+Technology growth: g<sub>A</sub> = 0.04 in Country A, g<sub>B</sub> = 0.02 in Country B.<br>
+Fundamental equation: Δk = sf(k) − (δ + n + g)k
+</div>
+
+<p><b>(a) Calculate the steady-state levels of capital stock k*, output per worker y*, saving per worker, and consumption per worker c* for both Country A and Country B.</b></p>
+<button class="show-btn" onclick="this.nextElementSibling.classList.toggle('shown'); this.textContent = this.nextElementSibling.classList.contains('shown') ? 'Hide solution' : 'Show solution'">Show solution</button>
+<div class="solution">
+<b>Country A — step by step:</b>
+<div class="step">
+<b>Step 1.</b> Compute the denominator δ + n + g (the "break-even rate"):<br>
+&nbsp;&nbsp;δ + n + g = 0.04 + 0.02 + 0.04 = <b>0.10</b><br>
+<b>Step 2.</b> Apply the steady-state formula k* = (s / (δ+n+g))² (derived from sf(k*) = (δ+n+g)·k*):<br>
+&nbsp;&nbsp;k*<sub>A</sub> = (0.25 / 0.10)² = (2.5)² = <b>6.25</b><br>
+<b>Step 3.</b> Compute output per worker y* = √k* (since y = k<sup>1/2</sup>):<br>
+&nbsp;&nbsp;y*<sub>A</sub> = √6.25 = <b>2.5</b><br>
+<b>Step 4.</b> Saving per worker = s × y*:<br>
+&nbsp;&nbsp;sy*<sub>A</sub> = 0.25 × 2.5 = <b>0.625</b><br>
+<b>Step 5.</b> Consumption per worker c* = (1 − s) × y*:<br>
+&nbsp;&nbsp;c*<sub>A</sub> = 0.75 × 2.5 = <b>1.875</b><br>
+<b>Sanity check:</b> sy* + c* should equal y*. 0.625 + 1.875 = 2.5 ✓
+</div>
+
+<b>Country B — step by step:</b>
+<div class="step">
+<b>Step 1.</b> δ + n + g = 0.04 + 0.02 + 0.02 = <b>0.08</b><br>
+<b>Step 2.</b> k*<sub>B</sub> = (0.40 / 0.08)² = (5)² = <b>25</b><br>
+<b>Step 3.</b> y*<sub>B</sub> = √25 = <b>5</b><br>
+<b>Step 4.</b> sy*<sub>B</sub> = 0.40 × 5 = <b>2</b><br>
+<b>Step 5.</b> c*<sub>B</sub> = (1 − 0.40) × 5 = 0.60 × 5 = <b>3</b><br>
+<b>Sanity check:</b> 2 + 3 = 5 = y* ✓
+</div>
+
+<b>Comparison:</b> Country B has 4× higher k*, 2× higher y*, and 60% higher consumption per worker than Country A.
+</div>
+</div>
+
+<div class="question">
+<p><b>(b) Discuss how the differences in saving rates and technology growth rates between Country A and Country B impact their steady-state outcomes. Which factor matters more for the level of output per worker?</b></p>
+<button class="show-btn" onclick="this.nextElementSibling.classList.toggle('shown'); this.textContent = this.nextElementSibling.classList.contains('shown') ? 'Hide solution' : 'Show solution'">Show solution</button>
+<div class="solution">
+<b>Model answer:</b><br>
+"Country B has both a higher saving rate (0.40 vs 0.25) AND a lower (δ+n+g) denominator (0.08 vs 0.10 — because its technology growth is lower). Both effects push Country B to higher steady-state k* and y*.<br><br>
+<b>Why higher s raises levels:</b> Higher saving means more investment per worker at every k, so the sf(k) curve shifts up. The intersection with the break-even line moves rightward, giving higher k* and y*.<br><br>
+<b>Why lower g raises level (but lowers growth rate):</b> Lower technology growth means less 'capital dilution' from new technology — the break-even line is shallower, so steady-state k* is higher. But lower g means a lower long-run growth rate of y per worker (which equals g).<br><br>
+<b>Which matters more for levels?</b> Mathematically, k* = (s/(δ+n+g))². Both s and (δ+n+g) appear inside, but s is squared in the numerator. So a doubling of s (from 0.25 to 0.5, say) quadruples k*. The same proportional change in (δ+n+g) has the same impact in the opposite direction. Both matter.<br><br>
+<b>Important caveat:</b> Levels are not growth rates. Both countries grow per-worker at their g rate in the long run. Country A grows at g=4%; Country B at g=2%. So Country A's y will eventually CATCH UP and OVERTAKE Country B in the very long run — though it starts from a much lower level."
+</div>
+</div>
+
+<div class="question">
+<p><b>(c) In the context of the Solow growth model, is the steady-state level of capital stock always equal to the Golden Rule level? Explain your answer.</b></p>
+<button class="show-btn" onclick="this.nextElementSibling.classList.toggle('shown'); this.textContent = this.nextElementSibling.classList.contains('shown') ? 'Hide solution' : 'Show solution'">Show solution</button>
+<div class="solution">
+<b>Model answer:</b><br>
+"<b>No, not in general.</b> The steady-state k* depends on the saving rate s (a choice made by households or policy). The Golden Rule k<sub>gold</sub> is determined by technology — specifically, k<sub>gold</sub> is the level of k that satisfies MPK = δ + n + g (i.e., the marginal product of capital equals the break-even investment rate).<br><br>
+They coincide only when s equals a specific Golden Rule saving rate s<sub>gold</sub>.<br><br>
+<b>Three cases:</b><br>
+1. <b>s &lt; s<sub>gold</sub> (under-saving):</b> The country has too little capital. Raising s would push k* toward k<sub>gold</sub>, eventually increasing consumption per worker. Most countries are believed to be in this case.<br>
+2. <b>s = s<sub>gold</sub> (Golden Rule):</b> The country maximises long-run c*. Hard to achieve in practice.<br>
+3. <b>s &gt; s<sub>gold</sub> (over-saving):</b> The country has too much capital — consumption is being sacrificed unnecessarily. Lowering s would increase c* immediately.<br><br>
+<b>For our two countries:</b> We'd need to check whether their s values are above or below s<sub>gold</sub>. With Country A's s=0.25 and B's s=0.40, B is closer to typical Golden Rule values (around 30–50% depending on assumptions). Country A is likely under-saving."
+</div>
+</div>
+
+<!-- ============================== PS5 ============================== -->
+<h2>Problem Set 5 — Consumption Theory + Danish CPI Analysis <span class="weight">20% · 48 min</span></h2>
+
+<div class="question">
+<p><b>(a) Explain how Friedman's Permanent Income Hypothesis (PIH) emphasises the role of permanent income over transitory income in shaping consumption decisions. Compare this with Keynes's consumption function. Use the Kuznets puzzle in your discussion.</b></p>
+<button class="show-btn" onclick="this.nextElementSibling.classList.toggle('shown'); this.textContent = this.nextElementSibling.classList.contains('shown') ? 'Hide solution' : 'Show solution'">Show solution</button>
+<div class="solution">
+<b>Model answer (3-paragraph A-grade structure):</b><br><br>
+<b>Paragraph 1 — Keynes (1936) Absolute Income Hypothesis:</b><br>
+"Keynes proposed that consumption depends primarily on <em>current</em> disposable income, captured by C = a + b·Yd, where b is the marginal propensity to consume (0 &lt; b &lt; 1). The intercept a represents autonomous consumption. The average propensity to consume (APC = C/Y = a/Y + b) <em>falls</em> as income rises, because the autonomous component a becomes a smaller share of total income. This is consistent with the observation that richer households save proportionally more.<br><br>
+<b>Paragraph 2 — Friedman (1957) Permanent Income Hypothesis:</b><br>
+"Friedman challenged Keynes by arguing that consumption depends on <em>permanent income</em> Y<sup>P</sup>, not current income. C = α·Y<sup>P</sup>, where α is a constant fraction. Permanent income is the long-run expected income, smoothed across many years. Households smooth consumption based on this permanent income, mostly ignoring transitory shocks. A windfall (lottery win, unexpected bonus) is mostly saved. An unexpected loss is mostly absorbed by reducing saving rather than cutting C significantly.<br><br>
+<b>Paragraph 3 — The Kuznets puzzle and how PIH solves it:</b><br>
+"Simon Kuznets observed empirically that APC is roughly constant in long-run time-series data, but falls as income rises in cross-section data. Keynes's theory cannot explain this — it predicts APC always falls with income. PIH solves the puzzle: in cross-section, higher-income households have a larger share of <em>transitory</em> income (lucky year), so their measured APC of <em>permanent</em> income is biased downward. In long-run time-series, growth is mostly permanent, so APC stays constant. This is strong evidence for PIH over Keynes for understanding long-run consumption behaviour. Policy implication: temporary tax rebates have little effect on C under PIH, while Keynes would predict a full MPC × rebate boost to C — empirical evidence largely supports PIH for predictable, large changes."
+</div>
+</div>
+
+<div class="question">
+<p>The following table shows Danish CPI changes (% year-on-year) by commodity group for the past four months. (Hypothetical data.)</p>
+<table>
+<tr><th>Category</th><th>Month 1</th><th>Month 2</th><th>Month 3</th><th>Month 4</th></tr>
+<tr><td>01: Food and non-alcoholic beverages</td><td>3.8</td><td>4.5</td><td>5.1</td><td>5.6</td></tr>
+<tr><td>04: Housing, water, electricity, gas, fuels</td><td>4.2</td><td>3.1</td><td>2.4</td><td>1.9</td></tr>
+<tr><td>10: Education</td><td>2.1</td><td>2.1</td><td>2.1</td><td>2.1</td></tr>
+<tr><td>11: Restaurants and hotels</td><td>2.3</td><td>4.8</td><td>1.9</td><td>3.5</td></tr>
+</table>
+
+<p><b>(b) Which category showed the most fluctuation in inflation across the four months, and what does this indicate about the underlying market?</b></p>
+<button class="show-btn" onclick="this.nextElementSibling.classList.toggle('shown'); this.textContent = this.nextElementSibling.classList.contains('shown') ? 'Hide solution' : 'Show solution'">Show solution</button>
+<div class="solution">
+<b>Model answer:</b><br>
+"Compute max − min for each category:<br>
+• Food: 5.6 − 3.8 = 1.8 pp<br>
+• Housing: 4.2 − 1.9 = 2.3 pp<br>
+• Education: 0 pp<br>
+• Restaurants & hotels: 4.8 − 1.9 = <b>2.9 pp</b> ← largest range<br><br>
+<b>'Restaurants and hotels' shows the most fluctuation.</b> This indicates a market that is highly sensitive to short-term factors. Specifically:<br>
+1. It is labour-intensive, so wage shocks transmit quickly.<br>
+2. It is seasonally driven (Christmas, summer holidays) creating volatility.<br>
+3. Demand is highly elastic (people skip dining out when budgets tighten), so prices adjust often.<br>
+4. Energy and food input costs flow through into menu prices.<br><br>
+By contrast, Education (10: 0 pp range) is stable because prices are largely set by the public sector and regulated."
+</div>
+</div>
+
+<div class="question">
+<p><b>(c) In your opinion, why did the inflation rate in the "10: Education" category remain unchanged across all four months?</b></p>
+<button class="show-btn" onclick="this.nextElementSibling.classList.toggle('shown'); this.textContent = this.nextElementSibling.classList.contains('shown') ? 'Hide solution' : 'Show solution'">Show solution</button>
+<div class="solution">
+<b>Model answer:</b><br>
+"Education prices in Denmark are largely set by the public sector. Tuition fees are regulated by the Ministry of Education on annual or longer cycles, not adjusted month-by-month. Salaries of teachers and staff are set in collective bargaining agreements that lock in increases for multi-year periods. The result is that 'Education' CPI moves only at policy-set intervals, not in response to monthly market shocks. The constant 2.1% likely reflects a programmed annual fee adjustment built into the system. This contrasts with market-driven categories (food, restaurants) where supply, demand, and input cost shocks transmit to prices much faster."
+</div>
+</div>
+
+<div class="question">
+<p><b>(d) Suppose inflation rises sharply in essential goods like "04: Housing, water, electricity, gas, fuels" but wages do not increase at the same rate. Using the national income identity Y = C + I + G, explain how this might influence overall consumption patterns and aggregate output.</b></p>
+<button class="show-btn" onclick="this.nextElementSibling.classList.toggle('shown'); this.textContent = this.nextElementSibling.classList.contains('shown') ? 'Hide solution' : 'Show solution'">Show solution</button>
+<div class="solution">
+<b>Model answer:</b><br>
+"When inflation in essentials rises but wages don't follow, real disposable income falls (Yd in real terms = nominal Yd / P, declining as P rises). Households face a difficult re-budgeting problem.<br><br>
+<b>Effect on C:</b> Essentials (housing, utilities) have inelastic demand — people don't significantly reduce their consumption of them when prices rise. So spending on essentials rises in nominal terms (same quantity, higher prices). To balance the budget, households cut spending on discretionary goods (entertainment, restaurants, clothing). Total nominal C may be roughly unchanged, but real C falls. Many lower-income households also borrow or dip into savings.<br><br>
+<b>Effect on Y:</b> Y = C + I + G + NX (open economy). Real C falls → real Y falls. The drop in C also reduces business revenue in non-essential sectors → firms may cut investment I and lay off workers, further reducing Y (a contractionary multiplier).<br><br>
+<b>Policy response:</b> The central bank may tighten (↑r) to bring inflation down, which lowers I further. Alternatively, the government may use targeted subsidies (housing or energy support) to soften the impact on households without compounding inflation. Both responses involve trade-offs.<br><br>
+<b>Distributional impact:</b> The burden falls disproportionately on low-income households (essentials are a larger share of their budgets), so this kind of inflation shock tends to worsen inequality and reduce overall welfare even if measured Y holds up nominally."
+</div>
+</div>
+
+<hr>
+
+<!-- ============================== BONUS T/F DRILL ============================== -->
+<h2>Bonus Drill — Extra T/F Practice <span class="weight">No time limit, for warm-up</span></h2>
+<p>If you finish the mock with time to spare, drill these extra T/F statements to sharpen reflexes. Cover the answers first, decide T/F, then check.</p>
+
+<table>
+<tr><th style="width:55%;">Statement</th><th>Answer + reasoning</th></tr>
+
+<tr><td>1. Doubling all inputs raises output from 80 to 200. This is constant returns to scale.</td>
+<td><b class="false" style="padding:2px 8px;">FALSE</b> — 200/80 = 2.5 &gt; 2, so this is IRS, not CRS.</td></tr>
+
+<tr><td>2. The IS curve shows combinations of (Y, r) where the money market is in equilibrium.</td>
+<td><b class="false" style="padding:2px 8px;">FALSE</b> — IS represents the GOODS market equilibrium. LM is the money market.</td></tr>
+
+<tr><td>3. Under floating exchange rates, fiscal expansion fully raises output.</td>
+<td><b class="false" style="padding:2px 8px;">FALSE</b> — Under floating, fiscal is INEFFECTIVE. IS* shifts but Y is pinned by vertical LM*; currency appreciates and NX falls to cancel the boost.</td></tr>
+
+<tr><td>4. Nominal GDP is calculated at constant base-year prices.</td>
+<td><b class="false" style="padding:2px 8px;">FALSE</b> — Reversed. Nominal GDP is at CURRENT prices; Real GDP is at constant base-year prices.</td></tr>
+
+<tr><td>5. According to Okun's law, a 1% increase in unemployment is associated with roughly a 2% increase in GDP relative to potential.</td>
+<td><b class="false" style="padding:2px 8px;">FALSE</b> — Sign reversed. A 1 pp increase in u is associated with a roughly 2% DECREASE in GDP relative to potential.</td></tr>
+
+<tr><td>6. In the Solow model with technological progress, the long-run growth rate of output per worker equals g (technology growth rate).</td>
+<td><b class="true" style="padding:2px 8px;">TRUE</b> — Only technology growth sustains per-capita growth long-run. Capital accumulation alone hits diminishing returns.</td></tr>
+
+<tr><td>7. CPI uses fixed quantity weights (Laspeyres), while the GDP deflator uses current quantity weights (Paasche).</td>
+<td><b class="true" style="padding:2px 8px;">TRUE</b> — Standard. The exam often tests this by reversing the definitions; watch carefully.</td></tr>
+
+<tr><td>8. The Phillips curve trade-off between inflation and unemployment is permanent in the long run.</td>
+<td><b class="false" style="padding:2px 8px;">FALSE</b> — In the long run, the Phillips curve is vertical at the natural rate u<sub>n</sub>. No permanent trade-off.</td></tr>
+
+<tr><td>9. According to the classical model, factors of production are paid their marginal products.</td>
+<td><b class="true" style="padding:2px 8px;">TRUE</b> — Real wage W/P = MPL; real rental rate R/P = MPK. Standard classical theory.</td></tr>
+
+<tr><td>10. According to Friedman's PIH, a temporary tax cut produces a large boost in consumption.</td>
+<td><b class="false" style="padding:2px 8px;">FALSE</b> — Under PIH, temporary (transitory) income shocks barely affect C. Households mostly save the windfall. Keynes would predict a multiplier effect.</td></tr>
+
+<tr><td>11. The Quantity Theory of Money says inflation equals money growth rate minus real output growth rate (when velocity is constant).</td>
+<td><b class="true" style="padding:2px 8px;">TRUE</b> — From M·V = P·Y in growth-rate form: %ΔP = %ΔM − %ΔY when %ΔV = 0.</td></tr>
+
+<tr><td>12. The natural rate of unemployment equals zero in an idealised classical economy.</td>
+<td><b class="false" style="padding:2px 8px;">FALSE</b> — u<sub>n</sub> = frictional + structural unemployment. Always positive, even in the best economy, because job-matching takes time.</td></tr>
+
+<tr><td>13. The Fisher equation states that the real interest rate equals the nominal rate plus expected inflation.</td>
+<td><b class="false" style="padding:2px 8px;">FALSE</b> — Reversed. r = i − π<sup>e</sup>. Real = nominal MINUS expected inflation.</td></tr>
+
+<tr><td>14. In the IS-LM model, an increase in the money supply shifts the LM curve to the right and reduces the interest rate.</td>
+<td><b class="true" style="padding:2px 8px;">TRUE</b> — ↑M → real money supply M/P rises (P sticky short-run) → LM shifts right → at any Y, r falls.</td></tr>
+
+<tr><td>15. The Cobb-Douglas function Y = K<sup>α</sup>L<sup>(1−α)</sup> with α = 0.3 means labour earns 30% of national income.</td>
+<td><b class="false" style="padding:2px 8px;">FALSE</b> — Labour earns its exponent (1−α) = 70%, capital earns α = 30%. Reverse the indexing.</td></tr>
+</table>
+
+<hr>
+
+<h2>Final Exam-Day Tactical Tips</h2>
+<div class="tips">
+<b>Time allocation (4 hours, 240 min):</b> 72 min PS1 (30%), 20 min PS2 T/F (10%), 48 min PS3 (20%), 48 min PS4 (20%), 48 min PS5 (20%), 4 min review. Stick to it — don't let one section consume your whole exam.
+</div>
+
+<div class="tips">
+<b>Always show working.</b> Even if your final answer is wrong, you get partial credit for correct steps. Make it easy for the grader to track your logic.
+</div>
+
+<div class="tips">
+<b>For "in your opinion" questions:</b> always anchor in economic theory. Don't just give an opinion — use the framework (Y = C + I + G, IS-LM, Phillips curve, etc.) and arrive at a reasoned verdict, even one with caveats.
+</div>
+
+<div class="tips">
+<b>For T/F:</b> Answer first ("FALSE."), then ONE sentence of reasoning. No more, no less. Read each statement twice — they love reversed definitions, swapped signs, and "always/never" overstatements.
+</div>
+
+<div class="tips">
+<b>Sketch diagrams when relevant.</b> Always label axes (Y horizontal; r/e/P vertical). Show curve shifts with arrows. A clean diagram earns marks; a messy one loses them.
+</div>
+
+<div class="tips">
+<b>Sanity-check your numbers.</b> If you compute MPC &gt; 1, or a multiplier &lt; 0, or negative Y, you've made an error. Catch these before moving on.
+</div>
+
+<div class="tips">
+<b>Don't panic on a confusing question.</b> Move on, finish what you know, then come back. There's always partial credit available even for incomplete answers.
+</div>
+
+<div class="tips">
+<b>Sleep well tonight.</b> Eat breakfast tomorrow. Bring water. Trust your preparation. You've put in the work. <b>You've got this, Marek. Good luck!</b>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Macroeconomics F26 — What Happens When X Changes</title>
+<style>
+  body { font-family: 'Segoe UI', Calibri, Arial, sans-serif; max-width: 1100px; margin: 30px auto; padding: 0 26px; color: #222; line-height: 1.55; background: #fafbfd; }
+  h1 { color: #002b5c; border-bottom: 3px solid #002b5c; padding-bottom: 8px; font-size: 1.85em; }
+  h2 { color: white; background: #002b5c; padding: 12px 18px; border-radius: 6px; margin-top: 42px; font-size: 1.35em; }
+  h3 { color: #134e9a; margin-top: 22px; font-size: 1.1em; }
+  .intro { background: #fff8e1; border-left: 4px solid #f9a825; padding: 14px 20px; border-radius: 6px; margin-bottom: 22px; }
+  .var-block { background: white; border: 1px solid #c0c8d4; border-radius: 6px; padding: 16px 22px; margin: 14px 0; }
+  .var-block h4 { margin: 0 0 8px 0; color: #002b5c; font-size: 1.15em; }
+  .var-block h4 .arrow { color: #c62828; font-weight: bold; font-family: 'Cambria Math', Georgia, serif; font-size: 1.2em; margin-right: 8px; }
+  .var-block h4 .arrow.up { color: #2e7d32; }
+  .chain { background: #f5f7fa; padding: 8px 12px; margin: 8px 0; border-radius: 4px; font-family: 'Cambria Math', Georgia, serif; font-size: 0.95em; }
+  .why { color: #555; font-size: 0.95em; margin: 6px 0; }
+  .why b { color: #134e9a; }
+  table { border-collapse: collapse; width: 100%; margin: 12px 0; font-size: 0.93em; }
+  th, td { border: 1px solid #c0c8d4; padding: 7px 10px; text-align: left; vertical-align: top; }
+  th { background: #134e9a; color: white; }
+  tr:nth-child(even) { background: #f5f7fa; }
+  .toc { background: white; border: 1px solid #c0c8d4; padding: 16px 22px; border-radius: 6px; margin-bottom: 24px; }
+  .toc h3 { margin-top: 8px; }
+  .toc ol { columns: 2; margin: 0; padding-left: 20px; }
+  .toc a { color: #134e9a; text-decoration: none; }
+  .toc a:hover { text-decoration: underline; }
+  .examphrase { background: #ffebee; padding: 6px 10px; border-left: 3px solid #c62828; margin: 8px 0; font-size: 0.92em; }
+  .examphrase b { color: #b71c1c; }
+  .plain-eng { background: #e8f5e9; border-left: 4px solid #2e7d32; padding: 10px 14px; margin: 10px 0; border-radius: 4px; font-size: 0.97em; line-height: 1.6; }
+  .plain-eng b { color: #1b5e20; }
+  .plain-eng b::before { content: "💡 "; }
+  hr { border: none; border-top: 1px solid #c0c8d4; margin: 30px 0; }
+</style>
+</head>
+<body>
+
+<h1>Macroeconomics F26 — "What Happens When X Changes" Reference</h1>
+
+<div class="intro">
+<b>How to use this.</b> When the exam asks "what happens when r increases?" or "explain the effect of higher M on Y", come here, find the variable, and read the chain. Every major variable in the course has its own block showing: <em>what triggers the change, what the chain of effects is, which curve shifts in which diagram, and how the exam typically phrases the question</em>.<br><br>
+<b>Symbols used:</b> ↑ means rises, ↓ means falls, → means leads to. Read chains left-to-right as a story.
+</div>
+
+<div class="toc">
+<h3>Table of contents — jump to any variable</h3>
+<ol>
+<li><a href="#symbol-key">⭐ Symbol Key — what every letter/symbol means (READ FIRST)</a></li>
+<li><a href="#sec-goods">Goods market: ↑G, ↓G, ↑T, ↓T, ↑MPC, ↑I (autonomous)</a></li>
+<li><a href="#sec-money">Money market: ↑M, ↓M, ↑P, ↑r, ↓r, ↑i, ↑π<sup>e</sup></a></li>
+<li><a href="#sec-open">Open economy: ↑e, ↓e, ↑r*, tariffs, capital flows</a></li>
+<li><a href="#sec-supply">Real / supply side: ↑K, ↑L, ↑A, supply shock</a></li>
+<li><a href="#sec-solow">Solow: ↑s, ↑n, ↑δ, ↑g</a></li>
+<li><a href="#sec-labor">Labour & prices: ↑u, ↑π, ↑P<sup>e</sup>, ↑V</a></li>
+<li><a href="#sec-combos">Combined scenarios (recession, boom, oil shock, COVID)</a></li>
+<li><a href="#sec-master">Master cheat table — every variable in one row</a></li>
+</ol>
+</div>
+
+<h2 id="symbol-key">⭐ Symbol Key — Look Up Any Letter/Symbol Here</h2>
+
+<div class="intro" style="background:#e8f5e9; border-left:4px solid #2e7d32;">
+<b>Use this section as your sticky reference.</b> Whenever you see a letter in a chain like "↑r → ↓I → ↓Y" and aren't sure what it means, scroll back here. Every symbol used in the chains below is decoded.
+</div>
+
+<h3>Operators (the arrows)</h3>
+<table>
+<tr><th>Symbol</th><th>Meaning</th></tr>
+<tr><td><strong>↑X</strong></td><td>"X rises" / "X increases"</td></tr>
+<tr><td><strong>↓X</strong></td><td>"X falls" / "X decreases"</td></tr>
+<tr><td><strong>→</strong></td><td>"leads to" / "causes"</td></tr>
+<tr><td><strong>ΔX</strong></td><td>"change in X" (could be positive or negative)</td></tr>
+<tr><td><strong>X*</strong></td><td>"steady-state X" (Solow) OR "world-level X" (open economy, e.g., r* = world interest rate). Context tells you which.</td></tr>
+<tr><td><strong>X̅</strong> ("X-bar")</td><td>Long-run / potential / natural level of X (e.g., Y̅ = potential output)</td></tr>
+</table>
+
+<h3>Output, income & spending</h3>
+<table>
+<tr><th>Symbol</th><th>Meaning</th></tr>
+<tr><td><strong>Y</strong></td><td>Total output / income / GDP — the big aggregate we want to explain</td></tr>
+<tr><td><strong>Ȳ</strong></td><td>Potential / natural output — what the economy produces in the long run</td></tr>
+<tr><td><strong>C</strong></td><td>Consumption — household spending on goods/services</td></tr>
+<tr><td><strong>I</strong></td><td>Investment — firms' spending on new capital (machines, factories)</td></tr>
+<tr><td><strong>G</strong></td><td>Government spending on goods and services</td></tr>
+<tr><td><strong>T</strong></td><td>Taxes</td></tr>
+<tr><td><strong>Yd</strong></td><td>Disposable income = Y − T (what households actually have to spend)</td></tr>
+<tr><td><strong>NX</strong></td><td>Net exports = X − IM (positive = trade surplus, negative = deficit)</td></tr>
+<tr><td><strong>X</strong></td><td>Exports (goods sold abroad)</td></tr>
+<tr><td><strong>IM</strong></td><td>Imports (goods bought from abroad). NOTE: sometimes just called "M" — different from money supply M!</td></tr>
+<tr><td><strong>PE</strong></td><td>Planned expenditure = C + I + G (+NX). Equals Y in equilibrium.</td></tr>
+<tr><td><strong>S</strong></td><td>Saving. Subscripts: S<sub>priv</sub> = private saving, S<sub>pub</sub> = public saving</td></tr>
+</table>
+
+<h3>Behavioural parameters</h3>
+<table>
+<tr><th>Symbol</th><th>Meaning</th></tr>
+<tr><td><strong>MPC</strong> (or <strong>b</strong>)</td><td>Marginal propensity to consume. Out of one extra unit of disposable income, how much is spent. Between 0 and 1.</td></tr>
+<tr><td><strong>m</strong></td><td>Either marginal propensity to import (open economy) OR money multiplier (banking). Context!</td></tr>
+<tr><td><strong>APC</strong></td><td>Average propensity to consume = C/Y</td></tr>
+<tr><td><strong>a</strong></td><td>Autonomous consumption (constant in C = a + b·Yd) — the part of C that doesn't depend on income</td></tr>
+</table>
+
+<h3>Money & prices</h3>
+<table>
+<tr><th>Symbol</th><th>Meaning</th></tr>
+<tr><td><strong>M</strong></td><td>Money supply (nominal) — set by the central bank. WATCH OUT: "M" can also stand for imports in open economy!</td></tr>
+<tr><td><strong>M/P</strong></td><td>Real money supply — money supply adjusted for prices. What money "actually buys."</td></tr>
+<tr><td><strong>P</strong></td><td>Price level — aggregate price index (CPI or GDP deflator)</td></tr>
+<tr><td><strong>P*</strong></td><td>Foreign price level (asterisk = "foreign" or "world")</td></tr>
+<tr><td><strong>V</strong></td><td>Velocity of money — how many times per year each unit of money is spent. Used in M·V = P·Y (Quantity Theory)</td></tr>
+<tr><td><strong>π</strong> (Greek "pi")</td><td>Inflation rate — percentage change in P</td></tr>
+<tr><td><strong>π<sup>e</sup></strong></td><td>Expected inflation — what people THINK inflation will be (drives wage demands)</td></tr>
+<tr><td><strong>i</strong></td><td>Nominal interest rate — what you see on a bank statement</td></tr>
+<tr><td><strong>r</strong></td><td>Real interest rate = i − π. The "true" return after adjusting for inflation.</td></tr>
+<tr><td><strong>r*</strong></td><td>World real interest rate. Under perfect capital mobility, domestic r = r*.</td></tr>
+<tr><td><strong>L(Y, i)</strong></td><td>Money demand function — how much money people want to hold. Rises with Y, falls with i.</td></tr>
+</table>
+
+<h3>Open economy & exchange rates</h3>
+<table>
+<tr><th>Symbol</th><th>Meaning</th></tr>
+<tr><td><strong>e</strong></td><td>Nominal exchange rate — price of one currency in another (e.g., 1 EUR = 7.45 DKK)</td></tr>
+<tr><td><strong>ε</strong> (Greek "epsilon")</td><td>Real exchange rate — domestic vs foreign prices in the same currency. ε = e × P/P*</td></tr>
+<tr><td><strong>"appreciation"</strong></td><td>The domestic currency gets STRONGER (e ↑). Our goods cost more abroad; imports cheaper at home.</td></tr>
+<tr><td><strong>"depreciation"</strong></td><td>The domestic currency gets WEAKER (e ↓). Our goods cheaper abroad; imports more expensive.</td></tr>
+</table>
+
+<h3>Production & classical (Cobb-Douglas)</h3>
+<table>
+<tr><th>Symbol</th><th>Meaning</th></tr>
+<tr><td><strong>K</strong></td><td>Capital stock — machines, factories, buildings, equipment</td></tr>
+<tr><td><strong>L</strong></td><td>Labour — number of workers employed</td></tr>
+<tr><td><strong>A</strong></td><td>Technology / total factor productivity — how efficiently K and L produce Y</td></tr>
+<tr><td><strong>α</strong> (Greek "alpha")</td><td>Capital's share of income in Cobb-Douglas (also: AS sensitivity, or PIH constant — context matters)</td></tr>
+<tr><td><strong>1−α</strong> (or <strong>β</strong>)</td><td>Labour's share of income. Watch: β can ALSO mean Phillips curve coefficient!</td></tr>
+<tr><td><strong>MPL</strong></td><td>Marginal product of labour — extra output from one more worker. For Cobb-Douglas: (1−α)·Y/L</td></tr>
+<tr><td><strong>MPK</strong></td><td>Marginal product of capital — extra output from one more unit of K. For Cobb-Douglas: α·Y/K</td></tr>
+<tr><td><strong>W/P</strong></td><td>Real wage. In equilibrium = MPL.</td></tr>
+<tr><td><strong>R/P</strong></td><td>Real rental rate of capital. In equilibrium = MPK.</td></tr>
+</table>
+
+<h3>Solow growth (per-worker form)</h3>
+<table>
+<tr><th>Symbol</th><th>Meaning</th></tr>
+<tr><td><strong>y</strong> (lower-case)</td><td>Output per worker (y = Y/L). Standard exam form: y = √k</td></tr>
+<tr><td><strong>k</strong> (lower-case)</td><td>Capital per worker (k = K/L)</td></tr>
+<tr><td><strong>k*</strong></td><td>Steady-state capital per worker — where the economy settles long-run</td></tr>
+<tr><td><strong>k<sub>gold</sub></strong></td><td>Golden Rule capital — the k that maximises consumption per worker</td></tr>
+<tr><td><strong>s</strong></td><td>Saving rate — fraction of output saved/invested (between 0 and 1)</td></tr>
+<tr><td><strong>δ</strong> (Greek "delta")</td><td>Depreciation rate — fraction of capital that wears out per year</td></tr>
+<tr><td><strong>n</strong></td><td>Population growth rate (annual)</td></tr>
+<tr><td><strong>g</strong></td><td>Technology growth rate (the ONLY source of long-run per-capita growth)</td></tr>
+<tr><td><strong>c*</strong></td><td>Steady-state consumption per worker = (1−s)·y*</td></tr>
+<tr><td><strong>(δ + n + g)·k</strong></td><td>"Break-even investment" — investment needed just to maintain k per worker</td></tr>
+</table>
+
+<h3>Labour, inflation, & curves</h3>
+<table>
+<tr><th>Symbol</th><th>Meaning</th></tr>
+<tr><td><strong>u</strong></td><td>Unemployment rate (unemployed / labour force)</td></tr>
+<tr><td><strong>u<sub>n</sub></strong></td><td>Natural rate of unemployment = frictional + structural. The rate that exists at potential output.</td></tr>
+<tr><td><strong>β</strong> (in Phillips)</td><td>Sensitivity of inflation to unemployment gap</td></tr>
+<tr><td><strong>ν</strong> (Greek "nu")</td><td>Supply shock term (e.g., oil price jump). Appears in Phillips curve.</td></tr>
+<tr><td><strong>IS</strong></td><td>Goods market equilibrium curve — all (Y, r) where planned spending = output. Slopes DOWN.</td></tr>
+<tr><td><strong>LM</strong></td><td>Money market equilibrium curve — all (Y, r) where money supply = demand. Slopes UP.</td></tr>
+<tr><td><strong>IS*, LM*</strong></td><td>Open-economy versions (Mundell-Fleming). LM* is VERTICAL (because r is pinned at r*).</td></tr>
+<tr><td><strong>AD</strong></td><td>Aggregate demand curve — (P, Y) combinations from IS-LM. Slopes DOWN.</td></tr>
+<tr><td><strong>SRAS</strong></td><td>Short-run aggregate supply — output rises when P exceeds expected P. Slopes UP.</td></tr>
+<tr><td><strong>LRAS</strong></td><td>Long-run aggregate supply — VERTICAL at potential output Ȳ.</td></tr>
+</table>
+
+<h3>⚠️ Common letter "clashes" — same symbol, different meanings</h3>
+<div class="examphrase" style="background:#fff3cd; border-left:4px solid #f9a825; color:#5d4037;">
+<b>Watch out for these:</b><br>
+• <b>M</b> = money supply (in money market, IS-LM) OR imports (in open-economy national accounts; sometimes written "IM" to disambiguate)<br>
+• <b>T</b> = taxes (everywhere except LCH) OR total years of life remaining (in Modigliani's life-cycle consumption formula)<br>
+• <b>α</b> = capital share (Cobb-Douglas) OR consumption fraction (in PIH) OR sensitivity parameter (in aggregate supply)<br>
+• <b>β</b> = labour share in Cobb-Douglas OR sensitivity coefficient in Phillips curve<br>
+• <b>r</b> = real interest rate (everywhere) OR remaining working years (in Modigliani's LCH — rare)<br>
+• <b>m</b> = money multiplier (banking) OR marginal propensity to import (open economy)<br>
+• <b>P</b> = price level OR foreign price level when written as <b>P*</b><br>
+• <b>e vs ε</b> = e is the nominal exchange rate; ε (epsilon) is the real exchange rate. They look similar but mean different things!
+</div>
+
+<!-- =============== GOODS MARKET =============== -->
+<h2 id="sec-goods">1. Goods Market Variables</h2>
+
+<div class="var-block">
+<h4><span class="arrow up">↑G</span> Government spending rises (fiscal expansion)</h4>
+<p class="why"><b>Triggers:</b> Stimulus package, infrastructure investment, defence spending, COVID relief.</p>
+<div class="chain">↑G (government spending) → ↑PE (planned expenditure = C+I+G) → ↑Y (output, via multiplier 1/(1−MPC)) → ↑money demand → ↑r (real interest rate) → ↓I (investment — this is crowding out) → Y rises by LESS than the simple multiplier predicts</div>
+<div class="plain-eng"><b>In plain English:</b> When the government spends more money, total demand for goods rises directly — more orders for goods, more contracts, more workers hired. Firms produce more, so Y goes up. But more activity means people need more cash for transactions, which pushes interest rates up. Higher rates make borrowing more expensive, so private companies invest less — partly cancelling out the original boost. This partial cancellation is called <em>crowding out</em>.</div>
+<p class="why"><b>Diagrams:</b> In IS-LM, IS shifts RIGHT. Move along LM up-right. Y↑, r↑. In Mundell-Fleming under floating: IS* shifts right but Y is pinned by vertical LM*; e appreciates, NX falls, cancels out. Under fixed: IS* shifts right, CB expands M to defend peg, LM* shifts alongside, Y rises by full amount.</p>
+<p class="why"><b>Long-run:</b> Higher G with no T offset reduces national saving (S<sub>pub</sub> falls). In classical model: r rises, I falls, future Y̅ is lower (capital accumulation slowed).</p>
+<div class="examphrase"><b>Exam phrasing:</b> "Suppose the government increases public spending. Which curve shifts and what's the effect on output and interest rate / exchange rate?" — Test framework: which regime → which curve → which mechanism.</div>
+</div>
+
+<div class="var-block">
+<h4><span class="arrow">↓G</span> Government spending falls (fiscal contraction)</h4>
+<p class="why"><b>Triggers:</b> Austerity, budget consolidation, deficit reduction.</p>
+<div class="chain">↓G (government spending) → ↓PE (planned expenditure) → ↓Y (output, via multiplier) → ↓money demand → ↓r (interest rate) → ↑I (investment partially recovers — partial reverse of crowding out)</div>
+<div class="plain-eng"><b>In plain English:</b> When the government cuts spending, total demand drops — fewer orders, fewer projects, fewer workers needed. Firms produce less, Y falls. There's some self-correction: lower Y means less demand for money, so interest rates drop, which encourages a bit of new private investment. But the net effect on Y is still negative.</div>
+<p class="why"><b>Diagrams:</b> IS shifts LEFT. Y↓, r↓ in IS-LM. Under floating ER: Y unchanged, e depreciates. Under fixed ER: Y falls (CB shrinks M to maintain peg).</p>
+<p class="why"><b>Welfare:</b> Short-run pain (lower employment, lower output) for long-run gains (less debt, more private investment).</p>
+</div>
+
+<div class="var-block">
+<h4><span class="arrow up">↑T</span> Taxes rise (contractionary fiscal)</h4>
+<p class="why"><b>Triggers:</b> Tax hike, austerity, paying down debt.</p>
+<div class="chain">↑T (taxes) → ↓Yd (disposable income = Y−T) → ↓C (consumption, via MPC = marginal propensity to consume) → ↓PE (planned expenditure) → ↓Y (output) → ↓r (interest rate, along LM curve) → ↑I (investment partially recovers — offsets some of the drop)</div>
+<div class="plain-eng"><b>In plain English:</b> When taxes go up, households have less money in their pocket. With less to spend, they consume less. That drop in consumption ripples through the economy — fewer sales, less production, less employment. The drop in Y is real but smaller than an equivalent cut in G, because households would save part of the tax change anyway (so only the spent portion drives demand down).</div>
+<p class="why"><b>Multiplier difference:</b> Tax multiplier = −MPC/(1−MPC) is SMALLER in absolute value than the spending multiplier 1/(1−MPC). With MPC = 0.75: spending multiplier = 4; tax multiplier = −3. Why? A tax change first goes through the consumption function (only MPC × ΔT goes to consumption) before the multiplier kicks in.</p>
+<p class="why"><b>Diagrams:</b> IS shifts LEFT (smaller shift than equivalent ↓G). Y↓, r↓.</p>
+<div class="examphrase"><b>Exam phrasing:</b> "Suppose taxes rise from 150 to 300. Calculate the new equilibrium Y and r." — Standard PS1 sub-question.</div>
+</div>
+
+<div class="var-block">
+<h4><span class="arrow">↓T</span> Taxes fall (expansionary fiscal)</h4>
+<p class="why"><b>Triggers:</b> Tax cut, stimulus.</p>
+<div class="chain">↓T (taxes) → ↑Yd (disposable income = Y−T) → ↑C (consumption) → ↑PE (planned expenditure) → ↑Y (output) → ↑r (interest rate, along LM curve) → ↓I (investment — this is crowding out)</div>
+<div class="plain-eng"><b>In plain English:</b> A tax cut puts more money in households' pockets. They spend some of it (the MPC fraction), and that spending becomes income for someone else, who spends part of it too — the multiplier in action. Y rises, but less than from an equivalent rise in G because part of the tax cut gets saved rather than spent. Forward-looking people might save MORE of it, expecting future taxes to rise.</div>
+<p class="why"><b>Caveat:</b> Under Ricardian equivalence, forward-looking households save the tax cut to pay future taxes. C doesn't rise, Y doesn't rise. Empirically Ricardian holds only partially — tax cuts do raise C, but less than Keynes predicted.</p>
+</div>
+
+<div class="var-block">
+<h4><span class="arrow up">↑MPC</span> Marginal propensity to consume rises</h4>
+<p class="why"><b>Triggers:</b> Demographic shifts (younger population), reduced precautionary saving, lower interest rates encouraging borrowing.</p>
+<div class="chain">↑MPC (marginal propensity to consume — fraction of extra Yd spent) → larger multiplier (1/(1−MPC)) → any ΔG (change in government spending) or Δa (change in autonomous consumption) has BIGGER effect on Y (output) → economy more responsive to demand shocks</div>
+<div class="plain-eng"><b>In plain English:</b> When people spend a bigger fraction of any extra income, every dollar that enters the economy gets re-spent more rounds before settling. So any shock — good or bad — gets amplified more. Fiscal policy becomes more powerful; recessions are deeper but recoveries are faster. The economy is more "responsive" but also more volatile.</div>
+<p class="why"><b>Example:</b> If MPC rises from 0.75 to 0.80, multiplier rises from 4 to 5. A 100 unit ↑G now raises Y by 500 instead of 400.</p>
+<p class="why"><b>Tax multiplier also grows in absolute value:</b> from -3 to -4 with the same MPC change.</p>
+</div>
+
+<div class="var-block">
+<h4><span class="arrow up">↑I (autonomous)</span> Investment demand rises (animal spirits)</h4>
+<p class="why"><b>Triggers:</b> Business confidence rises, new technology unlocks investment opportunities, tax credits for investment.</p>
+<div class="chain">↑I (autonomous investment — animal spirits) → ↑PE (planned expenditure) → ↑Y (output, via multiplier) → ↑money demand → ↑r (interest rate) → some self-correction (higher r pulls I back down a bit)</div>
+<div class="plain-eng"><b>In plain English:</b> When businesses become more optimistic — better expected returns, new technology, lower risks — they invest more even without any rate cut. This is what Keynes called "animal spirits." More investment means more orders for factories, equipment, and construction workers, which boosts Y. Same mechanism as a fiscal stimulus, just triggered by private optimism rather than government action.</div>
+<p class="why"><b>Diagrams:</b> IS shifts RIGHT. Y↑, r↑. Same as ↑G in IS-LM terms.</p>
+</div>
+
+<!-- =============== MONEY MARKET =============== -->
+<h2 id="sec-money">2. Money Market Variables</h2>
+
+<div class="var-block">
+<h4><span class="arrow up">↑M</span> Money supply rises (expansionary monetary policy)</h4>
+<p class="why"><b>Triggers:</b> Central bank buys bonds (open market operations), cuts reserve requirements, cuts policy rate, QE.</p>
+<div class="chain">↑M (money supply, nominal) → ↑(M/P) (real money supply, since P sticky in short run) → ↓r (real interest rate falls — same money demand, more supply) → ↑I (investment) → ↑PE (planned expenditure) → ↑Y (output)</div>
+<div class="plain-eng"><b>In plain English:</b> When the central bank prints more money, there's more cash in the economy. With more cash chasing the same investment opportunities, interest rates fall. Lower interest rates make borrowing cheaper, so firms invest more (more projects clear the lower hurdle). More investment means higher output and employment. In the long run, however, prices catch up and all the effect ends up in higher P, not real Y — this is "money neutrality".</div>
+<p class="why"><b>Long-run (classical, money neutrality):</b> ↑M raises P proportionally (QTM: M·V = P·Y). Real variables (Y, r, employment) unaffected. ALL the effect is in prices.</p>
+<p class="why"><b>Diagrams:</b> In IS-LM, LM shifts RIGHT/DOWN. Move along IS down-right: Y↑, r↓. In Mundell-Fleming floating: LM* shifts right, Y↑, e depreciates. Under fixed: Y unchanged (CB must reverse ΔM to defend peg).</p>
+<div class="examphrase"><b>Exam phrasing:</b> "Suppose the central bank applies tight monetary policy by reducing M by 20%. Find the new equilibrium." — Reverse direction of this story.</div>
+</div>
+
+<div class="var-block">
+<h4><span class="arrow">↓M</span> Money supply falls (contractionary monetary)</h4>
+<div class="chain">↓M (money supply, nominal) → ↓(M/P) (real money supply falls) → ↑r (real interest rate rises to clear the now-tighter money market) → ↓I (investment) → ↓Y (output)</div>
+<div class="plain-eng"><b>In plain English:</b> When the central bank pulls money out of circulation, there's less cash chasing the same bonds and investments. Interest rates rise to balance the now-tighter money supply against demand. Higher rates make borrowing expensive, so firms invest less, and output falls. This is the standard monetary tightening — used to fight inflation. In the long run, prices fall proportionally and the real economy returns to its original state.</div>
+<p class="why"><b>Diagrams:</b> LM shifts LEFT/UP in IS-LM. Move along IS up-left: Y↓, r↑.</p>
+<p class="why"><b>Long-run:</b> P falls proportionally. Real variables unchanged.</p>
+</div>
+
+<div class="var-block">
+<h4><span class="arrow up">↑P</span> Price level rises</h4>
+<p class="why"><b>Triggers:</b> Inflation, demand surge, cost-push shock, money growth.</p>
+<div class="chain">↑P (price level) → ↓(M/P) (real money supply falls — nominal M is fixed, P is higher, so real money buys less) → LM curve shifts LEFT in (Y, r) space → ↑r (interest rate) → ↓I (investment) → ↓Y (output)</div>
+<div class="plain-eng"><b>In plain English:</b> When prices rise but the amount of cash in circulation stays the same, that cash buys less real stuff. With less "real" money available for transactions, the interest rate must rise to clear the money market. Higher rates choke off investment, and Y falls. This is the exact mechanism behind the downward-sloping AD curve — higher P leads to lower Y.</div>
+<p class="why"><b>This is exactly why AD slopes down in (P, Y) space.</b> Higher P reduces real money supply, raises r, reduces I, lowers Y.</p>
+<p class="why"><b>Long-run distinction:</b> In SR, P sticky → small movements. In LR, P fully flexible → ΔP can fully offset shocks back to Y̅.</p>
+</div>
+
+<div class="var-block">
+<h4><span class="arrow up">↑r</span> Real interest rate rises (the most-asked variable)</h4>
+<p class="why"><b>Triggers:</b> Central bank tightening, ↓M, fiscal expansion (via ↑G), capital outflows reduced (closed economy).</p>
+<div class="chain">↑r (real interest rate) → cost of capital (r + δ, where δ = depreciation rate) rises → fewer investment projects clear the hurdle MPK (marginal product of capital) &gt; r + δ → ↓I (investment) → ↓PE (planned expenditure) → ↓Y (output) → ↓Yd (disposable income = Y−T) → ↓C (consumption) → further ↓Y (the multiplier effect kicks in)</div>
+<div class="plain-eng"><b>In plain English:</b> Higher interest rates mean borrowing is more expensive for everyone — businesses, governments, households. Firms put off building new factories or buying new machines because fewer projects are worth the higher cost. Less investment means less work for construction workers, suppliers, and manufacturers, so total output Y falls. Households earn less income → spend less → Y falls further (the multiplier in reverse). This whole chain is how monetary tightening cools an overheating economy.</div>
+<p class="why"><b>Other effects of ↑r:</b><br>
+• Saving decisions: higher reward to saving → ↑S<sub>private</sub> (modest effect, mostly substitution).<br>
+• Asset prices: bond prices fall (inverse to yields). Equity values fall (discounted at higher rate).<br>
+• Exchange rate (open econ): foreign capital flows in (seeking the higher return) → currency APPRECIATES → ↓NX.<br>
+• Mortgage payments rise → housing market cools.</p>
+<p class="why"><b>Diagrams:</b> Move UP along IS curve (lower Y). If ↑r is caused by ↑M shifting LM: no — that's ↓r. ↑r happens when LM shifts left, IS shifts right (fiscal expansion), or world rate r* rises.</p>
+<div class="examphrase"><b>Exam phrasing:</b> "Suppose the interest rate increases. Analyse the impact on investment (I), consumption (C) and output (Y)." — Walk through the chain.</div>
+</div>
+
+<div class="var-block">
+<h4><span class="arrow">↓r</span> Real interest rate falls</h4>
+<div class="chain">↓r (real interest rate falls) → cost of capital (r + δ) falls → more investment projects clear MPK &gt; r + δ → ↑I (investment) → ↑PE (planned expenditure) → ↑Y (output) → ↑C (consumption, via higher Yd = disposable income) → further ↑Y (multiplier)</div>
+<div class="plain-eng"><b>In plain English:</b> Lower interest rates make borrowing cheap. Firms invest in new factories, machines, and equipment that wouldn't be profitable at higher rates. This boosts production, jobs, and income. Households spend more of their higher incomes, multiplying the effect. This is the standard transmission of monetary easing — when central banks cut rates to fight recessions.</div>
+<p class="why"><b>Asset prices rise.</b> Bonds and equity become more valuable. Housing market heats up.</p>
+<p class="why"><b>Open economy:</b> Capital flows out → currency DEPRECIATES → ↑NX → further ↑Y.</p>
+</div>
+
+<div class="var-block">
+<h4><span class="arrow up">↑i</span> Nominal interest rate rises</h4>
+<p class="why"><b>By the Fisher equation:</b> i = r + π<sup>e</sup>. So ↑i can come from ↑r (real channel) OR ↑π<sup>e</sup> (expected inflation channel).</p>
+<div class="chain">Fisher equation: i (nominal interest rate) = r (real interest rate) + π<sup>e</sup> (expected inflation). So ↑i can be from two sources:<br>
+• If ↑i comes from ↑π<sup>e</sup> (expected inflation rising): r is unchanged. Just nominal effects. Real economy unaffected (long run).<br>
+• If ↑i comes from ↑r (real rate rising): triggers the full ↑r chain above (real effects on I, Y, C).</div>
+<div class="plain-eng"><b>In plain English:</b> Nominal interest is what you see on a bank statement — but only PART of that is the "real" return. The rest is just compensation for inflation. So whether ↑i hurts the real economy depends on WHY it's rising. If just expected inflation is rising and r stays put, nothing real changes. If r itself is rising (e.g., tight money), then the real economy slows down. Always ask: is this a real-rate change or a nominal-only change?</div>
+<p class="why"><b>Distinction matters:</b> high i in high-inflation countries doesn't necessarily mean tight monetary conditions — r might be normal or even negative.</p>
+</div>
+
+<div class="var-block">
+<h4><span class="arrow up">↑π<sup>e</sup></span> Expected inflation rises</h4>
+<p class="why"><b>Triggers:</b> Past inflation experience, central bank loses credibility, supply shocks.</p>
+<div class="chain">↑π<sup>e</sup> (expected inflation) → Fisher effect: ↑i (nominal interest rate rises by the same amount; r — real rate — unchanged in long run)<br>
+Short-run: wage bargaining bakes in higher π<sup>e</sup> → wages rise faster → firms raise prices → actual π (inflation) rises (self-fulfilling)<br>
+Phillips curve shifts UP (higher π at every level of u = unemployment)</div>
+<div class="plain-eng"><b>In plain English:</b> When everyone EXPECTS prices to keep rising, they start acting on that belief. Workers demand bigger wage rises. Landlords raise rents in advance. Firms raise prices preemptively. All these decisions feed actual inflation, so the expectation becomes self-fulfilling. This is why central banks obsess over "anchoring" inflation expectations — once they drift up, inflation becomes much harder to control because everyone is already pricing it in.</div>
+<p class="why"><b>Why central banks fight π<sup>e</sup> hard:</b> once it gets unanchored, inflation becomes self-fulfilling. Maintaining low π<sup>e</sup> is the main job of an inflation-targeting CB.</p>
+</div>
+
+<!-- =============== OPEN ECONOMY =============== -->
+<h2 id="sec-open">3. Open Economy Variables</h2>
+
+<div class="var-block">
+<h4><span class="arrow up">↑e</span> Currency appreciates</h4>
+<p class="why"><b>Triggers:</b> ↑r* (world rate falls relatively), capital inflows, current-account surplus, expectations of future appreciation.</p>
+<div class="chain">↑e (exchange rate — home currency appreciates / strengthens) → domestic goods MORE expensive abroad → ↓X (exports fall)<br>
+↑e → foreign goods CHEAPER at home → ↑IM (imports rise)<br>
+Net: NX (net exports) = X − IM → ↓NX (net exports fall)<br>
+Under floating ER: Y (output) falls because of lower NX.<br>
+Under fixed ER: doesn't happen (central bank intervenes to prevent the appreciation).</div>
+<div class="plain-eng"><b>In plain English:</b> When the home currency gets stronger, foreigners need to pay more of their money to buy our goods, so they buy fewer exports. At the same time, our consumers pay less for foreign products, so they import more. Both effects push net exports down. Under floating exchange rates, this drag pulls Y down. Manufacturers and exporters hate appreciation; tourists going abroad love it.</div>
+<p class="why"><b>Distributional impact:</b> Hurts exporters (manufacturing). Helps importers and consumers (cheaper foreign goods). Tourists going abroad have stronger purchasing power.</p>
+<div class="examphrase"><b>Exam phrasing:</b> "Why does an appreciation reduce net exports?" — Walk through the X and IM channels.</div>
+</div>
+
+<div class="var-block">
+<h4><span class="arrow">↓e</span> Currency depreciates</h4>
+<div class="chain">↓e (exchange rate — home currency depreciates / weakens) → domestic goods CHEAPER abroad → ↑X (exports rise)<br>
+↓e → foreign goods MORE expensive at home → ↓IM (imports fall)<br>
+→ ↑NX (net exports rise) → ↑Y (output rises, under floating ER)</div>
+<div class="plain-eng"><b>In plain English:</b> A weaker home currency means foreigners can buy more of our stuff for the same amount of their money — so they buy more exports. At the same time, our consumers find imports more expensive and buy fewer of them. Net exports rise, which boosts Y. The downside: imported goods (oil, electronics, cars) become pricier, fueling inflation.</div>
+<p class="why"><b>Inflationary effect:</b> Imports become expensive → imported inflation. Central banks often worry about this in small open economies.</p>
+</div>
+
+<div class="var-block">
+<h4><span class="arrow up">↑r*</span> World interest rate rises</h4>
+<p class="why"><b>Triggers:</b> Fed/ECB tightens, global savings shock.</p>
+<div class="chain">↑r* (world real interest rate) → domestic r must follow (perfect capital mobility): r = r*<br>
+↑r (real interest rate) → ↓I (investment) → ↓Y (output)<br>
+Under floating ER: capital flows IN (chasing higher world rate) → currency APPRECIATES (↑e) → ↓NX (net exports) → further ↓Y<br>
+Under fixed ER: CB must defend peg by selling reserves → ↓M (money supply) → LM* shifts left → Y falls</div>
+<div class="plain-eng"><b>In plain English:</b> When global interest rates rise (e.g., the Fed tightens), investors can earn more by moving their money abroad. Capital flows out of small open economies like Denmark, pulling domestic rates up too (since r must equal r*). Higher rates choke off investment and slow the economy. Under floating ER, the currency depreciates as capital leaves. Under fixed ER, the central bank must shrink its own money supply to defend the peg — same recessionary outcome.</div>
+<p class="why"><b>Real-world example:</b> When the Fed raised rates aggressively in 2022, capital flowed out of emerging markets, causing currency depreciations and stress in many small open economies. Same logic but with EM as "Denmark" here.</p>
+</div>
+
+<div class="var-block">
+<h4><span class="arrow up">Tariff</span> Import tariff imposed</h4>
+<p class="why"><b>Triggers:</b> Trade policy, protectionism, retaliation.</p>
+<div class="chain">Tariff → imports MORE expensive → ↓IM (imports) → ↑NX (net exports) at any given e (exchange rate)<br>
+IS* curve shifts RIGHT (at every e, Y = output is higher)<br>
+Under floating ER: e appreciates, which cancels NX gain. Y unchanged.<br>
+Under fixed ER: central bank expands M (money supply), both IS* and LM* shift right. Y rises.</div>
+<div class="plain-eng"><b>In plain English:</b> A tariff is a tax on imports that makes foreign goods more expensive. Domestic consumers shift toward buying local products, so net exports rise. Under a fixed exchange rate (like Denmark), the central bank expands the money supply to prevent the currency from appreciating, so Y actually rises. Under floating ER, the currency just appreciates and the boost to NX gets fully offset — no real benefit to Y. Tariffs often backfire because trading partners retaliate with their own tariffs, hurting our exporters too.</div>
+<p class="why"><b>Welfare:</b> Even when Y rises under fixed, there are efficiency losses (deadweight loss of tariff). Trading partners may retaliate. Long-run cost typically exceeds short-run Y gain.</p>
+<div class="examphrase"><b>Exam phrasing:</b> "Suppose Denmark introduces import tariffs. Explain the effect on NX, the IS/LM curve, e, and Y under a fixed ER system." — Recurring question type, appeared in V23 and S25.</div>
+</div>
+
+<!-- =============== SUPPLY SIDE =============== -->
+<h2 id="sec-supply">4. Real / Supply Side Variables</h2>
+
+<div class="var-block">
+<h4><span class="arrow up">↑K</span> Capital stock rises</h4>
+<p class="why"><b>Triggers:</b> Sustained investment, capital subsidies, foreign direct investment.</p>
+<div class="chain">↑K (capital stock) → ↑Ȳ (potential output, via production function Y = F(K, L) where L = labour) → LRAS curve (long-run aggregate supply) shifts RIGHT<br>
+By diminishing returns: MPK (marginal product of capital) falls slightly<br>
+Real wages (W/P) may rise (capital complements labour, making workers more productive)</div>
+<div class="plain-eng"><b>In plain English:</b> More capital — more machines, factories, tools — means workers can produce more output with the same effort. Potential output Y̅ rises. Workers become more productive, so real wages tend to rise (capital and labour are complements). But each additional unit of capital adds less than the previous one (diminishing returns), so just accumulating more capital doesn't sustain growth forever — that requires better technology.</div>
+<p class="why"><b>Long-run effect on growth:</b> Through Solow lens, ↑K eventually hits diminishing returns and stops adding to per-capita growth. Only g (technology) sustains long-run per-worker growth.</p>
+</div>
+
+<div class="var-block">
+<h4><span class="arrow up">↑L</span> Labour force rises</h4>
+<p class="why"><b>Triggers:</b> Immigration, higher participation rate, larger working-age population.</p>
+<div class="chain">↑L (labour force) → ↑Ȳ (potential output rises; LRAS shifts right) → ↓K/L (capital per worker = k falls, since same K spread across more workers) → ↓y (output per worker = Y/L falls in short run)<br>
+Real wages (W/P) may fall (more labour competing for jobs)<br>
+Eventually capital accumulates to restore old k (capital per worker)</div>
+<div class="plain-eng"><b>In plain English:</b> When more workers join the labour force (immigration, baby boomers entering work, higher participation), total output rises because there are more producers. But existing capital (machines, factories) has to be shared among more workers, so output per worker drops. With more job-seekers competing, real wages may also fall. Over time, the economy builds more capital to "catch up" with the larger workforce.</div>
+<p class="why"><b>In Solow:</b> Equivalent to a higher n. Break-even line steepens; k* falls; y* falls (per worker, even though total Y rises).</p>
+</div>
+
+<div class="var-block">
+<h4><span class="arrow up">↑A</span> Technology / TFP rises</h4>
+<p class="why"><b>Triggers:</b> Innovation, R&D investment, technology adoption.</p>
+<div class="chain">↑A (technology / total factor productivity) → ↑Y (output) at every (K, L) → both ↑MPK (marginal product of capital) AND ↑MPL (marginal product of labour) → both wages (W/P = MPL) and capital income (R/P = MPK) rise<br>
+LRAS curve shifts RIGHT (potential output Ȳ rises)<br>
+In Solow with g (technology growth rate): continuous ↑A drives long-run per-capita growth</div>
+<div class="plain-eng"><b>In plain English:</b> Better technology means the same machines and workers produce more stuff. It's the only true "free lunch" in economics — output rises without using more inputs. Everyone wins: wages rise because workers are more productive, and capital owners earn more because their machines do more. This is why all rich countries spend enormous amounts on R&D, education, and innovation — it's literally the only sustainable path to higher living standards over the long run.</div>
+<p class="why"><b>This is the only true free lunch in macro.</b> ↑A increases output without requiring more inputs. It's why policymakers obsess over innovation, education, and R&D — these are the only paths to sustained per-capita growth.</p>
+</div>
+
+<div class="var-block">
+<h4><span class="arrow">Supply shock</span> Adverse supply shock (oil, war, pandemic)</h4>
+<div class="chain">Adverse shock (oil, war, pandemic) → input costs rise for firms → firms must charge higher P (price level) at every Y (output) → SRAS curve (short-run aggregate supply) shifts UP/LEFT<br>
+Short-run equilibrium: ↑P AND ↓Y simultaneously (= STAGFLATION — both bad)<br>
+↑u (unemployment, by Okun's law: lower Y → higher u)<br>
+Long-run: wages and P<sup>e</sup> (expected prices) adjust, SRAS drifts back, but P stays permanently higher than before</div>
+<div class="plain-eng"><b>In plain English:</b> When something disrupts production capacity — a war, pandemic, oil crisis, or supply chain shock — every firm in the economy faces higher costs for inputs like energy, materials, or labour. To stay profitable they raise prices, but consumers buy less of everything, so output falls. The economy ends up with the worst of both worlds: rising prices AND rising unemployment at the same time. This is "stagflation," and it's policy-makers' nightmare because the usual tools either fight inflation OR support output, but not both.</div>
+<p class="why"><b>Policy dilemma:</b> Expansionary monetary policy restores Y but worsens π. Or wait for natural adjustment (slow, painful). Or supply-side intervention (subsidies for inputs) — best if achievable, slow if not.</p>
+<div class="examphrase"><b>Exam phrasing (V22, V20):</b> "An exogenous supply shock from [war / COVID] is shown in Figure A. How will this affect natural rate of output, natural rate of unemployment, and prices in the short run?"</div>
+</div>
+
+<!-- =============== SOLOW =============== -->
+<h2 id="sec-solow">5. Solow Growth Variables</h2>
+
+<div class="var-block">
+<h4><span class="arrow up">↑s</span> Saving rate rises</h4>
+<div class="chain">↑s (saving rate — fraction of output saved) → ↑sf(k) at every k (capital per worker) → saving curve shifts UP in Solow diagram<br>
+Intersection with break-even line (δ+n+g)·k moves RIGHTWARD<br>
+→ ↑k* (steady-state capital per worker rises)<br>
+→ ↑y* (steady-state output per worker = √k* rises)<br>
+But: ↑saving means ↓consumption (c* = (1−s)·y*) in short run (transitional dip before c* eventually rises)<br>
+Long-run effect on growth RATE: zero (only g — technology growth — sustains per-capita growth)</div>
+<div class="plain-eng"><b>In plain English:</b> When people save more, the economy can build more machines and equipment per worker. Each worker becomes more productive, so output per worker rises. The catch: more saving means less consumption today. So there's a short-run pain (people consuming less) for long-run gain (everyone richer in the future). This trade-off is why countries can't just save their way to prosperity — they have to balance present sacrifice with future gain.</div>
+<p class="why"><b>Trade-off:</b> Higher s means lower C today but higher Y* and C* eventually. The "Golden Rule" s maximises long-run C*. If country is below s<sub>gold</sub>, raising s eventually raises C*.</p>
+<div class="examphrase"><b>Exam phrasing:</b> "Country B has a higher saving rate than Country A. How does this affect their steady-state outcomes?"</div>
+</div>
+
+<div class="var-block">
+<h4><span class="arrow up">↑n</span> Population growth rises</h4>
+<div class="chain">↑n (population growth rate) → break-even line (δ+n+g)·k steepens (need more investment to equip new workers)<br>
+Intersection with sf(k) moves LEFTWARD<br>
+→ ↓k* (steady-state capital per worker; capital "diluted" across more workers)<br>
+→ ↓y* (lower steady-state output per worker)<br>
+But total Y (output) grows at higher rate (n+g instead of just g)<br>
+Per-capita Y growth unchanged (still equal to g — technology growth)</div>
+<div class="plain-eng"><b>In plain English:</b> If population grows fast, the existing capital (machines, factories, tools) has to be shared among more workers. Each worker now has less to work with, so output per worker drops. Total output of the country grows faster (more people working), but the average person isn't necessarily better off — only the LEVEL of per-worker income falls, not its growth rate. This is one reason why economists worry about rapid population growth in low-income countries.</div>
+<p class="why"><b>The Malthusian trap (extreme case):</b> When ↑n is too rapid, capital per worker can't keep up, y* falls below subsistence. Modern theory adds technology to escape this trap.</p>
+</div>
+
+<div class="var-block">
+<h4><span class="arrow up">↑δ</span> Depreciation rises</h4>
+<div class="chain">↑δ (depreciation rate — fraction of capital that wears out per year) → break-even line (δ+n+g)·k steepens<br>
+→ ↓k* (steady-state capital per worker), ↓y* (steady-state output per worker) — similar effect to ↑n<br>
+More capital needed just to replace what wears out, less left for net new capital</div>
+<div class="plain-eng"><b>In plain English:</b> When capital wears out faster (think IT equipment vs. brick buildings), the economy has to spend more just to maintain the existing stock — there's less left over for net new capital. The steady-state level of capital per worker falls, and so does output per worker. Faster-depreciating modern capital is one reason why advanced economies need higher investment rates than older economies did to maintain the same per-capita capital stock.</div>
+<p class="why"><b>Causes:</b> Faster-wearing technology (IT depreciates faster than buildings), natural disasters, war damage.</p>
+</div>
+
+<div class="var-block">
+<h4><span class="arrow up">↑g</span> Technology growth rises</h4>
+<div class="chain">↑g (technology growth rate) → break-even line (δ+n+g)·k steepens (more "dilution" from effective worker growth)<br>
+In level form: ↓k*, ↓y* per effective worker<br>
+But per-capita y (output per worker) grows at rate g — so long-run per-capita growth rate RISES<br>
+Most important long-run policy variable for living standards</div>
+<div class="plain-eng"><b>In plain English:</b> Technology growth is the most important long-run variable. When ideas, innovations, and productivity improvements happen faster, every worker becomes more productive every year forever. This is the only source of sustained increases in living standards — pure capital accumulation eventually runs out of steam due to diminishing returns. This is why governments spend huge amounts on R&D, education, and patent protection — they're trying to raise g.</div>
+<p class="why"><b>The key insight:</b> g is the ONLY thing that drives sustained long-run growth in living standards. All advanced economies prioritise R&D, education, innovation precisely for this reason.</p>
+<div class="examphrase"><b>Exam phrasing:</b> "Country B has higher g than Country A. In the long run, which country has higher growth of output per worker?" — Answer: B grows at rate g_B which is higher.</div>
+</div>
+
+<!-- =============== LABOR / INFLATION =============== -->
+<h2 id="sec-labor">6. Labour Market & Inflation Variables</h2>
+
+<div class="var-block">
+<h4><span class="arrow up">↑u</span> Unemployment rises</h4>
+<p class="why"><b>Triggers:</b> Recession (cyclical), structural shifts in industries, technology displacement, minimum wage above market clearing.</p>
+<div class="chain">↑u (unemployment rate) → by Okun's law: ↓Y (output drops roughly 2% per 1 percentage point rise in u)<br>
+→ ↓C (consumption — lower aggregate income means less spending)<br>
+→ by Phillips curve: ↓π (inflation pressure eases when u &gt; u<sub>n</sub>, where u<sub>n</sub> = natural rate of unemployment)</div>
+<div class="plain-eng"><b>In plain English:</b> When more people are unemployed, the country produces less stuff overall (Okun's law: roughly 2% drop in output for every 1 percentage point rise in unemployment). People who lose jobs lose income, so they spend less, which hurts other businesses and may trigger more layoffs. The one silver lining is that with weaker demand, inflation pressure eases — wages and prices stabilize or fall, which is why central banks accept some unemployment to fight inflation.</div>
+<p class="why"><b>Three types of u:</b> Frictional (job-matching), Structural (wage rigidities), Cyclical (recession). u<sub>n</sub> = frictional + structural. Cyclical u is what active stabilization policy targets.</p>
+</div>
+
+<div class="var-block">
+<h4><span class="arrow up">↑π</span> Inflation rises</h4>
+<p class="why"><b>Triggers:</b> ↑M growth, demand shock (↑G or ↑AD), supply shock (cost-push, oil), depreciation (imported inflation).</p>
+<div class="chain">↑π (inflation rate) → ↑i (nominal interest rate rises via Fisher equation: i = r + π<sup>e</sup>)<br>
+↑π → ↓real wages (W/P falls if nominal wages W don't keep pace) → ↓C (consumption)<br>
+↑π → shoe-leather costs, menu costs, redistribution from creditors to debtors<br>
+↑π over time → ↑π<sup>e</sup> (expected inflation rises) → self-fulfilling cycle</div>
+<div class="plain-eng"><b>In plain English:</b> Inflation eats away at the real value of money. If your wages don't rise as fast as prices, your buying power drops — you can afford less even though the number on your paycheck looks the same. Inflation also hurts savers (cash loses value) and helps borrowers (debt repaid in cheaper money). The biggest danger is that once inflation persists, people EXPECT more inflation and start bargaining for higher wages and setting higher prices, making it self-reinforcing. Central banks fight inflation hard precisely to prevent this spiral.</div>
+<p class="why"><b>Worst case:</b> Hyperinflation (monthly π &gt; 50%). Money stops functioning as a store of value. Economy reverts to barter or foreign currency.</p>
+</div>
+
+<div class="var-block">
+<h4><span class="arrow up">↑V</span> Velocity of money rises</h4>
+<p class="why"><b>Triggers:</b> Technology (faster payments), financial innovation, lower money-holding costs.</p>
+<div class="chain">From the Quantity Theory equation M·V = P·Y (where M = money supply, V = velocity, P = price level, Y = real output):<br>
+↑V (velocity — how often money changes hands per year) with M fixed → P·Y rises proportionally<br>
+If real Y fixed: ↑P (price level rises = inflation)<br>
+If real Y can adjust: mixed effect on P and Y</div>
+<div class="plain-eng"><b>In plain English:</b> Velocity is how often money "changes hands" per year. If V rises (people spend faster), the same amount of money supports more transactions, which raises nominal output (P × Y). With output fixed, this just means prices rise. Faster digital payments, financial innovation, or panic during inflation (people spend cash fast to avoid losing value) can all raise V. The opposite happens in recessions when people hoard cash.</div>
+<p class="why"><b>In practice:</b> V has been falling in many advanced economies post-2008 — money "sitting" in bank reserves rather than being spent. This is why QE didn't cause the inflation many feared in 2010s.</p>
+</div>
+
+<!-- =============== COMBINED SCENARIOS =============== -->
+<h2 id="sec-combos">7. Combined Scenarios — Multi-Variable Stories</h2>
+
+<div class="var-block">
+<h4>Scenario: Recession</h4>
+<p class="why"><b>Trigger chain:</b> Negative demand shock (financial crisis, confidence collapse, external shock).</p>
+<div class="chain">↓Confidence → ↓I (investment — firms postpone projects) → ↓Y (output) → ↓C (consumption, via lower Yd = disposable income) → ↓Y again (multiplier effect)<br>
+↓Y → ↓money demand → ↓r (real interest rate falls naturally)<br>
+↑u (unemployment rises, by Okun) → ↓π (inflation falls, by Phillips)<br>
+Policy response: ↓r (central bank cuts rates), ↑G (government does fiscal stimulus)</div>
+<div class="plain-eng"><b>In plain English:</b> A recession usually starts with something that scares businesses and consumers — a financial crisis, market crash, or external shock. Firms get nervous and postpone investment. Workers get laid off, so households cut spending. The whole thing snowballs as one round of cuts triggers another. Standard policy response: the central bank cuts interest rates aggressively, and the government boosts spending or cuts taxes to fill the gap left by collapsing private demand.</div>
+<p class="why"><b>Diagrams:</b> AD shifts left → SR: ↓Y, ↓P; LR: SRAS adjusts down, returns to Y̅ at lower P. Or with IS-LM: IS shifts left → Y↓, r↓.</p>
+</div>
+
+<div class="var-block">
+<h4>Scenario: Boom (above potential)</h4>
+<div class="chain">Positive shock (↑confidence, ↑G = govt spending, ↑M = money supply) → AD curve (aggregate demand) shifts right → Y (output) rises ABOVE Ȳ (potential output)<br>
+u (unemployment) falls below u<sub>n</sub> (natural rate of unemployment — tight labour market)<br>
+↑π (inflation, by Phillips curve — demand pressure)<br>
+Eventually ↑π<sup>e</sup> (expected inflation) → SRAS curve (short-run aggregate supply) shifts up → Y returns to Ȳ but at higher P (price level)</div>
+<div class="plain-eng"><b>In plain English:</b> An overheating economy looks great at first — strong demand, lots of jobs, rising incomes. But when output pushes above potential Y̅, employers compete fiercely for the few remaining workers, pushing wages up. Higher labour costs feed into prices, so inflation rises. If not checked, inflation expectations get embedded and the economy ends up with permanently higher prices but no extra real output. Central banks raise rates to "cool down" booms before they spiral.</div>
+<p class="why"><b>Policy concern:</b> If left unchecked, boom causes persistent inflation. Central banks raise r to cool things down.</p>
+</div>
+
+<div class="var-block">
+<h4>Scenario: Oil shock (1973-style)</h4>
+<div class="chain">↑oil price → ↑input costs for all firms<br>
+SRAS curve (short-run aggregate supply) shifts UP (cost-push) → STAGFLATION: ↓Y (output falls) AND ↑P (prices rise) simultaneously<br>
+↑u (unemployment rises, by Okun's law)<br>
+↑π (inflation rises) despite ↓Y — this confused economists in the 1970s, broke the simple Phillips curve<br>
+Eventually wages adjust, SRAS drifts back. P (price level) remains permanently higher than before.</div>
+<div class="plain-eng"><b>In plain English:</b> When oil prices spike, every business that uses energy (which is basically every business) sees its costs jump overnight. Firms try to maintain margins by raising prices, but consumers can't afford as much, so output falls. You get both rising prices AND rising unemployment — the policy makers' worst case. There's no easy fix: cutting rates restores output but adds to inflation; raising rates fights inflation but deepens the recession. Real-world example: Volcker's Fed in 1979-82 chose to tighten aggressively, causing severe recession to finally break the inflation cycle.</div>
+<p class="why"><b>Policy dilemma:</b> Easing monetary (↓r) restores Y but worsens π. Tightening (↑r) controls π but worsens Y. Volcker (Fed Chair, 1979-87) chose tightening — caused deep recession but broke the inflation cycle.</p>
+</div>
+
+<div class="var-block">
+<h4>Scenario: COVID-style shock (2020)</h4>
+<p class="why"><b>Dual shock:</b> Both supply AND demand. Lockdowns disrupted production (SRAS up) AND people stopped consuming (AD down).</p>
+<div class="chain">↓Production (lockdowns) → SRAS curve (short-run aggregate supply) shifts left<br>
+↓Demand (fear, lost jobs) → AD curve (aggregate demand) shifts left<br>
+Net: ↓Y (output) certain; P (price level) direction depends on which shock dominates<br>
+Policy response: aggressive ↓r (central bank cuts rates to zero) + huge ↑G (massive fiscal stimulus)<br>
+Result: V-shaped recovery in Y; later, the stimulus + post-pandemic demand surge contributed to 2022 inflation surge</div>
+<div class="plain-eng"><b>In plain English:</b> COVID was unusual because it hit both sides of the economy at once. Lockdowns prevented workers from producing (a supply shock), while fear and unemployment cut consumer spending (a demand shock). Output crashed regardless of policy. Governments responded with the biggest stimulus in history — near-zero rates plus massive fiscal support. This averted depression but, combined with snapped-back demand once economies reopened, fueled the 2022 inflation surge. A reminder that policy choices echo for years afterwards.</div>
+</div>
+
+<div class="var-block">
+<h4>Scenario: Hyperinflation</h4>
+<div class="chain">Government finances deficit by printing M (money supply) → ↑M growth at very high rates<br>
+↑π (inflation) becomes self-fulfilling: people lose faith in currency<br>
+V (velocity — how fast money is spent) rises sharply (people spend cash quickly to avoid losing value)<br>
+Both ↑M and ↑V both raise P (price level) — from M·V = P·Y → spirals out of control<br>
+Real Y (real output) collapses (money no longer functions as medium of exchange)</div>
+<div class="plain-eng"><b>In plain English:</b> Hyperinflation starts when a government can't fund itself through normal taxes or borrowing, so it just prints money. Prices rise. People realize their money is losing value daily, so they rush to spend it before it loses more — which makes prices rise even faster. Soon people refuse to use the currency at all, switching to foreign money or barter. The real economy collapses because basic transactions become impossible. The only way out is usually a drastic regime change: a new currency, abandoning fiscal deficits, often political upheaval.</div>
+<p class="why"><b>Historical examples:</b> Weimar Germany 1923 (monthly π reached 29,500%), Zimbabwe 2008, Venezuela 2010s.</p>
+</div>
+
+<!-- =============== MASTER TABLE =============== -->
+<h2 id="sec-master">8. Master Cheat Table — Every Variable in One Row</h2>
+
+<table>
+<tr><th>Variable changes</th><th>Effect on Y</th><th>Effect on r</th><th>Effect on P (long run)</th><th>Effect on e</th><th>Curve that shifts</th></tr>
+
+<tr><td>↑G (fiscal expansion, closed)</td><td>↑</td><td>↑</td><td>↑ slightly</td><td>—</td><td>IS right</td></tr>
+<tr><td>↑G (floating ER)</td><td>—</td><td>r = r*</td><td>—</td><td>↑ (appreciation)</td><td>IS* right, cancelled</td></tr>
+<tr><td>↑G (fixed ER)</td><td>↑↑ (full effect)</td><td>r = r*</td><td>↑ slightly</td><td>fixed</td><td>IS* + LM* right</td></tr>
+<tr><td>↓T (tax cut)</td><td>↑</td><td>↑</td><td>↑ slightly</td><td>↑ (floating)</td><td>IS right (smaller than ↑G)</td></tr>
+<tr><td>↑M (monetary expansion, closed)</td><td>↑</td><td>↓</td><td>↑ (long run, money neutrality)</td><td>—</td><td>LM right</td></tr>
+<tr><td>↑M (floating ER)</td><td>↑</td><td>r = r*</td><td>↑</td><td>↓ (depreciation)</td><td>LM* right</td></tr>
+<tr><td>↑M (fixed ER)</td><td>—</td><td>r = r*</td><td>—</td><td>fixed</td><td>None (reversed)</td></tr>
+<tr><td>↑r (caused by ↑r* or ↓M)</td><td>↓</td><td>↑</td><td>↓</td><td>↑ (capital inflows)</td><td>Move along IS</td></tr>
+<tr><td>↑P (price level rises)</td><td>↓</td><td>↑</td><td>—</td><td>—</td><td>LM left (M/P falls)</td></tr>
+<tr><td>↑e (currency appreciates)</td><td>↓ (lower NX)</td><td>r = r*</td><td>—</td><td>—</td><td>Move along IS*</td></tr>
+<tr><td>↓e (currency depreciates)</td><td>↑ (higher NX)</td><td>r = r*</td><td>↑ (imported inflation)</td><td>—</td><td>Move along IS*</td></tr>
+<tr><td>Tariff (under fixed ER)</td><td>↑</td><td>r = r*</td><td>↑</td><td>fixed</td><td>IS* + LM* right</td></tr>
+<tr><td>Adverse supply shock</td><td>↓ (stagflation)</td><td>↑ slightly</td><td>↑ permanently</td><td>—</td><td>SRAS up/left</td></tr>
+<tr><td>↑u (unemployment)</td><td>↓ (Okun)</td><td>↓ (lower Y)</td><td>↓ (Phillips)</td><td>—</td><td>—</td></tr>
+<tr><td>↑s (saving rate, Solow)</td><td>↑Y* level, growth unchanged</td><td>↓ (more savings supply)</td><td>—</td><td>—</td><td>sf(k) up</td></tr>
+<tr><td>↑n (population growth, Solow)</td><td>↓y* level, total Y grows faster</td><td>—</td><td>—</td><td>—</td><td>Break-even line up</td></tr>
+<tr><td>↑g (tech growth, Solow)</td><td>↓y* in levels, ↑ per-capita growth rate</td><td>—</td><td>—</td><td>—</td><td>Break-even line up</td></tr>
+<tr><td>↑MPC</td><td>multiplier bigger, Y more responsive</td><td>—</td><td>—</td><td>—</td><td>IS steeper</td></tr>
+<tr><td>↑π<sup>e</sup></td><td>— (long run)</td><td>r unchanged; ↑i</td><td>↑π actual (self-fulfilling)</td><td>—</td><td>Phillips up</td></tr>
+<tr><td>↑A (technology level)</td><td>↑Y̅</td><td>↑ (higher MPK)</td><td>↓ (more supply)</td><td>—</td><td>LRAS right</td></tr>
+</table>
+
+<hr>
+
+<div class="intro" style="margin-top: 30px;">
+<b>Final tip for exam:</b> When the exam asks "what happens when X changes", build the chain step-by-step out loud (or on paper) and never skip a link. Example: ↑G → ↑PE → ↑Y → ↑Yd → ↑C → further ↑Y (multiplier). The grader can follow each arrow even if your final answer is slightly off. Skipping arrows = lost marks.<br><br>
+And remember: <b>r = r*</b> under perfect capital mobility is the absolute foundation of Mundell-Fleming. If you forget that, every Mundell-Fleming answer falls apart. If you remember nothing else, remember this.
+</div>
+
+</body>
+</html>
