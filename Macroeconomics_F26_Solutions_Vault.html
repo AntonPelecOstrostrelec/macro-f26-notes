@@ -16,6 +16,9 @@
   th { background: #134e9a !important; color: white !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
   .problem { background: #fff8e1 !important; border-left: 4px solid #f9a825; padding: 12px 18px; margin: 14px 0; border-radius: 3px; -webkit-print-color-adjust: exact; print-color-adjust: exact; page-break-inside: avoid; }
   .problem b { color: #5d4037; }
+  .verbatim { background: #ede7f6 !important; border-left: 4px solid #5e35b1; padding: 12px 18px; margin: 14px 0 6px 0; border-radius: 3px; -webkit-print-color-adjust: exact; print-color-adjust: exact; page-break-inside: avoid; font-style: italic; }
+  .verbatim b { color: #311b92; font-style: normal; }
+  .verbatim .label { font-style: normal; font-weight: bold; color: #311b92; display: block; margin-bottom: 4px; font-size: 0.9em; letter-spacing: 0.3px; }
   .step { background: #f5f7fa !important; border-left: 3px solid #134e9a; padding: 8px 14px; margin: 8px 0; font-family: 'Cambria Math', Georgia, serif; font-size: 0.95em; -webkit-print-color-adjust: exact; print-color-adjust: exact; page-break-inside: avoid; }
   .answer { background: #e8f5e9 !important; border-left: 4px solid #2e7d32; padding: 10px 16px; margin: 10px 0; border-radius: 3px; -webkit-print-color-adjust: exact; print-color-adjust: exact; page-break-inside: avoid; }
   .answer b { color: #1b5e20; }
@@ -108,6 +111,21 @@
 
 <h2>PS1 — Jura-land IS-LM Case Study (30%)</h2>
 
+<div class="verbatim">
+<span class="label">VERBATIM EXAM QUESTION (S25 PS1):</span>
+"Consider the closed economy of Jura-land described by the following equations: C = 150 + 0.75(Y − T), I = 300, T = 150, G = 300.
+(a) Find the equilibrium level of output Y.
+Now suppose investment depends on the interest rate: I = 500 − 150r.
+(b) Derive the IS curve.
+(c) Explain what the IS curve represents and the relationship between the two variables on the axes.
+The money market: (M/P)<sup>d</sup> = Y − 80r, M = 13,100, P = 10.
+(d) Derive the LM curve.
+(e) Explain what the LM curve represents.
+(f) Find the equilibrium level of output Y* and the interest rate r*.
+(g) Now suppose the government implements a contractionary fiscal policy by raising T from 150 to 300. Find the new equilibrium.
+(h) In your opinion, how will this policy affect society as a whole?"
+</div>
+
 <div class="problem">
 <b>Setup:</b> Closed economy Jura-land.<br>
 C = 150 + 0.75(Y − T), I = 300 (initially fixed), T = 150, G = 300.<br>
@@ -191,6 +209,16 @@ Later: T raised to 300.
 
 <h2>PS2 — True/False (10%)</h2>
 
+<div class="verbatim">
+<span class="label">VERBATIM EXAM QUESTION (S25 PS2):</span>
+"Determine whether each of the following statements is true or false, and briefly justify your answer.
+(a) The marginal propensity to consume (MPC) can be greater than 1 but less than 0.
+(b) According to the classical model, real variables are not affected by nominal changes in the long run.
+(c) A production function in which doubling inputs raises output from 5 to 7 displays decreasing returns to scale.
+(d) According to the Phillips curve, reducing inflation in the short run requires accepting higher unemployment.
+(e) Real GDP measures output at current prices, while nominal GDP adjusts for inflation."
+</div>
+
 <table>
 <tr><th>#</th><th>Statement</th><th>Answer</th><th>Reasoning</th></tr>
 <tr><td>a</td><td>MPC > 1 but < 0</td><td><span class="false">FALSE</span></td><td>Mathematically impossible. MPC is between 0 and 1.</td></tr>
@@ -201,6 +229,15 @@ Later: T raised to 300.
 </table>
 
 <h2>PS3 — Mundell-Fleming: Denmark (fixed) vs Germany (floating) (20%)</h2>
+
+<div class="verbatim">
+<span class="label">VERBATIM EXAM QUESTION (S25 PS3):</span>
+"Denmark has a fixed exchange rate, pegging the Danish krone (DKK) to the euro. Germany operates with a floating exchange rate (vs the US dollar).
+(a) Explain the difference between fixed and floating exchange rate regimes.
+(b) Germany implements an expansionary fiscal policy by raising government spending. Which curve(s) shift, and what is the effect on output and the exchange rate?
+(c) Denmark introduces import tariffs. Explain the effect on net exports, the IS or LM curve, the exchange rate, and output.
+(d) The Danish interest rate rises. Explain the impact on investment, consumption, and output."
+</div>
 
 <h4>(a) Difference between fixed and floating ER</h4>
 <div class="answer"><b>Model answer:</b> Under a fixed ER regime, the central bank commits to maintaining e constant against another currency by buying/selling reserves. Money supply M becomes endogenous, sacrificing monetary independence. Under floating ER, e is determined by market forces, and the CB can independently control M, but e fluctuates with capital flows and trade. Denmark pegs DKK to EUR (fixed). Germany within euro area floats against USD.</div>
@@ -215,6 +252,16 @@ Later: T raised to 300.
 <div class="answer"><b>Model answer:</b> Direct effect: higher r raises cost of capital (r + δ), reducing investment I. Indirect effect: lower I lowers Y, which lowers Yd, which lowers C. Both I and C fall; G unchanged. Net: Y falls through both investment and consumption channels.</div>
 
 <h2>PS4 — Solow Growth, Country A vs B (20%)</h2>
+
+<div class="verbatim">
+<span class="label">VERBATIM EXAM QUESTION (S25 PS4):</span>
+"Consider two countries with the same production function y = k<sup>1/2</sup> and the same population growth rate n = 0.04. They differ in saving rate, depreciation, and technology growth.
+Country A: s = 0.15, δ = 0.03, g = 0.02.
+Country B: s = 0.20, δ = 0.03, g = 0.04.
+(a) For each country, compute the steady-state values of capital per worker k*, output per worker y*, saving per worker, and consumption per worker.
+(b) Discuss the differences between the two countries.
+(c) Is the steady-state level of capital always equal to the Golden Rule level? Why or why not?"
+</div>
 
 <div class="problem">
 <b>Setup:</b> y = k<sup>1/2</sup>. Both countries: n = 0.04. Same n. Differ in s and g.<br>
@@ -265,6 +312,16 @@ Country B: s = 0.20, δ = 0.03, g = 0.04 → δ + n + g = <b>0.11</b>
 
 <h2>PS5 — Consumption + Danish CPI (20%)</h2>
 
+<div class="verbatim">
+<span class="label">VERBATIM EXAM QUESTION (S25 PS5):</span>
+"(a) Explain Friedman's Permanent Income Hypothesis (PIH) and discuss how it differs from Keynes's consumption function.
+The table below shows annual inflation rates by CPI category in Denmark.
+(b) Which category shows the largest fluctuation in inflation? Compute the difference between maximum and minimum.
+(c) Why does the inflation rate in the 'Education' category remain unchanged?
+(d) Why is 'Restaurants and hotels' particularly volatile?
+(e) If housing and energy inflation outpaces wage growth, how would this affect aggregate output Y? Use the Y = C + I + G framework."
+</div>
+
 <h4>(a) Friedman's PIH vs Keynes</h4>
 <div class="answer"><b>Model answer (3 paragraphs):</b><br><br>
 <b>Keynes (1936) Absolute Income Hypothesis:</b> C = a + b·Yd, where b (MPC) ∈ (0,1). Current disposable income is the main determinant. APC = a/Y + b falls as Y rises.<br><br>
@@ -288,6 +345,20 @@ Country B: s = 0.20, δ = 0.03, g = 0.04 → δ + n + g = <b>0.11</b>
 <h1 id="s25re">S25 Re-exam (August 2025) — Full Worked Solutions</h1>
 
 <h2>PS1 — Eco-land Open Economy (30%)</h2>
+
+<div class="verbatim">
+<span class="label">VERBATIM EXAM QUESTION (S25_RE PS1):</span>
+"Consider the open economy of Eco-land described by Y = C + I + G + NX. The economy is currently characterised by:
+C = 400 + 0.70(Y − T), I = 1,000, T = 400, G = 800, X = 800, M = 800 (so NX = 0).
+(a) Find the equilibrium level of output Y and consumption C.
+(b) What is the government expenditure multiplier?
+The government wishes to reduce its budget deficit. Two options are considered:
+Option 1: Reduce G by 400.
+Option 2: Raise T to 800.
+(c) For each option, calculate the new equilibrium level of Y and C.
+(d) Which policy would you prefer? Justify your answer.
+(e) Explain why net exports NX have a negative relationship with the exchange rate e."
+</div>
 
 <div class="problem">
 <b>Setup:</b> Open economy Eco-land. Y = C + I + G + NX.<br>
@@ -356,6 +427,16 @@ The G-multiplier is exactly 1 unit larger than the T-multiplier. <b>Why?</b> Bec
 
 <h2>PS2 — True/False (10%)</h2>
 
+<div class="verbatim">
+<span class="label">VERBATIM EXAM QUESTION (S25_RE PS2):</span>
+"Determine whether each of the following statements is true or false, and briefly justify your answer.
+(a) An expansionary fiscal policy shifts the IS curve to the right, leading to both higher Y and higher r.
+(b) In Keynesian theory, disposable income is the main determinant of consumption.
+(c) An appreciation of the domestic currency makes exports more expensive abroad and reduces net exports.
+(d) A production function in which doubling inputs raises output from 100 to 150 exhibits increasing returns to scale.
+(e) According to the Quantity Theory of Money, an increase in the money supply M is nominal and therefore does not raise prices proportionally."
+</div>
+
 <table>
 <tr><th>#</th><th>Statement</th><th>Answer</th><th>Reasoning</th></tr>
 <tr><td>a</td><td>↑G shifts IS right → higher Y and r</td><td><span class="true">TRUE</span></td><td>Standard fiscal expansion in IS-LM.</td></tr>
@@ -366,6 +447,15 @@ The G-multiplier is exactly 1 unit larger than the T-multiplier. <b>Why?</b> Bec
 </table>
 
 <h2>PS3 — Closed-economy IS-LM Analysis (20%)</h2>
+
+<div class="verbatim">
+<span class="label">VERBATIM EXAM QUESTION (S25_RE PS3):</span>
+"Consider a closed economy described by the IS-LM model.
+(a) Explain why the LM curve slopes upward and the IS curve slopes downward.
+(b) What is the Quantity Theory of Money, and how does it explain the long-run determination of the price level?
+(c) Use the IS-LM framework to explain the effect of an expansionary monetary policy (↑M) on output and the interest rate.
+(d) Use the IS-LM framework to explain the effect of an expansionary fiscal policy (↑G or ↓T). Discuss crowding out."
+</div>
 
 <h4>(a) Why LM slopes up and IS slopes down</h4>
 <div class="answer"><b>Model answer:</b><br><br>
@@ -382,6 +472,16 @@ The G-multiplier is exactly 1 unit larger than the T-multiplier. <b>Why?</b> Bec
 <div class="answer"><b>Model answer:</b> Expansionary fiscal policy means ↑G or ↓T. The IS curve shifts RIGHT (at any r, planned expenditure is higher → higher Y). With LM unchanged, the new equilibrium has higher r and higher Y. The rise in r reduces some private investment — this is <strong>crowding out</strong>. Net effect: Y rises (but by less than the simple multiplier would predict), r rises.</div>
 
 <h2>PS4 — Solow with Two Periods (20%)</h2>
+
+<div class="verbatim">
+<span class="label">VERBATIM EXAM QUESTION (S25_RE PS4):</span>
+"Country A has the production function y = k<sup>1/2</sup> and a constant saving rate s = 0.25 and population growth rate n = 0.04. The country experiences two periods:
+Period t1: δ = 0.01, g = 0.02.
+Period t2: δ = 0.02, g = 0.01.
+(a) For each period, compute the steady-state values of k*, y*, saving per worker, and consumption per worker.
+(b) Discuss what happens to the economy between t1 and t2.
+(c) Is the steady-state level of capital always equal to the Golden Rule level? Why or why not?"
+</div>
 
 <div class="problem">
 <b>Setup:</b> Country A, two periods.<br>
@@ -432,6 +532,16 @@ t2: δ = 0.02, g = 0.01 → <b>δ + n + g = 0.07</b><br>
 
 <h2>PS5 — LCH + Danish CO2 Emissions (20%)</h2>
 
+<div class="verbatim">
+<span class="label">VERBATIM EXAM QUESTION (S25_RE PS5):</span>
+"(a) Explain Modigliani's Life-Cycle Hypothesis (LCH) and discuss how it differs from Keynes's consumption function.
+The table below shows CO2 emissions by Danish industry.
+(b) Identify the top 3 most CO2-emitting industries.
+(c) Why do financial services emit less CO2 than manufacturing?
+(d) If the government introduces a carbon tax, which industries would be most affected? How would this affect investment I and output Y?
+(e) Suggest policies to reduce CO2 emissions in transport without disrupting aggregate output."
+</div>
+
 <h4>(a) Modigliani's LCH vs Keynes</h4>
 <div class="answer"><b>Model answer:</b><br><br>
 <b>Keynes:</b> C = a + b·Yd. Consumption depends on CURRENT disposable income. APC falls as Y rises.<br><br>
@@ -462,6 +572,20 @@ Net: well-designed policy can decarbonise without contracting Y because the carb
 <p class="small">Date: 15 December 2023. 3-hour exam. First exam in the modern 5-PS format.</p>
 
 <h2>PS1 — IS-LM Case Study (25%)</h2>
+
+<div class="verbatim">
+<span class="label">VERBATIM EXAM QUESTION (V23 PS1):</span>
+"Consider a closed economy with the following equations: C = 200 + 0.60(Y − T), I = 200, T = 100, G = 250.
+(a) Find the equilibrium level of output Y using the Keynesian cross.
+Now suppose investment depends on the interest rate: I = 400 − 100r.
+(b)(i) Derive the IS curve.
+(b)(ii) What is the IS curve? Explain the relationship between the two variables on the axes.
+The money market: (M/P)<sup>d</sup> = Y − 50r, M = 11,100, P = 12.
+(c)(i) Derive the LM curve.
+(c)(ii) What is the LM curve? Explain the relationship between the two variables.
+(d) Find the equilibrium values of Y* and r*.
+(e) The government cuts taxes by 50% (T falls from 100 to 50). Find the new equilibrium."
+</div>
 
 <div class="problem">
 <b>Setup:</b> Closed economy.<br>
@@ -536,6 +660,16 @@ Then: tax cut by 50% (T = 50).
 
 <h2>PS2 — True/False (10%)</h2>
 
+<div class="verbatim">
+<span class="label">VERBATIM EXAM QUESTION (V23 PS2):</span>
+"Determine whether each of the following statements is true or false, and briefly justify your answer.
+(a) In a Cobb-Douglas production function, doubling all inputs raises output from 120 to 180 — this displays increasing returns to scale.
+(b) In the classical model, firms hire each factor until its marginal product equals its real factor price.
+(c) According to the Phillips curve, in the short run, reducing inflation requires accepting higher unemployment.
+(d) In the Keynesian cross, investment I is treated as fixed; in the IS-LM model, I is a function of the interest rate r.
+(e) The marginal propensity to consume (MPC) measures how income changes when consumption changes."
+</div>
+
 <table>
 <tr><th>#</th><th>Statement</th><th>Answer</th><th>Reasoning</th></tr>
 <tr><td>a</td><td>Doubling inputs raises Y from 120 to 180 → IRS</td><td><span class="false">FALSE</span></td><td>180/120 = 1.5 &lt; 2 → DRS.</td></tr>
@@ -547,6 +681,13 @@ Then: tax cut by 50% (T = 50).
 
 <h2>PS3 — Mundell-Fleming (20%)</h2>
 
+<div class="verbatim">
+<span class="label">VERBATIM EXAM QUESTION (V23 PS3):</span>
+"(a) Explain the difference between fixed and floating exchange rate regimes.
+(b) Under a floating exchange rate regime, what is the effect of an expansionary fiscal policy (↑G) on output and the exchange rate?
+(c) Under a floating exchange rate regime, what is the effect of introducing tariffs on imports?"
+</div>
+
 <h4>(a) Fixed vs floating</h4>
 <div class="answer">Fixed ER: central bank maintains e by intervention; M is endogenous; monetary policy ineffective. Floating ER: e is market-determined; CB independently controls M; e fluctuates.</div>
 
@@ -557,6 +698,16 @@ Then: tax cut by 50% (T = 50).
 <div class="answer">Tariffs raise NX at any e → IS* shifts right. Under floating, currency appreciates exactly enough to offset the NX rise. <b>Y unchanged, e appreciates.</b> Same outcome as fiscal expansion under floating.</div>
 
 <h2>PS4 — Solow, Two Countries (25%)</h2>
+
+<div class="verbatim">
+<span class="label">VERBATIM EXAM QUESTION (V23 PS4):</span>
+"Consider two countries with the same production function y = k<sup>1/2</sup>, the same saving rate s = 0.25, and the same population growth rate n = 0.03. They differ in depreciation and technology growth.
+Country A: δ = 0.05, g = 0.02.
+Country B: δ = 0.02, g = 0.03.
+(a) Compute the steady-state values of k*, y*, saving per worker, and consumption per worker for each country.
+(b) Discuss the differences between the two countries.
+(c) Is the steady-state level of capital always equal to the Golden Rule level? Why or why not?"
+</div>
 
 <div class="problem">
 <b>Setup:</b> y = k<sup>1/2</sup>, s = 0.25, n = 0.03 (same for both).<br>
@@ -609,6 +760,15 @@ Country B: δ = 0.02, g = 0.03 → <b>δ+n+g = 0.08</b><br>
 
 <h2>PS5 — Keynes vs LCH + Danish Data (20%)</h2>
 
+<div class="verbatim">
+<span class="label">VERBATIM EXAM QUESTION (V23 PS5):</span>
+"(a) Compare Keynes's consumption function with Modigliani's Life-Cycle Hypothesis.
+Figure 2 shows employment in three Danish industries over 2022, and Table shows CPI in 2022.
+(b)(i) Identify the employment trends in the three industries.
+(b)(ii) Explain the Phillips curve relationship between unemployment and inflation.
+(b)(iii) Does the Phillips curve relationship hold in the Danish data?"
+</div>
+
 <h4>(a) Keynes vs Modigliani's LCH</h4>
 <div class="answer"><b>Model answer:</b><br><br>
 <b>Keynes:</b> C = a + b·Yd. Consumption is driven by current disposable income. APC falls as Y rises (short-run focus).<br><br>
@@ -634,6 +794,18 @@ Both Industry 2 and Industry 8 performed well in this period.</div>
 <p class="small">Date: 16 December 2022. Older format with 5 PS but different structure (no T/F section).</p>
 
 <h2>PS1 — IS-LM Case Study (25%)</h2>
+
+<div class="verbatim">
+<span class="label">VERBATIM EXAM QUESTION (V22 PS1):</span>
+"Consider a closed economy with Y = C + I + G. Assume C = 200 + 0.75Yd, T = 200, G = 300, I = 300.
+(i) Find the equilibrium level of Y, consumption C, private saving S<sub>priv</sub>, and public saving S<sub>pub</sub>.
+(ii) Compute the government expenditure multiplier.
+Now suppose investment depends on r: I = 300 − 25r.
+(iii) Derive the IS curve.
+The money market: (M/P)<sup>d</sup> = Y − 200r, M/P = 1,100.
+(iv-v) Derive the LM curve.
+(vi) Find the equilibrium values of Y* and r*."
+</div>
 
 <div class="problem">
 <b>Setup:</b> Y = C + I + G. C = 200 + 0.75Yd, T = 200, G = 300, I = 300.<br>
@@ -691,6 +863,15 @@ Money: (M/P)<sup>d</sup> = Y − 200r, M = M/P = 1,100.
 
 <h2>PS2 — Cobb-Douglas (20%)</h2>
 
+<div class="verbatim">
+<span class="label">VERBATIM EXAM QUESTION (V22 PS2):</span>
+"Consider the Cobb-Douglas production function Y = A·L<sup>α</sup>·K<sup>β</sup> with α = β = 1/2, A = 1, K = L = 1,000.
+(i) What returns to scale does this production function display?
+(ii) Compute MPL and MPK.
+(iii) Calculate output Y.
+(iv) Compute total labour income and total capital income. Verify they sum to Y."
+</div>
+
 <div class="problem">
 Y = A·L<sup>α</sup>·K<sup>β</sup>. α = β = 1/2. A = 1, K = L = 1,000.
 </div>
@@ -728,6 +909,14 @@ Y = A·L<sup>α</sup>·K<sup>β</sup>. α = β = 1/2. A = 1, K = L = 1,000.
 
 <h2>PS3 — Short-answer concepts (20%)</h2>
 
+<div class="verbatim">
+<span class="label">VERBATIM EXAM QUESTION (V22 PS3):</span>
+"(i) Explain the difference between nominal GDP and real GDP. Which is better for measuring economic performance?
+(ii) Explain how an increase in money growth raises inflation according to the Quantity Theory of Money.
+(iii) Compare Keynes's consumption function with Modigliani's Life-Cycle Hypothesis.
+(iv) The Russia-Ukraine war triggers a supply shock affecting EU countries. How will this shock affect the natural rate of output Y̅, the natural rate of unemployment u<sub>n</sub>, and the price level P in the short run? Suggest a fiscal or monetary policy to reduce the adverse impact."
+</div>
+
 <h4>(i) Nominal vs Real GDP</h4>
 <div class="answer">Nominal GDP values output at current prices; Real GDP values it at constant base-year prices. Real GDP is better for measuring economic performance because it strips out inflation — changes reflect actual production, not price changes.</div>
 
@@ -742,6 +931,14 @@ Y = A·L<sup>α</sup>·K<sup>β</sup>. α = β = 1/2. A = 1, K = L = 1,000.
 <b>Policy options:</b> (1) Expansionary monetary (↑M) shifts AD right → Y recovers but inflation worsens. (2) Supply-side intervention (energy subsidies) shifts SRAS back without adding to demand pressure. (3) Wait — slow but natural adjustment.</div>
 
 <h2>PS4 — Solow with Population Growth (20%)</h2>
+
+<div class="verbatim">
+<span class="label">VERBATIM EXAM QUESTION (V22 PS4):</span>
+"Consider the Solow growth model with y = k<sup>1/2</sup>, s = 0.4, δ = 0.04. The population growth rate is initially n₁ = 0.04 but falls to n₂ = 0.02.
+The capital accumulation equation is Δk = s·k<sup>1/2</sup> − (δ + n)k (no technology growth).
+(i) Compute the steady-state values of k*, y*, sy*, and c* for both values of n.
+(ii) Is the steady-state level of capital always equal to the Golden Rule level? Why or why not?"
+</div>
 
 <div class="problem">
 y = k<sup>1/2</sup>, s = 0.4, δ = 0.04, n changes from n₁ = 0.04 to n₂ = 0.02.<br>
@@ -787,6 +984,15 @@ y = k<sup>1/2</sup>, s = 0.4, δ = 0.04, n changes from n₁ = 0.04 to n₂ = 0.
 
 <h2>PS5 — Danish Short-term Interest Rates Analysis (15%)</h2>
 
+<div class="verbatim">
+<span class="label">VERBATIM EXAM QUESTION (V22 PS5):</span>
+"Figure C shows Danish short-term interest rates (deposit and lending rates) from 2019 to 2022.
+(i) Explain what is meant by short-term interest rates.
+(ii) Describe the development of Danish short-term interest rates from 2019 to 2022.
+(iii) Explain the relationship between short-term interest rates and inflation.
+(iv) Explain how short-term interest rate changes will influence national output Y and investment I."
+</div>
+
 <h4>(i) Short-term interest rates definition</h4>
 <div class="answer">Short-term interest rates are rates on loans/deposits with short maturities (overnight to ~1 year). They are set by the central bank's policy actions and used in the money market for borrowing/lending between banks. They directly influence the cost of credit and money market conditions.</div>
 
@@ -804,6 +1010,17 @@ y = k<sup>1/2</sup>, s = 0.4, δ = 0.04, n changes from n₁ = 0.04 to n₂ = 0.
 <h1 id="v23re">V23 Re-exam (February 2024) — Full Worked Solutions</h1>
 
 <h2>PS1 — Open Economy Keynesian Cross (25%)</h2>
+
+<div class="verbatim">
+<span class="label">VERBATIM EXAM QUESTION (V23_RE PS1):</span>
+"Consider a small open economy with Y = C + I + G + NX.
+C = 300 + 0.8(Y − T), I = 500, T = 1,200, G = 1,500, X = 1,000, M = 800 (so NX = 200).
+(a) Find the equilibrium Y and consumption C.
+(b) Compute the government expenditure multiplier.
+(c) What is fiscal policy? Name contractionary fiscal policy tools.
+(d) The government wishes to balance the budget by adjusting G (so that G = T = 1,200). Find the new Y and C.
+(e) Discuss the effect of a tax cut (↓T) on output (no calculation needed)."
+</div>
 
 <div class="problem">
 <b>Setup:</b> Small open. Y = C + I + G + NX.<br>
@@ -848,6 +1065,16 @@ C = 300 + 0.8(Y − T), I = 500, T = 1,200, G = 1,500, NX = 1,000 − 800 = <b>2
 
 <h2>PS2 — True/False (10%)</h2>
 
+<div class="verbatim">
+<span class="label">VERBATIM EXAM QUESTION (V23_RE PS2):</span>
+"Determine whether each of the following statements is true or false, and briefly justify your answer.
+(a) The GDP deflator uses fixed weights, while the Consumer Price Index uses changing weights.
+(b) A production function in which doubling inputs raises output from 120 to 250 displays increasing returns to scale.
+(c) According to the Quantity Theory of Money, an increase in the money supply has no effect on real variables in the long run.
+(d) Okun's law indicates a negative relationship between employment and aggregate output Y.
+(e) In the Mundell-Fleming model, the IS curve is vertical due to the fixed exchange rate."
+</div>
+
 <table>
 <tr><th>#</th><th>Statement</th><th>Answer</th><th>Why</th></tr>
 <tr><td>a</td><td>GDPD uses fixed weights, CPI uses changing weights</td><td><span class="false">FALSE</span></td><td>Opposite: CPI fixed (Laspeyres); deflator current (Paasche).</td></tr>
@@ -859,6 +1086,12 @@ C = 300 + 0.8(Y − T), I = 500, T = 1,200, G = 1,500, NX = 1,000 − 800 = <b>2
 
 <h2>PS3 — IS-LM + AD-AS Shock (20%)</h2>
 
+<div class="verbatim">
+<span class="label">VERBATIM EXAM QUESTION (V23_RE PS3):</span>
+"(a) Use the IS-LM model to explain the effect of an increase in taxes (↑T) on output and the interest rate.
+(b) Figure 2 shows a positive demand shock — the AD curve shifts to the right. Explain the short-run and long-run effects on output and prices. Suggest a policy to mitigate any negative effects."
+</div>
+
 <h4>(a) Effect of ↑T</h4>
 <div class="answer">↑T reduces disposable income → ↓C → ↓PE. The IS curve shifts LEFT. New equilibrium has lower Y AND lower r. The fall in r partly recovers I, but the net effect is contractionary.</div>
 
@@ -866,6 +1099,16 @@ C = 300 + 0.8(Y − T), I = 500, T = 1,200, G = 1,500, NX = 1,000 − 800 = <b>2
 <div class="answer"><b>Short run:</b> AD shifts right (e.g., ↑G or ↑confidence). Economy moves along SRAS: P rises, Y rises above Y̅. <b>Long run:</b> rising wages and P<sup>e</sup> shift SRAS up; economy returns to Y̅ but at permanently higher P. <b>Policy to mitigate negative effects:</b> if the shock is positive (Y above Y̅, inflation rising), contractionary fiscal (↑T or ↓G) or contractionary monetary (↑r) would cool the economy and prevent persistent inflation.</div>
 
 <h2>PS4 — Solow, Two Periods (25%)</h2>
+
+<div class="verbatim">
+<span class="label">VERBATIM EXAM QUESTION (V23_RE PS4):</span>
+"Consider the Solow growth model with y = k<sup>1/2</sup>, population growth n = 0.03, and depreciation δ = 0.01 in both periods. The country experiences two periods:
+Period t1: s = 0.3, g = 0.02.
+Period t2: s = 0.4, g = 0.04.
+(a) Compute the steady-state values of k*, y*, sy*, and c* for both periods.
+(b) Discuss what happens to the economy between t1 and t2.
+(c) Is the steady-state level of capital always equal to the Golden Rule level? Why or why not?"
+</div>
 
 <div class="problem">
 y = k<sup>1/2</sup>, n = 0.03, δ = 0.01 (both periods).<br>
@@ -915,6 +1158,14 @@ t2: s = 0.4, g = 0.04 → <b>δ+n+g = 0.08</b>
 
 <h2>PS5 — PIH vs LCH + Danish CPI Data (20%)</h2>
 
+<div class="verbatim">
+<span class="label">VERBATIM EXAM QUESTION (V23_RE PS5):</span>
+"(a) Compare Friedman's Permanent Income Hypothesis (PIH) with Modigliani's Life-Cycle Hypothesis (LCH).
+(b)(i) Define the Consumer Price Index (CPI). How does it differ from the GDP deflator?
+(b)(ii) Describe the trends in the total Danish CPI and selected categories during 2022.
+(b)(iii) Compute the month-over-month percentage changes in the total CPI for each month of 2022."
+</div>
+
 <h4>(a) Friedman PIH vs Modigliani LCH</h4>
 <div class="answer"><b>Friedman PIH:</b> C depends on PERMANENT income (long-run expected income). Transitory shocks barely affect C. Households save windfalls, borrow against expected gains. <b>Modigliani LCH:</b> C depends on LIFETIME income — wealth + remaining working years × annual income, divided by total years. People save during working years, dissave in retirement. <b>Similarity:</b> both are forward-looking. <b>Difference:</b> PIH integrates over an infinite horizon (or very long); LCH has a finite life cycle with retirement as a distinct phase.</div>
 
@@ -941,6 +1192,16 @@ t2: s = 0.4, g = 0.04 → <b>δ+n+g = 0.08</b>
 <h1 id="v22re">V22 Re-exam (February 2023) — Full Worked Solutions</h1>
 
 <h2>PS1 — Small Open Economy (25%)</h2>
+
+<div class="verbatim">
+<span class="label">VERBATIM EXAM QUESTION (V22_RE PS1):</span>
+"Consider a small open economy with C = 500 + 0.6(Y − T), T = 300, G = 500, I = 500, X = 300, M = 200 (so NX = 100).
+(i) Is the government budget balanced? Is trade balanced?
+(ii) Find the equilibrium values of Y, C, private saving, public saving, and total saving. Verify the saving-investment identity.
+(iii) Imports drop to M = 100 (so NX = 200). Find the new equilibrium.
+(iv) Explain the difference between monetary and fiscal policy. Give examples of tools used in each.
+(v) Compute the government expenditure multiplier."
+</div>
 
 <div class="problem">
 C = 500 + 0.6(Y−T), T = 300, G = 500, I = 500, X = 300, M = 200, NX = X − M = <b>100</b>
@@ -990,6 +1251,13 @@ C = 500 + 0.6(Y−T), T = 300, G = 500, I = 500, X = 300, M = 200, NX = X − M 
 
 <h2>PS2 — Fisher, MPL/MPK, Consumption (20%)</h2>
 
+<div class="verbatim">
+<span class="label">VERBATIM EXAM QUESTION (V22_RE PS2):</span>
+"(i) An economy has money supply growth of 6%, real GDP growth of 4%, and a real interest rate of 1%. Calculate the nominal interest rate using the Fisher equation.
+(ii) Consider the production function Y = L<sup>0.4</sup>K<sup>0.6</sup>. Compute the marginal product of labour (MPL) and the marginal product of capital (MPK). Explain why W/P = MPL and R/P = MPK in competitive markets.
+(iii) Compare Keynes's consumption function with Friedman's Permanent Income Hypothesis."
+</div>
+
 <h4>(i) Calculate nominal interest rate i — step by step</h4>
 <div class="step">
 <b>Step 1.</b> Apply QTM in growth-rate form (V constant): %ΔM = %ΔP + %ΔY<br>
@@ -1010,6 +1278,14 @@ C = 500 + 0.6(Y−T), T = 300, G = 500, I = 500, X = 300, M = 200, NX = X − M 
 
 <h2>PS3 — Short-answer concepts (20%)</h2>
 
+<div class="verbatim">
+<span class="label">VERBATIM EXAM QUESTION (V22_RE PS3):</span>
+"(i) Differentiate between structural and frictional unemployment. How might unemployment benefits affect each type?
+(ii) Explain the difference between CPI and the GDP deflator. Which is better for measuring the cost of living?
+(iii) In the Mundell-Fleming model, explain the relationship between net exports and the exchange rate.
+(iv) Use Mundell-Fleming to analyse an expansionary fiscal policy under a floating exchange rate regime."
+</div>
+
 <h4>(i) Structural vs frictional unemployment</h4>
 <div class="answer">Frictional: time needed for job matching. Structural: wages above market clearing (minimum wage, unions). Unemployment benefits may INCREASE frictional unemployment because they reduce the urgency to accept any job — workers can hold out for better matches, lengthening search times.</div>
 
@@ -1023,6 +1299,14 @@ C = 500 + 0.6(Y−T), T = 300, G = 500, I = 500, X = 300, M = 200, NX = X − M 
 <div class="answer">IS* shifts right. With vertical LM* (Y pinned), capital flows in chasing higher r → currency appreciates → ↓NX → cancels boost. <b>Y unchanged, e appreciates. Fiscal INEFFECTIVE.</b></div>
 
 <h2>PS4 — Solow with Two Depreciation Rates (20%)</h2>
+
+<div class="verbatim">
+<span class="label">VERBATIM EXAM QUESTION (V22_RE PS4):</span>
+"Consider the Solow growth model with y = k<sup>1/2</sup> and saving function sf(k) = 0.3·k<sup>1/2</sup> (so s = 0.3). The country experiences two periods with different depreciation rates:
+T1: δ = 0.10. T2: δ = 0.07.
+(i) Compute the steady-state values of k*, y*, sy*, and c* for both periods.
+(ii) Discuss the differences. Why does the change in δ have these effects?"
+</div>
 
 <div class="problem">
 y = k<sup>1/2</sup>, sf(k) = 0.3·k<sup>1/2</sup>, n = 0 (implicit).<br>
@@ -1066,6 +1350,13 @@ T1: δ = 0.10 | T2: δ = 0.07
 
 <h2>PS5 — Denmark vs Euro Phillips (15%)</h2>
 
+<div class="verbatim">
+<span class="label">VERBATIM EXAM QUESTION (V22_RE PS5):</span>
+"The figure shows inflation rates and GDP growth rates for Denmark and the euro area from approximately 2008 to 2022.
+(i) Compare and contrast the patterns of inflation and GDP growth between Denmark and the euro area. What factors might explain any differences?
+(ii) Examine whether the Phillips curve relationship (negative relationship between unemployment proxy and inflation) holds in this data."
+</div>
+
 <div class="answer"><b>Model answer:</b> The figure shows that Denmark and the euro area generally show similar inflation patterns, with Denmark slightly more volatile. Factors causing differences: (1) Denmark has its own monetary policy (DKK pegged to EUR but not in eurozone fully), (2) different fiscal stances, (3) different industry composition (Denmark more export-oriented). GDP growth: similar broad patterns but Denmark less volatile during 2008-09 crisis. <b>Phillips curve relationship:</b> if higher GDP growth (proxy for lower u) consistently aligns with higher inflation, the Phillips curve interpretation would hold. From the data, this seems to hold for both areas — supporting Phillips curve logic.</div>
 
 <!-- ============================== V21 ============================== -->
@@ -1075,12 +1366,29 @@ T1: δ = 0.10 | T2: δ = 0.07
 
 <h2>A1 — Danish BOP Analysis (25%)</h2>
 
+<div class="verbatim">
+<span class="label">VERBATIM EXAM QUESTION (V21 A1):</span>
+"The figure shows Denmark's balance of payments (BOP) from 2010 to 2021.
+(1) Explain the concept of the balance of payments. What factors influence a country's BOP?
+(2) Discuss how a persistent trade surplus affects output via the Keynesian cross.
+(3) Explain the relationship between capital flows and the saving-investment identity (S − I = NX). What does Denmark's BOP pattern imply about its position as a net creditor or debtor?"
+</div>
+
 <div class="answer"><b>Model answer:</b><br>
 <b>1. BOP concept:</b> The balance of payments records all economic transactions between residents of a country and the rest of the world. Net values reflect current account (trade, services, income, transfers). Factors influencing it: exchange rate, foreign demand, domestic demand, competitiveness, capital flows. Denmark's BOP from 2010-2021 shows generally positive net values, indicating persistent surplus.<br><br>
 <b>2. Keynesian cross effects:</b> A persistent trade surplus (NX > 0) raises Y through Y = C + I + G + NX. Sustained NX adds to demand year after year. The economy operates closer to potential due to external demand.<br><br>
 <b>3. Capital flows and S-I:</b> By the identity S − I = NX, a trade surplus means national saving exceeds domestic investment. The surplus capital flows abroad (capital outflow), making Denmark a net creditor. Higher S provides resources for foreign investment but means less is consumed domestically.</div>
 
 <h2>A2 — Short-answer concepts (25%)</h2>
+
+<div class="verbatim">
+<span class="label">VERBATIM EXAM QUESTION (V21 A2):</span>
+"(1) Explain the difference between exogenous and endogenous variables in macroeconomic models. Give examples of each.
+(2) State Okun's law. How does it link business cycles to unemployment?
+(3) Use the Phillips curve to explain how business cycles affect inflation.
+(4) Compare Keynes's consumption function with Friedman's Permanent Income Hypothesis. What is the empirical evidence?
+(5) Discuss the role of future expectations in consumption decisions."
+</div>
 
 <div class="answer"><b>1. Exogenous vs endogenous:</b> Exogenous = determined outside the model (G, T, M). Endogenous = determined by the model (Y, r, P).<br><br>
 <b>2. Okun's law:</b> Business cycles → real GDP fluctuates → unemployment moves opposite. ΔY/Y ≈ −β(u − u<sub>n</sub>). Roughly: 1pp ↑u ↔ 2% ↓Y from potential.<br><br>
@@ -1089,6 +1397,19 @@ T1: δ = 0.10 | T2: δ = 0.07
 <b>5. Future expectations and consumption:</b> Forward-looking households (PIH, LCH) raise C today if expecting higher future income. Keynes ignores expectations.</div>
 
 <h2>A3 — Mundell-Fleming Policy Choice (25%)</h2>
+
+<div class="verbatim">
+<span class="label">VERBATIM EXAM QUESTION (V21 A3):</span>
+"Consider a small open economy with a fixed exchange rate:
+C = 0.95(Y − T), I = 250 − 10r (with r = r* = 5, so I = 200), G = 200, T = 200, NX = 50.
+(1) Find the initial equilibrium level of output Y.
+(2) The government considers three policy options:
+(a) Raise G from 200 to 250.
+(b) Cut the domestic interest rate to r = 4%.
+(c) Raise NX from 50 to 75 through trade policy.
+For each option, calculate the new equilibrium Y. Which policy is most effective? Recommend a choice with justification.
+(3) Repeat the analysis under a floating exchange rate regime. How do the recommendations change?"
+</div>
 
 <div class="problem">
 Small open, fixed ER. C = 0.95(Y−T), I = 250 − 10r (with r = r* = 5), G = 200, T = 200, NX = 50.<br>
@@ -1125,6 +1446,14 @@ I at r=5: I = 250 − 50 = 200
 
 <h2>A4 — Solow with Shifted Production (25%)</h2>
 
+<div class="verbatim">
+<span class="label">VERBATIM EXAM QUESTION (V21 A4):</span>
+"Consider the Solow growth model with production function y = 3·k<sup>1/2</sup>, saving function sf(k) = 0.24·f(k) = 0.72·k<sup>1/2</sup>, and depreciation rate δ = 0.12. Population growth n and technology growth g are both zero.
+(1) What is meant by 'the steady state'?
+(2) Compute the steady-state values of k*, y*, and c*.
+(3) Compare the steady-state k* to the Golden Rule k<sub>gold</sub>. Is the country under-saving or over-saving?"
+</div>
+
 <div class="problem">
 y = 3·k<sup>1/2</sup>, sf(k) = 0.24·f(k) = 0.72·k<sup>1/2</sup>, δ = 0.12. No n, no g specified.
 </div>
@@ -1153,12 +1482,30 @@ y = 3·k<sup>1/2</sup>, sf(k) = 0.24·f(k) = 0.72·k<sup>1/2</sup>, δ = 0.12. N
 <h1 id="v21re">V21 Re-exam (February 2022) — Full Worked Solutions</h1>
 
 <h2>A1 — Danish Labour Force Analysis (25%)</h2>
+
+<div class="verbatim">
+<span class="label">VERBATIM EXAM QUESTION (V21_RE A1):</span>
+"Figure 1 shows Danish employment by gender (men and women) from 2015 to 2021.
+(1) Discuss the short-run influences on employment in Denmark using the AD-AS framework, monetary policy, and fiscal policy.
+(2) Discuss the long-run trends visible in Figure 1. What structural factors might explain the patterns?
+(3) Discuss the future implications of these employment trends for Danish output, unemployment, and inflation."
+</div>
+
 <div class="answer"><b>Model answer:</b><br>
 <b>1. Short-run influences (AD-AS, monetary, fiscal):</b> Employment in the short run is driven by aggregate demand. Positive AD shocks (↑G, ↑M, ↑confidence) shift AD right → ↑Y → ↑employment. Negative demand shocks (financial crises, pandemics) cause ↓AD → ↓Y → ↑u. Monetary policy: ↓r raises I and C, supporting employment. Fiscal: ↑G or ↓T directly boosts demand and employment.<br><br>
 <b>2. Long-run dynamics:</b> Figure 1 shows men's employment hovering ~1,400-1,475K and women's growing steadily from ~1,250 to ~1,330K over 2015-2021 — gradual catch-up reflecting structural changes (rising female participation, gender equality policies, demographic shifts). Both genders show resilience through COVID (2020-21) with relatively modest dips. Long-run growth tracks population and participation rates, not just business cycles.<br><br>
 <b>3. Future implications:</b> Rising employment supports higher Y, lower u, possibly higher π pressure (Phillips). Sustainable if accompanied by productivity gains (g). Danish economy positioned well with high female participation supporting growth.</div>
 
 <h2>A2 — Short-answer concepts (25%)</h2>
+
+<div class="verbatim">
+<span class="label">VERBATIM EXAM QUESTION (V21_RE A2):</span>
+"(1) Explain the Quantity Theory of Money. How does it support the concept of money neutrality?
+(2) In a closed economy, why does the IS curve slope downward and the LM curve slope upward?
+(3) Under a fixed exchange rate regime, what is the effect of an expansionary monetary policy? Why?
+(4) Under a floating exchange rate regime, what is the effect of an expansionary monetary policy? Why?"
+</div>
+
 <div class="answer"><b>Model answers:</b><br>
 <b>1. QTM and money neutrality:</b> M·V = P·Y. In long run, V and real Y fixed. So ↑M → proportional ↑P. Real variables (Y, r, employment) unchanged. Classical dichotomy: nominal changes (M, P) don't affect real economy long-run.<br><br>
 <b>2. IS and LM slopes (closed economy):</b> IS slopes DOWN because lower r → ↑I → ↑PE → ↑Y. LM slopes UP because higher Y → ↑money demand → r must rise to clear money market.<br><br>
@@ -1166,6 +1513,17 @@ y = 3·k<sup>1/2</sup>, sf(k) = 0.24·f(k) = 0.72·k<sup>1/2</sup>, δ = 0.12. N
 <b>4. Floating ER + expansionary monetary:</b> ↑M shifts LM* right; capital flows out → currency depreciates → ↑NX → ↑Y. <b>Y rises, e depreciates, monetary EFFECTIVE under floating.</b></div>
 
 <h2>A3 — Open Economy Keynesian Cross (25%)</h2>
+
+<div class="verbatim">
+<span class="label">VERBATIM EXAM QUESTION (V21_RE A3):</span>
+"Consider an open economy with C = 200 + 0.85(Y − T), T = 200, G = 300, I = 100, X = 500, M = 500 (so NX = 0).
+(1) Find the equilibrium values of Y and C.
+(2) Is the economy running a trade deficit, budget deficit, both, or neither? Justify with calculations.
+(3) The government wishes to balance the budget. Consider two options:
+Option A: Raise T to 300.
+Option B: Reduce G to 200.
+For each option, compute the new equilibrium Y and C. Which policy do you recommend, and why?"
+</div>
 
 <div class="problem">
 C = 200 + 0.85(Y−T), T = 200, G = 300, I = 100, X = 500, M = 500 → NX = 0
@@ -1217,6 +1575,13 @@ C = 200 + 0.85(Y−T), T = 200, G = 300, I = 100, X = 500, M = 500 → NX = 0
 
 <h2>A4 — Solow with Population Growth (25%)</h2>
 
+<div class="verbatim">
+<span class="label">VERBATIM EXAM QUESTION (V21_RE A4):</span>
+"Consider the Solow growth model with y = k<sup>1/2</sup>, saving function sf(k) = 0.25·k<sup>1/2</sup> (s = 0.25), and population growth n = 0.03. Initially the depreciation rate is δ = 0.07.
+(1) Compute the steady-state values of k*, y*, sy*, and c*.
+(2) New technology reduces the depreciation rate to δ = 0.05. Compute the new steady-state values. Discuss the differences."
+</div>
+
 <div class="problem">
 y = k<sup>1/2</sup>, sf(k) = 0.25·k<sup>1/2</sup>, n = 0.03, δ = 0.07 (then drops to 0.05).
 </div>
@@ -1251,6 +1616,15 @@ y = k<sup>1/2</sup>, sf(k) = 0.25·k<sup>1/2</sup>, n = 0.03, δ = 0.07 (then dr
 <h1 id="v20">V20 (December 2020) — Full Worked Solutions</h1>
 
 <h2>PS1 — Closed-economy IS-LM (25%)</h2>
+
+<div class="verbatim">
+<span class="label">VERBATIM EXAM QUESTION (V20 PS1):</span>
+"Consider a closed economy with C = 250 + 0.75(Y − T), T = 200, G = 200, I = 300 − 15r.
+The money market: (M/P)<sup>d</sup> = Y − 100r, M = 52,000, P = 20.
+(a) Derive the IS curve and the LM curve.
+(b) Find the equilibrium values of Y* and r*.
+(c) The central bank implements a contractionary monetary policy by reducing M by 20% (to M = 41,600). Find the new equilibrium. Comment on the policy."
+</div>
 
 <div class="problem">
 C = 250 + 0.75(Y−T), T = 200, G = 200, I = 300 − 15r, (M/P)<sup>d</sup> = Y − 100r, M = 52,000, P = 20 → M/P = 2,600
@@ -1295,6 +1669,14 @@ C = 250 + 0.75(Y−T), T = 200, G = 200, I = 300 − 15r, (M/P)<sup>d</sup> = Y 
 
 <h2>PS2 — Cobb-Douglas + QTM (25%)</h2>
 
+<div class="verbatim">
+<span class="label">VERBATIM EXAM QUESTION (V20 PS2):</span>
+"Consider the production function Y = A·K<sup>α</sup>·L<sup>(1−α)</sup> with α = 0.6, K = 25, L = 50, A = 1.
+(a) Compute MPL and MPK.
+(b) Why are factors paid their marginal products in competitive markets? Calculate total labour income and total capital income, and verify they sum to total Y.
+(c) According to the Quantity Theory of Money, how is the inflation rate determined?"
+</div>
+
 <div class="problem">
 Y = A·K<sup>α</sup>·L<sup>(1−α)</sup>, α = 0.6, K = 25, L = 50, A = 1
 </div>
@@ -1317,6 +1699,12 @@ Y = A·K<sup>α</sup>·L<sup>(1−α)</sup>, α = 0.6, K = 25, L = 50, A = 1
 
 <h2>PS3 — Consumption + COVID Supply Shock (15%)</h2>
 
+<div class="verbatim">
+<span class="label">VERBATIM EXAM QUESTION (V20 PS3):</span>
+"(a) Compare Keynes's consumption function with Modigliani's Life-Cycle Hypothesis.
+(b) Figure A shows the AD-AS effects of the COVID-19 supply shock. How will this exogenous shock affect the natural rate of output Y̅, the natural rate of unemployment u<sub>n</sub>, and the price level P in the short term? Suggest an appropriate policy response."
+</div>
+
 <h4>(a) Keynes vs LCH</h4>
 <div class="answer"><b>Keynes:</b> short-run, current Yd drives C. <b>LCH (Modigliani):</b> long-run lifetime smoothing — C = (W + R·Y)/T. People save during working years for retirement. Short-run: Keynes predicts C falls with Y; LCH predicts smoothing across temporary shocks.</div>
 
@@ -1324,6 +1712,14 @@ Y = A·K<sup>α</sup>·L<sup>(1−α)</sup>, α = 0.6, K = 25, L = 50, A = 1
 <div class="answer">SRAS shifts up due to disruption. Y̅ unchanged (LRAS fixed by K, L, A). u<sub>n</sub> unchanged. Short run: Y falls, P rises (stagflation), u rises (Okun). Long run: SRAS drifts back as expectations adjust, but P stays elevated. <b>Policy:</b> expansionary monetary (↑M) restores Y but worsens inflation; or supply-side intervention (input subsidies) addresses the SRAS shift directly without compounding inflation.</div>
 
 <h2>PS4 — Solow with Population Growth (20%)</h2>
+
+<div class="verbatim">
+<span class="label">VERBATIM EXAM QUESTION (V20 PS4):</span>
+"Consider the Solow growth model with y = k<sup>1/2</sup>, saving function sf(k) = 0.2·k<sup>1/2</sup> (s = 0.2), and depreciation rate δ = 0.05. Two countries differ in population growth:
+Country A: n = 0.03. Country B: n = 0.05.
+(a) Compute the steady-state values of k*, y*, sy*, and c* for both countries. Why do they differ?
+(b) Define the Golden Rule level of capital. Is the steady-state level always equal to the Golden Rule level? Why or why not?"
+</div>
 
 <div class="problem">
 y = k<sup>1/2</sup>, sf(k) = 0.2·k<sup>1/2</sup>, δ = 0.05.<br>
@@ -1369,6 +1765,13 @@ Country B: n = 0.05 → δ+n = 0.10
 <div class="answer">Golden Rule: level of k that maximises consumption per worker in steady state, satisfying MPK = δ + n + g. Generally NOT equal to actual steady-state k*; depends on the country's saving rate.</div>
 
 <h2>PS5 — EU Quarterly GDP Growth (15%)</h2>
+
+<div class="verbatim">
+<span class="label">VERBATIM EXAM QUESTION (V20 PS5):</span>
+"The table shows quarterly real GDP growth rates (% change quarter-over-quarter) for several EU countries in Q1 and Q2 of 2020.
+Compare the growth performance of two countries of your choice for Q1 and Q2 2020. What exogenous shock can explain the patterns observed in the data?"
+</div>
+
 <div class="answer"><b>Model answer:</b> Compare any two EU countries (e.g., Denmark and Germany) for Q1 and Q2 2020. Denmark Q1: −1.6%, Q2: −6.8%. Germany Q1: −2.0%, Q2: −9.7%. EU-27 Q1: −3.7%, Q2: −11.8%. Denmark's recession was MILDER than EU average, Germany slightly worse than Denmark but close. <b>Exogenous shock:</b> COVID-19 pandemic lockdowns. Triggered both supply shock (production halts) and demand shock (consumer spending collapse). Q2 2020 was the deepest single-quarter recession in postwar history.</div>
 
 <!-- ============================== V20_RE ============================== -->
@@ -1376,6 +1779,13 @@ Country B: n = 0.05 → δ+n = 0.10
 <h1 id="v20re">V20 Re-exam (February 2021) — Full Worked Solutions</h1>
 
 <h2>PS1 — QTM, Fisher, MPL/MPK (20%)</h2>
+
+<div class="verbatim">
+<span class="label">VERBATIM EXAM QUESTION (V20_RE PS1):</span>
+"(a) An economy has money supply growth of 8%, real GDP growth of 3%, and a real interest rate of 2%. Use the Fisher equation and Quantity Theory of Money to compute the nominal interest rate.
+(b) For the production function Y = K<sup>0.7</sup>·L<sup>0.3</sup>, compute MPL and MPK. Explain their economic meaning.
+(c) What is meant by perfect capital mobility?"
+</div>
 
 <h4>(a) Nominal interest rate — step by step</h4>
 <div class="step">
@@ -1393,6 +1803,15 @@ Country B: n = 0.05 → δ+n = 0.10
 <div class="answer">If r ≠ r*, investors instantly move capital across borders to capture the higher return, forcing r back to equal r*. So in a small open economy, the domestic real rate must equal the world rate at all times: <b>r = r*</b>. The country is a price-taker in the world capital market.</div>
 
 <h2>PS2 — Closed Then Open Economy (25%)</h2>
+
+<div class="verbatim">
+<span class="label">VERBATIM EXAM QUESTION (V20_RE PS2):</span>
+"Consider a closed economy with C = 300 + 0.8(Y − T), T = 800, G = 1,000, I = 500.
+(a) Find the equilibrium values of Y, C, private saving S<sub>priv</sub>, and public saving S<sub>pub</sub>.
+(b) Compute the government expenditure multiplier.
+(c) The government raises T by 200 to balance the budget (T = 1,000 = G). Find the new equilibrium.
+(d) Now consider an open economy with NX = 800 − 200ε. If ε = 3, then NX = 200. Using the original closed-economy parameters except adding NX, find the new equilibrium Y and C."
+</div>
 
 <div class="problem">
 Closed: C = 300 + 0.8(Y−T), T = 800, G = 1,000, I = 500
@@ -1444,6 +1863,12 @@ Closed: C = 300 + 0.8(Y−T), T = 800, G = 1,000, I = 500
 
 <h2>PS3 — PIH/LCH + COVID Demand Shock (15%)</h2>
 
+<div class="verbatim">
+<span class="label">VERBATIM EXAM QUESTION (V20_RE PS3):</span>
+"(a) Compare Friedman's Permanent Income Hypothesis with Modigliani's Life-Cycle Hypothesis.
+(b) The COVID-19 pandemic represents a negative aggregate demand shock. Explain the short-run and long-run effects on Y, u, and P using the AD-AS framework. Suggest appropriate fiscal or monetary policy responses."
+</div>
+
 <h4>(a) PIH vs LCH</h4>
 <div class="answer"><b>Friedman PIH:</b> C depends on permanent income Y<sup>P</sup>. Transitory shocks barely move C. <b>Modigliani LCH:</b> C depends on lifetime resources, smoothed over the life cycle (saving during work, dissaving in retirement). Both are forward-looking; PIH integrates over indefinite horizon, LCH has finite life with explicit retirement phase.</div>
 
@@ -1451,6 +1876,13 @@ Closed: C = 300 + 0.8(Y−T), T = 800, G = 1,000, I = 500
 <div class="answer">AD shifts left. Short run: Y falls below Y̅; P falls; u rises (Okun). Natural rate Y̅ unchanged (LRAS doesn't shift). u<sub>n</sub> unchanged. <b>Policy:</b> expansionary monetary (↑M) or fiscal (↑G) shifts AD back right, restoring Y. Most countries did both aggressively in 2020-21.</div>
 
 <h2>PS4 — Solow with Lockdown Savings (20%)</h2>
+
+<div class="verbatim">
+<span class="label">VERBATIM EXAM QUESTION (V20_RE PS4):</span>
+"Consider the Solow growth model with y = k<sup>1/2</sup> and depreciation δ = 0.06. During the COVID lockdown, the saving rate rose from s = 0.25 to s = 0.35 because households could not spend on services.
+(a) Compute the steady-state values of k*, y*, sy*, and c* before and during lockdown.
+(b) Is the steady-state level of capital always equal to the Golden Rule level? Why or why not?"
+</div>
 
 <div class="problem">
 y = k<sup>1/2</sup>, δ = 0.06. Before lockdown: s = 0.25. During: s = 0.35.
@@ -1492,6 +1924,13 @@ y = k<sup>1/2</sup>, δ = 0.06. Before lockdown: s = 0.25. During: s = 0.35.
 <div class="answer">Standard answer: maximises c*, requires MPK = δ + n + g. Steady-state ≠ Golden Rule in general.</div>
 
 <h2>PS5 — Danish Income/Consumption Time Series (20%)</h2>
+
+<div class="verbatim">
+<span class="label">VERBATIM EXAM QUESTION (V20_RE PS5):</span>
+"Figure C shows Danish household average income, disposable income, and consumption from 2001 to 2018.
+Describe the patterns observed. How do consumption and income behave over the business cycle? Does the data support the Life-Cycle Hypothesis prediction of consumption smoothing?"
+</div>
+
 <div class="answer"><b>Model answer:</b> Figure C shows Danish household average income and consumption from 2001-2018. Income grows from ~400k to ~600k DKK; disposable income from ~250k to ~440k; consumption from ~260k to ~340k. <b>Business cycle relation:</b> consumption grows steadily but with mild dip around 2008-09 (financial crisis). Income recovered faster than consumption. <b>LCH fit:</b> aggregate data shows generally smooth consumption growth, consistent with LCH's smoothing prediction. However, consumption's lag behind income recovery suggests precautionary saving and behavioral factors.</div>
 
 <!-- ============================== V19 ============================== -->
@@ -1499,6 +1938,13 @@ y = k<sup>1/2</sup>, δ = 0.06. Before lockdown: s = 0.25. During: s = 0.35.
 <h1 id="v19">V19 (January 2020) — Full Worked Solutions</h1>
 
 <h2>PS1 — Income Shares, Fisher, Money (25%)</h2>
+
+<div class="verbatim">
+<span class="label">VERBATIM EXAM QUESTION (V19 PS1):</span>
+"(1) Suppose the marginal product of labour is MPL = 25 with L = 10 workers, and the marginal product of capital is MPK = 60 with K = 5 units of capital. Calculate total output Y, the labour share of income, and the capital share of income.
+(2) The Fisher equation states i = r + π. Assume the nominal interest rate is 3% and CPI is 125. The Central Bank's monetary policy raises CPI to 126. How will this affect the real interest rate?
+(3) What is the major opportunity cost of holding money in liquid form?"
+</div>
 
 <h4>(1) Income shares — step by step</h4>
 <div class="step">
@@ -1523,6 +1969,15 @@ y = k<sup>1/2</sup>, δ = 0.06. Before lockdown: s = 0.25. During: s = 0.35.
 <div class="answer">The major opportunity cost of holding money in liquid form is the interest forgone (the nominal interest rate i). Cash earns 0% nominal; if you instead held bonds earning i%, you'd gain that interest.</div>
 
 <h2>PS2 — Open Economy Keynesian Cross (25%)</h2>
+
+<div class="verbatim">
+<span class="label">VERBATIM EXAM QUESTION (V19 PS2):</span>
+"Consider an open economy with Y = C + I + G + NX.
+C = 250 + 0.75(Y − T), T = 1,000, G = 1,250, I = 450 − 25r (with r = 8, so I = 250), NX = 1,000 − 125ε (with ε = 4, so NX = 500).
+(1) Find the equilibrium values of Y, C, and savings (private, public, total). Verify the saving identity.
+(2) The real exchange rate ε rises to 5 (currency appreciation). Find the new equilibrium Y.
+(3) Under a floating exchange rate regime, explain the effect of expansionary fiscal policy (↑G) on Y, the exchange rate, and net exports."
+</div>
 
 <div class="problem">
 Y = C + I + G + NX. C = 250 + 0.75(Y−T), T = 1,000, G = 1,250, I = 450 − 25r (r = 8), NX = 1,000 − 125ε (ε = 4 → NX = 500). I = 250.
@@ -1562,6 +2017,19 @@ Y = C + I + G + NX. C = 250 + 0.75(Y−T), T = 1,000, G = 1,250, I = 450 − 25r
 
 <h2>PS3 — Trade Surplus + Phillips + Unemployment (20%)</h2>
 
+<div class="verbatim">
+<span class="label">VERBATIM EXAM QUESTION (V19 PS3):</span>
+"(1) When net exports X > IM (a trade surplus), which of the following statements about demand is correct?
+A. Demand for goods in the domestic economy equals total demand for domestic goods.
+B. Demand for goods in the domestic economy is GREATER than total demand for domestic goods.
+C. Demand for goods in the domestic economy is LESS than total demand for domestic goods.
+D. (formulation D from exam)
+(2) Suppose the natural rate of unemployment depends on past unemployment via the formula u<sub>n,t</sub> = 0.25·(u<sub>t-1</sub> + u<sub>t-2</sub> + u<sub>t-3</sub> + u<sub>t-4</sub>).
+(a) Why might u<sub>n</sub> depend on past unemployment? Explain hysteresis.
+(b) Explain how a small change in unemployment at year t-4 will affect the current inflation rate.
+(3) Differentiate between frictional and structural unemployment."
+</div>
+
 <h4>(1) Trade surplus statement (X > IM)</h4>
 <div class="answer"><b>Correct: D.</b> Demand for goods in the domestic economy (C+I+G) is LESS than total demand for domestic goods (C+I+G+NX). Trade surplus means foreigners are also buying domestic goods, raising total demand for them above what residents alone demand.</div>
 
@@ -1572,6 +2040,14 @@ Y = C + I + G + NX. C = 250 + 0.75(Y−T), T = 1,000, G = 1,250, I = 450 − 25r
 <div class="answer">Frictional: job-matching takes time; reducible with better information. Structural: wages above market clearing (min wage, unions, mismatched skills). Both make u<sub>n</sub> > 0 even in good economies.</div>
 
 <h2>PS4 — Solow Two Countries (15%)</h2>
+
+<div class="verbatim">
+<span class="label">VERBATIM EXAM QUESTION (V19 PS4):</span>
+"Consider the Solow growth model with y = k<sup>1/2</sup> (no population growth, no technology growth).
+Country A: s = 0.25, δ = 0.10.
+Country B: s = 0.3, δ = 0.12.
+Compute the steady-state values of k* and y* for both countries. Compare the results. Is the steady-state level of capital always equal to the Golden Rule level?"
+</div>
 
 <div class="problem">
 y = k<sup>1/2</sup>. Country A: s = 0.25, δ = 0.10. Country B: s = 0.3, δ = 0.12. No n, no g.
@@ -1609,6 +2085,13 @@ y = k<sup>1/2</sup>. Country A: s = 0.25, δ = 0.10. Country B: s = 0.3, δ = 0.
 <div class="answer">Standard answer: steady-state ≠ Golden Rule in general. Depends on s.</div>
 
 <h2>PS5 — Danish Consumption Trend (15%)</h2>
+
+<div class="verbatim">
+<span class="label">VERBATIM EXAM QUESTION (V19 PS5):</span>
+"Figure 2 shows Danish household consumption from 1994 to 2017.
+Describe the patterns observed. Connect the consumption movements to business cycle theory (specifically, the 2008-09 financial crisis and recovery). Does the data support the Life-Cycle Hypothesis prediction of consumption smoothing?"
+</div>
+
 <div class="answer"><b>Model answer:</b> Figure 2 shows Danish household consumption from 1994-2017, rising from ~275k to a peak of ~355k DKK in 2007, then dipping during 2008-09 financial crisis to ~315k, then recovering more slowly. <b>Business cycle theory:</b> the rapid rise pre-2007 reflects the boom; the 2008-09 dip is the recession; the slow recovery thereafter is consistent with a "lost decade" pattern. <b>LCH fit:</b> aggregate data shows that consumption did fall during the crisis (counter to pure LCH smoothing), but less than income — suggesting partial smoothing as predicted by LCH, with deviation reflecting credit constraints and behavioral factors.</div>
 
 <!-- ============================== V19_RE ============================== -->
@@ -1616,6 +2099,16 @@ y = k<sup>1/2</sup>. Country A: s = 0.25, δ = 0.10. Country B: s = 0.3, δ = 0.
 <h1 id="v19re">V19 Re-exam (February 2020) — Full Worked Solutions</h1>
 
 <h2>PS1 — Cobb-Douglas, QTM, Mundell-Fleming (25%)</h2>
+
+<div class="verbatim">
+<span class="label">VERBATIM EXAM QUESTION (V19_RE PS1):</span>
+"(1) Consider the production function Y = K<sup>0.65</sup>·L<sup>0.45</sup>. What returns to scale does this exhibit? What does this mean economically?
+(2) Suppose M = 2,400, V = 2, Y = 2,000.
+(a) Use the Quantity Theory of Money to find the price level P.
+(b) The money supply increases by 50%. Find the new P and inflation rate.
+(c) Is the proportional relationship predicted by QTM verified?
+(3) Consider a small open economy with a fixed exchange rate. Explain why expansionary monetary policy is ineffective."
+</div>
 
 <h4>(1) RTS check for Y = K<sup>0.65</sup>·L<sup>0.45</sup></h4>
 <div class="answer">α + β = 0.65 + 0.45 = <b>1.10 > 1 → Increasing Returns to Scale (IRS)</b>. Economic meaning: doubling all inputs MORE than doubles output. Could be due to specialization, network effects, or economies of scale.</div>
@@ -1639,6 +2132,16 @@ y = k<sup>1/2</sup>. Country A: s = 0.25, δ = 0.10. Country B: s = 0.3, δ = 0.
 <div class="answer">↑M would shift LM* right and depreciate currency. To defend the peg, CB sells reserves and buys back its currency, contracting M back to original. <b>Y unchanged, e fixed. Monetary INEFFECTIVE under fixed ER.</b></div>
 
 <h2>PS2 — Closed-economy IS-LM (25%)</h2>
+
+<div class="verbatim">
+<span class="label">VERBATIM EXAM QUESTION (V19_RE PS2):</span>
+"Consider a closed economy with C = 150 + 0.6(Y − T), T = 100, G = 500, I = 250 − 10r.
+The money market: (M/P)<sup>d</sup> = Y − 95r, M = 6,000, P = 5.
+(1) Derive the IS curve and the LM curve.
+(2) Find the equilibrium values of Y* and r*.
+(3) Suppose the price level drops from P = 5 to P = 4. Find the new equilibrium.
+(4) Why might the price level drop? Provide an AD-AS interpretation."
+</div>
 
 <div class="problem">
 C = 150 + 0.6(Y−T), T = 100, G = 500, I = 250 − 10r. (M/P)<sup>d</sup> = Y − 95r, M = 6,000, P = 5 → M/P = 1,200.
@@ -1686,6 +2189,23 @@ C = 150 + 0.6(Y−T), T = 100, G = 500, I = 250 − 10r. (M/P)<sup>d</sup> = Y �
 
 <h2>PS3 — Multiple-Choice Concepts (20%)</h2>
 
+<div class="verbatim">
+<span class="label">VERBATIM EXAM QUESTION (V19_RE PS3):</span>
+"Choose the correct answer(s) for each of the following.
+(1) Suppose the government cuts defense spending in an open economy. Which is correct?
+A. National saving rises and the deficit shrinks.
+B. The government uses the money to buy imports.
+C. Government saving stays the same.
+D. None of the above.
+(2) Identify the correct IS-LM statements.
+A. A drop in the price level shifts LM to the left.
+B. Fiscal policy shifts the LM curve.
+C. An increase in M shifts LM to the right.
+(3) Identify the correct NX and exchange rate statement.
+A-D. (various reformulations of the NX-e relationship)
+(4) Compare Modigliani's LCH with Friedman's PIH. What are the key similarities and differences?"
+</div>
+
 <h4>(1) Defense spending cut, open economy</h4>
 <div class="answer"><b>A is correct.</b> A cut in G raises public saving (T−G rises) and thus national saving (S<sub>priv</sub> + S<sub>pub</sub>). B is wrong — spending is on G, not specifically imports. C is wrong — government savings RISE, not stay the same.</div>
 
@@ -1699,6 +2219,14 @@ C = 150 + 0.6(Y−T), T = 100, G = 500, I = 250 − 10r. (M/P)<sup>d</sup> = Y �
 <div class="answer"><b>Similarities:</b> both forward-looking, both reject Keynes's reliance on current Yd, both predict smoothed consumption over time. <b>Differences:</b> LCH has finite life with explicit retirement; PIH integrates over indefinite horizon with permanent income concept. LCH emphasizes life-cycle saving (working years vs retirement); PIH emphasizes permanent vs transitory income.</div>
 
 <h2>PS4 — Solow Two Periods (15%)</h2>
+
+<div class="verbatim">
+<span class="label">VERBATIM EXAM QUESTION (V19_RE PS4):</span>
+"Consider the Solow growth model with y = k<sup>1/2</sup> and saving function sf(k) = 0.45·k<sup>1/2</sup>. The country experiences a change in depreciation:
+1990s: δ<sub>1</sub> = 0.15. 2018: δ<sub>2</sub> = 0.11.
+(1) Compute the steady-state level of capital k* for each period.
+(2) Is it true that a high saving rate always reduces consumption per worker c*? Discuss using the Golden Rule concept."
+</div>
 
 <div class="problem">
 y = k<sup>1/2</sup>, sf(k) = 0.45·k<sup>1/2</sup>. δ<sub>1</sub> = 0.15 (1990s); δ<sub>2</sub> = 0.11 (2018).
@@ -1729,6 +2257,12 @@ y = k<sup>1/2</sup>, sf(k) = 0.45·k<sup>1/2</sup>. δ<sub>1</sub> = 0.15 (1990s
 <div class="answer">Not always. Higher s raises k* and y*. Whether c* rises or falls depends on whether s is below, at, or above the Golden Rule. Below Golden Rule: raising s eventually raises c*. Above: raising s further reduces c*. So the claim "high s always reduces c*" is FALSE — it depends on the country's position relative to Golden Rule.</div>
 
 <h2>PS5 — Danish GVA Industries (15%)</h2>
+
+<div class="verbatim">
+<span class="label">VERBATIM EXAM QUESTION (V19_RE PS5):</span>
+"The table shows Gross Value Added (GVA) by Danish industry in 2013 and 2018.
+Compute the percentage change in GVA for each industry. Identify the industries that grew, declined, or stagnated. What economic reasons (structural change, energy transition, sector cycles) might explain these patterns?"
+</div>
 
 <table>
 <tr><th>Industry</th><th>2013</th><th>2018</th><th>% growth</th></tr>
